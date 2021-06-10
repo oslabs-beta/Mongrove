@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.config.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && electron ./dist/bundle.js"
+    "start": "electron ./dist/bundle.js"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +22,12 @@
     "electron-reload": "^1.5.0",
     "electron-reloader": "^1.2.1",
     "html-webpack-plugin": "^5.3.1",
+    "node-loader": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "ts-loader": "^9.2.3",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
-  }
+  },
+  "dependencies": {}
 }

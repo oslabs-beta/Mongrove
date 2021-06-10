@@ -15,7 +15,7 @@
   \****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const { app, BrowserWindow } = __webpack_require__(/*! electron */ \"electron\");\n\n\n// try {\n// \trequire('electron-reloader')(module, {\n//     watchRenderer: true\n//   })\n// } catch (_) { console.log('Error'); }\n\n\nfunction createWindow () {\n  // Create the browser window.\n  let win = new BrowserWindow({\n    width: 800,\n    height: 600,\n    webPreferences: {\n      nodeIntegration: true\n    }\n  });\n\n  // and load the index.html of the app.\n  win.loadFile('index.html');\n}\n\napp.on('ready', createWindow);\n\n//# sourceURL=webpack://Mongrove/./client/electron.js?");
+eval("const { app, BrowserWindow } = __webpack_require__(/*! electron */ \"electron\");\n\n\n// try {\n// \trequire('electron-reloader')(module, {\n//     debug: true,\n//     watchRenderer: true\n//   })\n// } catch (_) { console.log('Error'); }\n\n// require('electron-reload')(__dirname, {\n//     electron: path.join(__dirname, 'node_modules', 'electron'),\n//     hardResetMethod: 'exit'\n// });\n\nfunction createWindow () {\n  // Create the browser window.\n  let win = new BrowserWindow({\n    width: 800,\n    height: 600,\n    webPreferences: {\n      nodeIntegration: true,\n    }\n  });\n\n  // and load the index.html of the app.\n  win.loadFile('index.html');\n}\n\napp.on('ready', createWindow);\n\n//# sourceURL=webpack://Mongrove/./client/electron.js?");
 
 /***/ }),
 
