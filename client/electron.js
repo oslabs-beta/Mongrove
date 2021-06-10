@@ -1,11 +1,11 @@
 const { app, BrowserWindow } = require('electron');
 
 
-try {
-	require('electron-reloader')(module, {
-    watchRenderer: true
-  })
-} catch (_) { console.log('Error'); }
+// try {
+// 	require('electron-reloader')(module, {
+//     watchRenderer: true
+//   })
+// } catch (_) { console.log('Error'); }
 
 
 function createWindow () {
