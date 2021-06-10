@@ -1,0 +1,31 @@
+{
+  "name": "Mongrove",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && electron ./client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "babel-loader": "^8.2.2",
+    "electron": "^13.1.2",
+    "electron-reload": "^1.5.0",
+    "electron-reloader": "^1.2.1",
+    "html-webpack-plugin": "^5.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-loader": "^9.2.3",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
