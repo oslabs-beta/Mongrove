@@ -7,6 +7,10 @@ const { app, BrowserWindow } = require('electron');
 //   })
 // } catch (_) { console.log('Error'); }
 
+// require('electron-reload')(__dirname, {
+//     electron: path.join(__dirname, 'node_modules', 'electron'),
+//     hardResetMethod: 'exit'
+// });
 
 function createWindow () {
   // Create the browser window.
@@ -14,7 +18,7 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
     }
   });
 
