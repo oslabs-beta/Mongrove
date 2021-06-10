@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.config.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && electron ./dist/bundle.js"
+    "start": "electron ./dist/bundle.js"
   },
   "keywords": [],
   "author": "",
