@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [
@@ -21,7 +22,7 @@ module.exports = [
     //render process
     {
         mode: 'development',
-        entry: './client/react.jsx',
+        entry: './client/App.jsx',
         target: 'electron-renderer',
         devtool: 'source-map',
         module: { rules: [{
