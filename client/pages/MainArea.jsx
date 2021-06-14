@@ -1,6 +1,6 @@
 import React from 'react';
-import SchemaArea from './schemaArea';
-import TestDBGenArea from './TestDBGenArea';
+import SchemaArea from './SchemaArea.jsx';
+import TestDBGenArea from './TestDBGenArea.jsx';
 
 
 const MainArea = () => {

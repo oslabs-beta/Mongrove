@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import SchemaPanel from '../components/SchemaPanel';
-import MainArea from './MainArea';
-import DatabasePanel from '../components/DatabasePanel';
+import Navbar from '../components/Navbar.jsx';
+import SchemaPanel from '../components/SchemaPanel.jsx';
+import MainArea from './MainArea.jsx';
+import DatabasePanel from '../components/DatabasePanel.jsx';
 
 //Navbar component
 
@@ -19,7 +19,7 @@ const LandingPage = () => {
             <MainArea />
             <DatabasePanel />
         </div>
-    );
+    )
 }
 
 

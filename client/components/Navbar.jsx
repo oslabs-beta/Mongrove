@@ -1,8 +1,8 @@
 import React from 'react';
 // import { HashRouter, NavLink, Link, Route, Switch } from "react-router-dom";
-import { IconButton } from '@material-ui/core';
+// import { IconButton } from '@material-ui/core';
 // import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import { HelpOutlineRoundedIcon } from '@material-ui/icons/HelpOutlineRounded';
+// import { HelpOutlineRoundedIcon } from '@material-ui/icons/HelpOutlineRounded';
 
 //imports for opening new browser window from a react element
 // const remote = electron.remote;

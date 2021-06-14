@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { HashRouter, Link, Route, Switch } from 'react-router-dom';
-// import LandingPage from './pages/LandingPage';
+import LandingPage from './pages/LandingPage.jsx';
 
 // renderer process
 // const { ipcRenderer } = require('electron');
@@ -17,7 +17,7 @@ const App = () => {
     return (
         <div>
             App component rendering!!
-            {/* <LandingPage /> */}
+            <LandingPage />
         </div>
     );
 };

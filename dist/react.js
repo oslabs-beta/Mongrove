@@ -2,6 +2,318 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./client/components/DatabasePanel.jsx":
+/*!*********************************************!*\
+  !*** ./client/components/DatabasePanel.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+ // import DatabaseItem from './DatabaseItem';
+
+var DatabasePanel = function DatabasePanel() {
+  // use state to populate schemas to display here
+  var state = {
+    dbNameList: []
+  };
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(state),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentState = _useState2[0],
+      setState = _useState2[1];
+
+  var dbList = [];
+
+  for (var i = 0; i < currentState.dbNameList.length; i++) {
+    dbList.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(DatabaseItem, {
+      schemaName: currentState.dbNameList[i],
+      key: i,
+      id: i,
+      currentState: currentState
+    }));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "dbPanel"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, " DATABASES "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "dbList"
+  }, "databaseItem1"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DatabasePanel);
+
+/***/ }),
+
+/***/ "./client/components/Navbar.jsx":
+/*!**************************************!*\
+  !*** ./client/components/Navbar.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+ // import { HashRouter, NavLink, Link, Route, Switch } from "react-router-dom";
+// import { IconButton } from '@material-ui/core';
+// import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+// import { HelpOutlineRoundedIcon } from '@material-ui/icons/HelpOutlineRounded';
+//imports for opening new browser window from a react element
+// const remote = electron.remote;
+// const {BrowserWindow} = remote;
+//create NavBar component
+
+var Navbar = function Navbar() {
+  //opened browser window width and height defaults to 800 by 600
+  //   handleOpenHelp = () => {
+  //       let win = new BrowserWindow({
+  //           title:"Help",
+  //           //hide menu for pop-up browser window
+  //             //either use the removeMenu() function
+  //               win.removeMenu();
+  //             // or set the Menu to null
+  //               // win.setMenu(null);
+  //       })
+  //       win.loadURL('replacethispath(https://www.electronjs.org/docs/api/remote)')
+  //       //possibly add win.loadfile here??
+  //   }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "navbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Navbar component rendering"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
+
+/***/ }),
+
+/***/ "./client/components/SchemaPanel.jsx":
+/*!*******************************************!*\
+  !*** ./client/components/SchemaPanel.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+ // import SchemaItem from './SchemaItem';
+
+var SchemaPanel = function SchemaPanel() {
+  // use state to populate schemas to display here
+  var state = {
+    schemaNameList: []
+  };
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(state),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentState = _useState2[0],
+      setState = _useState2[1];
+
+  var schemaList = [];
+
+  for (var i = 0; i < currentState.schemaNameList.length; i++) {
+    schemaList.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(SchemaItem, {
+      schemaName: currentState.schemaNameList[i],
+      key: i,
+      id: i,
+      currentState: currentState
+    }));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "schemaPanel"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, " SCHEMAS "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "schemaList"
+  }, "schemaItem1"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SchemaPanel);
+
+/***/ }),
+
+/***/ "./client/pages/LandingPage.jsx":
+/*!**************************************!*\
+  !*** ./client/pages/LandingPage.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar.jsx */ "./client/components/Navbar.jsx");
+/* harmony import */ var _components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SchemaPanel.jsx */ "./client/components/SchemaPanel.jsx");
+/* harmony import */ var _MainArea_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainArea.jsx */ "./client/pages/MainArea.jsx");
+/* harmony import */ var _components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/DatabasePanel.jsx */ "./client/components/DatabasePanel.jsx");
+
+
+
+
+ //Navbar component
+//SchemaPanel component
+
+var LandingPage = function LandingPage() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "landingPage"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Landing page component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LandingPage);
+
+/***/ }),
+
+/***/ "./client/pages/MainArea.jsx":
+/*!***********************************!*\
+  !*** ./client/pages/MainArea.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SchemaArea.jsx */ "./client/pages/SchemaArea.jsx");
+/* harmony import */ var _TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TestDBGenArea.jsx */ "./client/pages/TestDBGenArea.jsx");
+
+
+
+
+var MainArea = function MainArea() {
+  // use useState for handling schema data from SchemaArea component to passdown to dropdown selection in TestDBGenArea    
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "mainArea",
+    className: "mainAreaComponents"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainArea);
+
+/***/ }),
+
+/***/ "./client/pages/SchemaArea.jsx":
+/*!*************************************!*\
+  !*** ./client/pages/SchemaArea.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var SchemaArea = function SchemaArea() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "schemaArea",
+    className: "mainAreaComponents"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "SchemaArea component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "schemaName"
+  }, "Enter Schema Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "schemaName",
+    name: "schemaName"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "schemaField"
+  }, "Schema Input Field"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "schemaField",
+    name: "schemaField"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "button",
+    id: "saveSchemaBn",
+    className: "mainAreaBn",
+    value: "Save Schema"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SchemaArea);
+
+/***/ }),
+
+/***/ "./client/pages/TestDBGenArea.jsx":
+/*!****************************************!*\
+  !*** ./client/pages/TestDBGenArea.jsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var TestDBGenArea = function TestDBGenArea() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "testdbGenArea"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "TestDBGenArea component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "testdbName"
+  }, "Test Database Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "testdbName",
+    name: "testdbName"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "selectSchema"
+  }, "Select Schema Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
+    id: "selectSchema",
+    name: "selectSchema"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "sampleSchema1"
+  }, "sampleSchema1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "sampleSchema2"
+  }, "sampleSchema2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+    value: "sampleSchema3"
+  }, "sampleSchema3")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "rowsNum"
+  }, "Enter number of rows"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "text",
+    id: "rowsNum",
+    name: "rowsNum"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "button",
+    id: "genTestdbBn",
+    className: "mainAreaBn",
+    placeholder: "Generate Test Database"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TestDBGenArea);
+
+/***/ }),
+
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -29840,6 +30152,23 @@ if (false) {} else {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -29861,16 +30190,17 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _pages_LandingPage_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/LandingPage.jsx */ "./client/pages/LandingPage.jsx");
 
 
- // import LandingPage from './pages/LandingPage';
-// renderer process
+
+ // renderer process
 // const { ipcRenderer } = require('electron');
 // ipcRenderer.send('anything-asynchronous', 'ping');
 //render landing page when app is first opened
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "App component rendering!!");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "App component rendering!!", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LandingPage_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById('app'));
