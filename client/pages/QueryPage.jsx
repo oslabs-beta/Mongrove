@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import QueriesPanel from '../components/QueriesPanel.jsx';
-import MainArea from './MainArea.jsx';
+import MainArea from './SchemaMainArea.jsx';
 
 // eventually add a graphs/visualization component
 

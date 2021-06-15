@@ -310,7 +310,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar.jsx */ "./client/components/Navbar.jsx");
 /* harmony import */ var _components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SchemaPanel.jsx */ "./client/components/SchemaPanel.jsx");
-/* harmony import */ var _MainArea_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainArea.jsx */ "./client/pages/MainArea.jsx");
+/* harmony import */ var _SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SchemaMainArea.jsx */ "./client/pages/SchemaMainArea.jsx");
 /* harmony import */ var _components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/DatabasePanel.jsx */ "./client/components/DatabasePanel.jsx");
 
 
@@ -322,40 +322,10 @@ __webpack_require__.r(__webpack_exports__);
 var LandingPage = function LandingPage() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "landingPage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Landing page component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Landing page component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LandingPage);
-
-/***/ }),
-
-/***/ "./client/pages/MainArea.jsx":
-/*!***********************************!*\
-  !*** ./client/pages/MainArea.jsx ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SchemaArea.jsx */ "./client/pages/SchemaArea.jsx");
-/* harmony import */ var _TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TestDBGenArea.jsx */ "./client/pages/TestDBGenArea.jsx");
-
-
-
-
-var MainArea = function MainArea() {
-  // use useState for handling schema data from SchemaArea component to passdown to dropdown selection in TestDBGenArea    
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "mainArea",
-    className: "mainAreaComponents"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainArea);
 
 /***/ }),
 
@@ -373,7 +343,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar.jsx */ "./client/components/Navbar.jsx");
 /* harmony import */ var _components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/QueriesPanel.jsx */ "./client/components/QueriesPanel.jsx");
-/* harmony import */ var _MainArea_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainArea.jsx */ "./client/pages/MainArea.jsx");
+/* harmony import */ var _SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SchemaMainArea.jsx */ "./client/pages/SchemaMainArea.jsx");
 
 
 
@@ -382,7 +352,7 @@ __webpack_require__.r(__webpack_exports__);
 var QueryPage = function QueryPage() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "queryPage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QueryPage);
@@ -427,6 +397,36 @@ var SchemaArea = function SchemaArea() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SchemaArea);
+
+/***/ }),
+
+/***/ "./client/pages/SchemaMainArea.jsx":
+/*!*****************************************!*\
+  !*** ./client/pages/SchemaMainArea.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SchemaArea.jsx */ "./client/pages/SchemaArea.jsx");
+/* harmony import */ var _TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TestDBGenArea.jsx */ "./client/pages/TestDBGenArea.jsx");
+
+
+
+
+var SchemaMainArea = function SchemaMainArea() {
+  // use useState for handling schema data from SchemaArea component to passdown to dropdown selection in TestDBGenArea    
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "mainArea",
+    className: "mainAreaComponents"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SchemaMainArea);
 
 /***/ }),
 
