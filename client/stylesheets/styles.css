@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#navbar {
+  display: flex;
+  border-style: solid;
+  background-color: #718355;
+  color: white;
+}
+
+#schemaPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+}
+
+#schemaMainArea {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 15px;
+}
+
+#schemaArea {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 15px;
+  margin: 20px;
+}
+
+#schemaArea input {
+  margin-bottom: 10px;
+}
+
+#testdbGenArea {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 15px;
+  margin: 20px;
+}
+
+#testdbGenArea input {
+  margin-bottom: 10px;
+}
+
+#testdbGenArea label {
+  margin-top: 5px;
+}

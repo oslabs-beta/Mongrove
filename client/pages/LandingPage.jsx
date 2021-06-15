@@ -11,15 +11,15 @@ import DatabasePanel from '../components/DatabasePanel.jsx';
 const LandingPage = () => {
 
    
-    return (
-        <div id="landingPage">
-            <p>Landing page component rendering</p>
-            <Navbar />
-            <SchemaPanel />
-            <SchemaMainArea />
-            <DatabasePanel />
-        </div>
-    )
+  return (
+      <div id="landingPage">
+          <p>Landing page component rendering</p>
+          <Navbar />
+          <SchemaPanel />
+          <SchemaMainArea />
+          <DatabasePanel />
+      </div>
+  )
 }
 
 

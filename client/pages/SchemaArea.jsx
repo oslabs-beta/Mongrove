@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Editor from '../components/Editor.jsx';
+
 
 const SchemaArea = () => {
+  const [schema, setSchema] = useState('{field: text}');
 
     return (
         <div id="schemaArea" className="mainAreaComponents">
@@ -11,8 +14,13 @@ const SchemaArea = () => {
             
 
             {/* schema input field */}
-            <label htmlFor="schemaField">Schema Input Field</label>
-            <input type="text" id="schemaField" name="schemaField"/>
+            {/* <label htmlFor="schemaField">Schema Input Field</label> */}
+            <Editor 
+              displayName="Enter Schema here:"
+              value={schema}
+              onChange={setSchema}
+            />
+            {/* <input type="text" id="schemaField" name="schemaField"/> */}
            
             {/* save schema button */}
             <button type="button" id="saveSchemaBn" className="mainAreaBn">

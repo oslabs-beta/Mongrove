@@ -5,7 +5,7 @@ import ResultsArea from './ResultsArea.jsx';
 const QueriesMainArea = () => {
 // use useState for handling schema data from SchemaArea component to passdown to dropdown selection in TestDBGenArea    
     return (
-        <div id="mainArea" className="mainAreaComponents">
+        <div id="queriesMainArea" className="mainAreaComponents">
             <QueryArea />
             {/* <ResultsArea /> */}
         </div>
