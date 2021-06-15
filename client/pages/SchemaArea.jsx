@@ -15,7 +15,9 @@ const SchemaArea = () => {
             <input type="text" id="schemaField" name="schemaField"/>
            
             {/* save schema button */}
-            <input type="button" id="saveSchemaBn" className="mainAreaBn" value="Save Schema" />
+            <button type="button" id="saveSchemaBn" className="mainAreaBn">
+                Save Schema
+            </button>
         </div>
     );
 };

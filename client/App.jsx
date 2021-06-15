@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { HashRouter, Link, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage.jsx';
+import Navbar from './components/Navbar.jsx';
+import QueryPage from './pages/QueryPage.jsx';
 
 // renderer process
 // const { ipcRenderer } = require('electron');
@@ -16,10 +18,15 @@ import LandingPage from './pages/LandingPage.jsx';
 const App = () => {
     return (
         <div>
-            App component rendering!!
-            <LandingPage />
+            test text
+            {/* react router should first show landing page, then switch when viewchange button is clicked */}
+                <Switch>
+                    {/* <Route exact path="/" component={LandingPage}/> */}
+                    <Route exact path="/"  component={QueryPage}/>
+                </Switch>
         </div>
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render( <HashRouter><App /></HashRouter>, document.getElementById('app'));
+

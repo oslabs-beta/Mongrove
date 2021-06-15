@@ -1,4 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
+
+// const TestDBGenArea = () => {
+    // const [dbName, setDBName] = useState('');
+    // const [testSchemaName, setTestSchemaName] = useState('');
+    // const [numberOfRows, setNumberOfRows] = useState(0)
+    
+    // //when GenerateTestDatabase button is clicked, add all 3 inputs to state
+    const handleGenerateTestDB = () => {
+        // setDBName('');
+        // setTestSchemaName('');
+        // setNumberOfRows();
+    }
+
+
 
 const TestDBGenArea = () => {
 
@@ -21,8 +36,9 @@ const TestDBGenArea = () => {
             <label htmlFor="rowsNum">Enter number of rows</label>
             <input type="text" id="rowsNum" name="rowsNum"/>
 
-            <input type="button" id="genTestdbBn" className="mainAreaBn" placeholder="Generate Test Database" />
-    
+            <button type="submit" id="genTestdbBn" className="mainAreaBn" onClick={handleGenerateTestDB}>
+                Generate Test Database
+            </button>
         </div>
     )
 };

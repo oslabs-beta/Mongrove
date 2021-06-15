@@ -1,38 +1,23 @@
-import React, { useState } from 'react';
-// import DatabaseItem from './DatabaseItem';
+import React from 'react';
+import DatabaseItem from './DatabaseItem.jsx';
 
 const DatabasePanel = () => {
-    // use state to populate schemas to display here
-    const state = {
-        dbNameList: [], 
-    }
 
-    const [currentState, setState] = useState(state);
+    //     //create an array to hold each created test DB component
+    //     const testDBslist = [];
 
-
-    const dbList = [];
-    for (let i = 0; i < currentState.dbNameList.length; i++) {
-        dbList.push(
-            <DatabaseItem 
-                schemaName={currentState.dbNameList[i]}
-                key={i}
-                id={i}
-                currentState={currentState}
-            />
-        )
-    }
-
+    //     for (let i = 0; i < testDBslist.length; i++) {
+    //         something.push(<DatabaseItem databaseName={testDBslist[i]} key={i} id={i} />)
+    //     }
+    //     //when user clicks Generate Test Database button, add new test db name to testDBs array
     return (
-        <div id="dbPanel">
-            <h2> DATABASES </h2>
+        <div></div>
+    //     <div className="databasePanel">
 
-
-            <div id="dbList">
-                {/* {dbList} */}
-                databaseItem1
-            </div>
-
-        </div>
+    //     <p className="panelTitle">Test Databases</p>
+        
+    //     {testDBs}
+    //     </div>
     )
 }
 
