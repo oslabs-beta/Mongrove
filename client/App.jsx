@@ -21,8 +21,8 @@ const App = () => {
             test text
             {/* react router should first show landing page, then switch when viewchange button is clicked */}
                 <Switch>
-                    {/* <Route exact path="/" component={LandingPage}/> */}
-                    <Route exact path="/"  component={QueryPage}/>
+                    <Route exact path="/" component={LandingPage}/>
+                    <Route exact path="/queryPage"  component={QueryPage}/>
                 </Switch>
         </div>
     );

@@ -2,21 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 
 // const TestDBGenArea = () => {
-    // const [dbName, setDBName] = useState('');
-    // const [testSchemaName, setTestSchemaName] = useState('');
-    // const [numberOfRows, setNumberOfRows] = useState(0)
+//     const [dbName, setDBName] = useState('');
+//     const [testSchemaName, setTestSchemaName] = useState('');
+//     const [numberOfRows, setNumberOfRows] = useState(0)
     
-    // //when GenerateTestDatabase button is clicked, add all 3 inputs to state
-    const handleGenerateTestDB = () => {
-        // setDBName('');
-        // setTestSchemaName('');
-        // setNumberOfRows();
-    }
+//     //when GenerateTestDatabase button is clicked, add all 3 inputs to state
 
 
 
 const TestDBGenArea = () => {
-
+    
+    const handleGenerateTestDB = () => {
+        setDBName('');
+        setTestSchemaName('');
+        setNumberOfRows();
+    }
     return (
         <div id="testdbGenArea">
             <h2>TestDBGenArea component rendering</h2>

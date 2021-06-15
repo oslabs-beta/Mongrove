@@ -8,3 +8,5 @@ const ResultsArea = () => {
         </div>
     )
 }
+
+export default ResultsArea;

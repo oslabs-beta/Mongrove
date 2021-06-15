@@ -6,7 +6,7 @@ const QueryArea = () => {
         <div id="queryArea" className="mainAreaComponents">
         
             {/* select database dropdown */}
-            <label for="selectDB">Select Database</label>
+            <label htmlFor="selectDB">Select Database</label>
             <select id="selectDB" name="selectDB">
                 {/* placeholder values for database selection */}
                 <option value="sampleDB1">sampleDB1</option>
@@ -15,11 +15,11 @@ const QueryArea = () => {
             </select>
 
             {/* enter query name field */}
-            <label for="queryName">Enter Query Name</label>
+            <label htmlFor="queryName">Enter Query Name</label>
             <input type="text" id="queryName" name="queryName"/>
 
             {/* query input field */}
-            <label for="queryField">Query Input Field</label>
+            <label htmlFor="queryField">Query Input Field</label>
             <input type="text" id="queryField" name="queryField"/>
 
         </div>

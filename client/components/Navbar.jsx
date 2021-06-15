@@ -31,8 +31,8 @@ const Navbar = () => {
         <div className="navbar">
             <h1>Navbar component rendering</h1>
             <div className="navbarLinks">
-                {/* <NavLink to="/" activeClassName="activeClassName" className="navLink"><h2>CREATE</h2> </NavLink> */}
-                <NavLink to="/" activeClassName="activeClassName" className="navLink"><h2>TEST</h2></NavLink>
+                <NavLink to="/" activeClassName="activeClassName" className="navLink"><h2>CREATE</h2> </NavLink>
+                <NavLink to="/queryPage" activeClassName="activeClassName" className="navLink"><h2>TEST</h2></NavLink>
             </div>
             <h1>Mongrove</h1>
             <div className="helpIcon">

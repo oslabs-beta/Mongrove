@@ -11,12 +11,13 @@ const DatabasePanel = () => {
     //     }
     //     //when user clicks Generate Test Database button, add new test db name to testDBs array
     return (
-        <div></div>
-    //     <div className="databasePanel">
+        <div className="databasePanel">
 
-    //     <p className="panelTitle">Test Databases</p>
-        
-    //     {testDBs}
+    //    <p className="panelTitle">Test Databases</p>
+        <div className="databasesList">
+
+        </div>
+    {/* //     {testDBs} */}
     //     </div>
     )
 }
