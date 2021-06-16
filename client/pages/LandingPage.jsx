@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import SchemaPanel from '../components/SchemaPanel.jsx';
 import SchemaMainArea from './SchemaMainArea.jsx';
 import DatabasePanel from '../components/DatabasePanel.jsx';
-import { useState } from 'react';
 import DatabaseItem from '../components/DatabaseItem.jsx';
 
 //Navbar component

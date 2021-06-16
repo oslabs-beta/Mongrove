@@ -15,7 +15,7 @@ import QueryPage from './pages/QueryPage.jsx';
 
 //render landing page when app is first opened
 
-const App = (props) => {
+const App = () => {
     return (
         <div>
             <button onClick={() => alert("here")}>Button</button>

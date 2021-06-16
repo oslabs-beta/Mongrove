@@ -347,7 +347,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
  //Navbar component
 //SchemaPanel component
 
@@ -638,7 +637,7 @@ var TestDBGenArea = function TestDBGenArea(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "testdbGenArea"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "TestDBGenArea component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "testdbName"
   }, "Test Database Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
@@ -34652,7 +34651,7 @@ __webpack_require__.r(__webpack_exports__);
 // ipcRenderer.send('anything-asynchronous', 'ping');
 //render landing page when app is first opened
 
-var App = function App(props) {
+var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return alert("here");
