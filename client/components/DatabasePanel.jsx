@@ -1,24 +1,27 @@
 import React from 'react';
 import DatabaseItem from './DatabaseItem.jsx';
 
-const DatabasePanel = () => {
+const DatabasePanel = (props) => {
 
-    //     //create an array to hold each created test DB component
-    //     const testDBslist = [];
-
-    //     for (let i = 0; i < testDBslist.length; i++) {
-    //         something.push(<DatabaseItem databaseName={testDBslist[i]} key={i} id={i} />)
-    //     }
-    //     //when user clicks Generate Test Database button, add new test db name to testDBs array
+    //create an array to hold each created test DB component
+    const databaseItemsList = []; 
+    for (let i = 0; i < props.testDatabasesList.length; i++) {
+        databaseItemsList.push(
+                <DatabaseItem 
+                    key={i}
+                    id={i}
+                    dbName={props.testDatabasesList[i].name} 
+                    />)
+        }
     return (
-        <div className="databasePanel">
+        <div id="databasePanel">
+            <h2>TEST DATABASES</h2>
 
-    //    <p className="panelTitle">Test Databases</p>
-        <div className="databasesList">
-
+            <div className="databasesList">
+            {databaseItemsList}
+            </div>
+        
         </div>
-    {/* //     {testDBs} */}
-    //     </div>
     )
 }
 

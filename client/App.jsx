@@ -15,18 +15,21 @@ import QueryPage from './pages/QueryPage.jsx';
 
 //render landing page when app is first opened
 
-const App = () => {
+const App = (props) => {
     return (
         <div>
+            <button onClick={() => alert("here")}>Button</button>
             test text
             {/* react router should first show landing page, then switch when viewchange button is clicked */}
+            <HashRouter>
                 <Switch>
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/queryPage"  component={QueryPage}/>
                 </Switch>
+             </HashRouter>
         </div>
     );
 };
 
-ReactDOM.render( <HashRouter><App /></HashRouter>, document.getElementById('app'));
+ReactDOM.render( <App />, document.getElementById('app'));
 
