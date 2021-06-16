@@ -16,7 +16,7 @@ const LandingPage = (props) => {
    const [testDatabasesList, setTestDatabasesList] = useState([])
         
    //functions for setting schema area inputs to state
-   const handleSaveSchema = (e) => {
+   const handleSaveSchema = () => {
     //when clicked, should add new schema to state and add new schemaItem component to schemaPanel
    }
     
@@ -35,6 +35,8 @@ const LandingPage = (props) => {
             //use update dbName to create a new dbItem component and and it to the db panel
         //backend: all inputs get sent to backend (IPC renderer --> main?)
     }
+
+    
 
     return (
         <div id="landingPage">

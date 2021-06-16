@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage.jsx';
 import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.css';
+import DatabasePanel from './components/DatabasePanel.jsx';
 // renderer process
 // const { ipcRenderer } = require('electron');
 
@@ -24,6 +25,8 @@ const App = () => {
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/queryPage"  component={QueryPage}/>
                 </Switch>
+                <p>testing router</p>
+                {/* <DatabasePanel/> */}
              </HashRouter>
         </div>
     );

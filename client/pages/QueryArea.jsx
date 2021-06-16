@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Editor from '../components/Editor.jsx';
+
 
 const QueryArea = () => {
-
+    const [selectedDB, setSelectedDB] = useState('sampleDB1')
+    const [testQueryName, setTestQueryName] = useState('')
+    const [testQuery, setTestQuery] = useState('')
+    
     return (
         <div id="queryArea" className="mainAreaComponents">
         
@@ -16,12 +21,27 @@ const QueryArea = () => {
 
             {/* enter query name field */}
             <label htmlFor="queryName">Enter Query Name</label>
-            <input type="text" id="queryName" name="queryName"/>
+            <input 
+                type="text" 
+                id="queryName" 
+                name="queryName"/>
 
             {/* query input field */}
-            <label htmlFor="queryField">Query Input Field</label>
-            <input type="text" id="queryField" name="queryField"/>
+            
+                <Editor 
+              displayName="Enter query here:"
+              value={testQuery}
+              onChange={setTestQuery}
+            />
 
+            <button 
+                type="submit" 
+                id="runQueryBn" 
+                className="mainAreaBn"
+                // onClick={}
+                >
+            Run Query
+            </button>
         </div>
     );
 }

@@ -3,7 +3,9 @@ import React from 'react';
 const QueriesPanel = () => {
 
     return (
-<div></div>
+        <div>
+
+        </div>
     )
 }
 
