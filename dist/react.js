@@ -152,12 +152,11 @@ var DatabasePanel = function DatabasePanel() {
   //     }
   //     //when user clicks Generate Test Database button, add new test db name to testDBs array
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "databasePanel"
-  }, "//    ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "panelTitle"
-  }, "Test Databases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "databasePanel",
+    className: "panels"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "TEST DATABASES"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "databasesList"
-  }), "//     ");
+  }));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DatabasePanel);
@@ -260,17 +259,17 @@ var Navbar = function Navbar() {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "navbar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Navbar component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "navbarLinks"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
     to: "/",
     activeClassName: "activeClassName",
     className: "navLink"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "CREATE"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "CREATE"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
     to: "/queryPage",
     activeClassName: "activeClassName",
     className: "navLink"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "TEST"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "TEST"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     id: "navbar-header"
   }, "Mongrove"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "helpIcon"
@@ -352,8 +351,9 @@ var SchemaPanel = function SchemaPanel() {
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "schemaPanel"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, " SCHEMAS "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: "schemaPanel",
+    className: "panels"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, " SCHEMAS "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "schemaList"
   }, "schemaItem1"));
 };
@@ -388,7 +388,9 @@ __webpack_require__.r(__webpack_exports__);
 var LandingPage = function LandingPage() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "landingPage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Landing page component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "mainArea"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LandingPage);
@@ -417,7 +419,7 @@ var QueriesMainArea = function QueriesMainArea() {
   // use useState for handling schema data from SchemaArea component to passdown to dropdown selection in TestDBGenArea    
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "queriesMainArea",
-    className: "mainAreaComponents"
+    className: "mainAreaContainers"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QueryArea_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null));
 };
 
@@ -496,7 +498,9 @@ __webpack_require__.r(__webpack_exports__);
 var QueryPage = function QueryPage() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "queryPage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QueriesMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "mainArea"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QueriesMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QueryPage);
@@ -562,7 +566,7 @@ var SchemaArea = function SchemaArea() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "schemaArea",
     className: "mainAreaComponents"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "SchemaArea component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Schema Creation Area"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "schemaName"
   }, "Enter Schema Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
@@ -609,7 +613,7 @@ var SchemaMainArea = function SchemaMainArea(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "schemaMainArea",
-    className: "mainAreaComponents"
+    className: "mainAreaContainers"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaArea_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TestDBGenArea_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null));
 };
 
@@ -645,7 +649,7 @@ var TestDBGenArea = function TestDBGenArea() {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "testdbGenArea"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "TestDBGenArea component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "testdbName"
   }, "Test Database Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
@@ -11488,7 +11492,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: Helvetica, sans-serif;\n}\n\nbody {\n  background-color: whitesmoke;\n}\n\n#navbar {\n  display: flex;\n  border-style: solid;\n  background-color: #718355;\n  color: white;\n}\n\n#schemaPanel {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-style: solid;\n}\n\n#schemaMainArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n}\n\n#schemaArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#schemaArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#testdbGenArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea label {\n  margin-top: 5px;\n}", "",{"version":3,"sources":["webpack://./client/stylesheets/styles.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;EACA,sBAAA;EACA,kCAAA;AACJ;;AAEA;EACI,4BAAA;AACJ;;AAEA;EACE,aAAA;EACA,mBAAA;EACA,yBAAA;EACA,YAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,mBAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;AACF;;AAEA;EACE,mBAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;AACF;;AAEA;EACE,mBAAA;AACF;;AAEA;EACE,eAAA;AACF","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    font-family: Helvetica, sans-serif;\n}\n\nbody {\n    background-color: whitesmoke;\n}\n\n#navbar {\n  display: flex;\n  border-style: solid;\n  background-color: #718355;\n  color: white;\n}\n\n#schemaPanel {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-style: solid;\n}\n\n#schemaMainArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n}\n\n#schemaArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#schemaArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#testdbGenArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea label {\n  margin-top: 5px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: Helvetica, sans-serif;\n}\n\nbody {\n  background-color: whitesmoke;\n}\n\n#navbar {\n  display: flex;\n  align-items: center;\n  border-style: solid;\n  background-color: #718355;\n  color: white;\n  height: 70px;\n  position: relative;\n}\n\n#navbar-header {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-right: -50%;\n  transform: translate(-50%, -50%);\n}\n\n.navbarLinks {\n  display: flex;\n  margin-left: 20px;\n}\n\n.navLink {\n  margin-left: 20px;\n  color: gold;\n  text-decoration: none;\n}\n\n.mainArea {\n  display: flex;\n  flex-direction: row;\n}\n\n.mainAreaContainers {\n  width: 60%;\n}\n\n.panels {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-style: solid;\n  width: 20%;\n}\n\n.panels h3 {\n  margin: 15px;\n}\n\n#schemaMainArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n}\n\n#schemaArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#schemaArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#testdbGenArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea label {\n  margin-top: 5px;\n}", "",{"version":3,"sources":["webpack://./client/stylesheets/styles.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,UAAA;EACA,sBAAA;EACA,kCAAA;AACJ;;AAEA;EACI,4BAAA;AACJ;;AAEA;EACE,aAAA;EACA,mBAAA;EACA,mBAAA;EACA,yBAAA;EACA,YAAA;EACA,YAAA;EACA,kBAAA;AACF;;AAEA;EACE,kBAAA;EACA,QAAA;EACA,SAAA;EACA,kBAAA;EACA,gCAAA;AACF;;AAEA;EACE,aAAA;EACA,iBAAA;AACF;;AAEA;EACE,iBAAA;EACA,WAAA;EACA,qBAAA;AACF;;AAEA;EACE,aAAA;EACA,mBAAA;AACF;;AAEA;EACE,UAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,mBAAA;EACA,UAAA;AACF;;AAEA;EACE,YAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;AACF;;AAEA;EACE,mBAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;AACF;;AAEA;EACE,mBAAA;AACF;;AAEA;EACE,eAAA;AACF","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    font-family: Helvetica, sans-serif;\n}\n\nbody {\n    background-color: whitesmoke;\n}\n\n#navbar {\n  display: flex;\n  align-items: center;\n  border-style: solid;\n  background-color: #718355;\n  color: white;\n  height: 70px;\n  position: relative;\n}\n\n#navbar-header {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-right: -50%;\n  transform: translate(-50%, -50%);\n}\n\n.navbarLinks {\n  display: flex;\n  margin-left: 20px;\n}\n\n.navLink {\n  margin-left: 20px;\n  color: gold;\n  text-decoration: none;\n}\n\n.mainArea {\n  display: flex;\n  flex-direction: row;\n}\n\n.mainAreaContainers {\n  width: 60%;\n}\n\n.panels {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-style: solid;\n  width: 20%;\n}\n\n.panels h3 {\n  margin: 15px;\n}\n\n#schemaMainArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n}\n\n#schemaArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#schemaArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea {\n  display: flex;\n  flex-direction: column;\n  border-style: solid;\n  padding: 15px;\n  margin: 20px;\n}\n\n#testdbGenArea input {\n  margin-bottom: 10px;\n}\n\n#testdbGenArea label {\n  margin-top: 5px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

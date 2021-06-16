@@ -10,7 +10,7 @@ const SchemaMainArea = (props) => {
   } = props;
 
   return (
-      <div id="schemaMainArea" className="mainAreaComponents">
+      <div id="schemaMainArea" className="mainAreaContainers">
           <SchemaArea />
           <TestDBGenArea />
       </div>

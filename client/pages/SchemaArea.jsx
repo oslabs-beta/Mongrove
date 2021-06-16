@@ -8,7 +8,7 @@ const SchemaArea = () => {
     return (
         <div id="schemaArea" className="mainAreaComponents">
             {/* enter schema name field */}
-            <h2>SchemaArea component rendering</h2>
+            <h2>Schema Creation Area</h2>
             <label htmlFor="schemaName">Enter Schema Name</label>
             <input type="text" id="schemaName" name="schemaName"/>
             

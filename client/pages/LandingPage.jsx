@@ -13,11 +13,12 @@ const LandingPage = () => {
    
   return (
       <div id="landingPage">
-          <p>Landing page component rendering</p>
           <Navbar />
-          <SchemaPanel />
-          <SchemaMainArea />
-          <DatabasePanel />
+          <div className="mainArea">
+            <SchemaPanel />
+            <SchemaMainArea />
+            <DatabasePanel />
+          </div>
       </div>
   )
 }

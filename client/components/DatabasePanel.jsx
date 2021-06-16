@@ -10,16 +10,17 @@ const DatabasePanel = () => {
     //         something.push(<DatabaseItem databaseName={testDBslist[i]} key={i} id={i} />)
     //     }
     //     //when user clicks Generate Test Database button, add new test db name to testDBs array
-    return (
-        <div className="databasePanel">
+  return (
+    <div id="databasePanel" className="panels">
 
-    //    <p className="panelTitle">Test Databases</p>
-        <div className="databasesList">
+      <h3>TEST DATABASES</h3>
 
-        </div>
-    {/* //     {testDBs} */}
-    //     </div>
-    )
+      <div className="databasesList">
+
+      </div>
+  {/* //     {testDBs} */}
+    </div>
+  )
 }
 
 export default DatabasePanel;

@@ -19,7 +19,7 @@ const TestDBGenArea = () => {
     }
     return (
         <div id="testdbGenArea">
-            <h2>TestDBGenArea component rendering</h2>
+            <h2>Test Database Generation</h2>
             <h6>Test Database Generation</h6>
 
             <label htmlFor="testdbName">Test Database Name</label>
