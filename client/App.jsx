@@ -17,14 +17,17 @@ import './stylesheets/styles.css';
 const App = () => {
     return (
         <div>
+            {/* <button onClick={() => alert("here")}>Button</button> */}
             {/* react router should first show landing page, then switch when viewchange button is clicked */}
+            <HashRouter>
                 <Switch>
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/queryPage"  component={QueryPage}/>
                 </Switch>
+             </HashRouter>
         </div>
     );
 };
 
-ReactDOM.render( <HashRouter><App /></HashRouter>, document.getElementById('app'));
+ReactDOM.render( <App />, document.getElementById('app'));
 

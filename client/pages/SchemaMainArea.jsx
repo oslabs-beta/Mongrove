@@ -5,16 +5,12 @@ import TestDBGenArea from './TestDBGenArea.jsx';
 
 const SchemaMainArea = (props) => {
 // use useState for handling schema data from SchemaArea component to passdown to dropdown selection in TestDBGenArea    
-  const {
-    
-  } = props;
-
-  return (
-      <div id="schemaMainArea" className="mainAreaContainers">
-          <SchemaArea />
-          <TestDBGenArea />
-      </div>
-  );
+    return (
+        <div id="mainArea" className="mainAreaComponents">
+            <SchemaArea {...props} />
+            <TestDBGenArea {...props}/>
+        </div>
+    );
 };
 
 export default SchemaMainArea;
