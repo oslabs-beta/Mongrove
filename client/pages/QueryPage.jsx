@@ -6,7 +6,7 @@ import DatabasePanel from '../components/DatabasePanel.jsx';
 
 // eventually add a graphs/visualization component
 
-const QueryPage = () => {
+const QueryPage = (props) => {
 
    
   return (
@@ -16,6 +16,9 @@ const QueryPage = () => {
           <QueriesPanel />
           <QueriesMainArea />
           {/* <DatabasePanel /> */}
+          <DatabasePanel 
+            testDatabasesList={props.testDatabasesList}
+            />
       </div>
     </div>
   );

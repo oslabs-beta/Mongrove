@@ -383,26 +383,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SchemaMainArea.jsx */ "./client/pages/SchemaMainArea.jsx");
 /* harmony import */ var _components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/DatabasePanel.jsx */ "./client/components/DatabasePanel.jsx");
 /* harmony import */ var _components_DatabaseItem_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/DatabaseItem.jsx */ "./client/components/DatabaseItem.jsx");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -412,39 +392,17 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //SchemaPanel component
 
 var LandingPage = function LandingPage(props) {
-  //set initial state
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      testDatabasesList = _useState2[0],
-      setTestDatabasesList = _useState2[1]; //functions for setting schema area inputs to state
-
-
+  //functions for setting schema area inputs to state
   var handleSaveSchema = function handleSaveSchema() {//when clicked, should add new schema to state and add new schemaItem component to schemaPanel
-  }; //functions for setting testDBgenArea inputs to state
-  //when GenerateTestDatabase button is clicked, add all 3 inputs to state and add a new dbItem to dbPanel
-
-
-  function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
-    // e.preventdefault()
-    //frontend: 
-    var newList = _toConsumableArray(testDatabasesList);
-
-    newList.push({
-      name: testDBname,
-      schema: selectedSchema,
-      rows: numberOfRows
-    });
-    setTestDatabasesList(newList); //use update dbName to create a new dbItem component and and it to the db panel
-    //backend: all inputs get sent to backend (IPC renderer --> main?)
-  }
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "landingPage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Landing page component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
     handleSaveSchema: handleSaveSchema,
-    handleGenerateTestDatabase: handleGenerateTestDatabase
+    handleGenerateTestDatabase: props.handleGenerateTestDatabase
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
-    testDatabasesList: testDatabasesList
+    testDatabasesList: props.testDatabasesList
   }));
 };
 
@@ -584,12 +542,14 @@ __webpack_require__.r(__webpack_exports__);
 
  // eventually add a graphs/visualization component
 
-var QueryPage = function QueryPage() {
+var QueryPage = function QueryPage(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "queryPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mainArea"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QueriesMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_QueriesPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QueriesMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
+    testDatabasesList: props.testDatabasesList
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QueryPage);
@@ -46901,6 +46861,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_QueryPage_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/QueryPage.jsx */ "./client/pages/QueryPage.jsx");
 /* harmony import */ var _stylesheets_styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./stylesheets/styles.css */ "./client/stylesheets/styles.css");
 /* harmony import */ var _components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DatabasePanel.jsx */ "./client/components/DatabasePanel.jsx");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -46913,15 +46894,45 @@ __webpack_require__.r(__webpack_exports__);
 //render landing page when app is first opened
 
 var App = function App() {
+  //set initial state
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      testDatabasesList = _useState2[0],
+      setTestDatabasesList = _useState2[1]; //when GenerateTestDatabase button is clicked, add all 3 inputs to state and add a new dbItem to dbPanel
+
+
+  function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
+    // e.preventdefault()
+    //frontend: 
+    var newList = _toConsumableArray(testDatabasesList);
+
+    newList.push({
+      name: testDBname,
+      schema: selectedSchema,
+      rows: numberOfRows
+    });
+    setTestDatabasesList(newList); //use update dbName to create a new dbItem component and and it to the db panel
+    //backend: all inputs get sent to backend (IPC renderer --> main?)
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
     exact: true,
     path: "/",
-    component: _pages_LandingPage_jsx__WEBPACK_IMPORTED_MODULE_2__.default
+    render: function render(props) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_LandingPage_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+        testDatabasesList: testDatabasesList,
+        handleGenerateTestDatabase: handleGenerateTestDatabase
+      });
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
     exact: true,
     path: "/queryPage",
-    component: _pages_QueryPage_jsx__WEBPACK_IMPORTED_MODULE_3__.default
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "testing router")));
+    render: function render(props) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_QueryPage_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
+        testDatabasesList: testDatabasesList
+      });
+    }
+  }))));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), document.getElementById('app'));

@@ -11,9 +11,7 @@ import DatabaseItem from '../components/DatabaseItem.jsx';
 
 const LandingPage = (props) => {
     
-   //set initial state
    
-   const [testDatabasesList, setTestDatabasesList] = useState([])
         
    //functions for setting schema area inputs to state
    const handleSaveSchema = () => {
@@ -21,35 +19,21 @@ const LandingPage = (props) => {
    }
     
    
-   //functions for setting testDBgenArea inputs to state
-   //when GenerateTestDatabase button is clicked, add all 3 inputs to state and add a new dbItem to dbPanel
-    function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
-    // e.preventdefault()
-        //frontend: 
-            const newList = [...testDatabasesList];
-            newList.push({
-                name:testDBname, 
-                schema: selectedSchema, 
-                rows: numberOfRows});
-            setTestDatabasesList(newList);
-            //use update dbName to create a new dbItem component and and it to the db panel
-        //backend: all inputs get sent to backend (IPC renderer --> main?)
-    }
+   
 
     
 
     return (
         <div id="landingPage">
-            <p>Landing page component rendering</p>
             <Navbar />
             <SchemaPanel />
             <SchemaMainArea 
                 handleSaveSchema={handleSaveSchema} 
-                handleGenerateTestDatabase={handleGenerateTestDatabase}        
+                handleGenerateTestDatabase={props.handleGenerateTestDatabase}        
             />
             <DatabasePanel 
-            testDatabasesList={testDatabasesList}
-            />
+                 testDatabasesList={props.testDatabasesList}
+                 />
         </div>
     )
 }
