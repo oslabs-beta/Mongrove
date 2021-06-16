@@ -12,8 +12,18 @@ const TestDBGenArea = (props) => {
     const [selectedSchema, setSelectedSchema] = useState('sampleSchema1');
     const [numberOfRows, setNumberOfRows] = useState(0);
 
+    // for having schemas in schema list appear as a selection option
+    const schemaSelection = [];
+    for (let i = 0; i < props.schemaSelection.length; i++) {
+        schemaSelection.push(
+            <option value={props.schemaSelection[i].name}>
+                {props.schemaSelection[i].name}
+            </option>
+        )
+    }
+
     return (
-        <div id="testdbGenArea">
+        <div id="testdbGenArea" className="mainAreaComponents">
             <h2>Test Database Generation</h2>
             
             
@@ -35,9 +45,7 @@ const TestDBGenArea = (props) => {
                 onChange={(e) => {setSelectedSchema(e.target.value)}} 
             >
             {/* placeholder values for schema selection */}
-                <option value="sampleSchema1">sampleSchema1</option>
-                <option value="sampleSchema2">sampleSchema2</option>
-                <option value="sampleSchema3">sampleSchema3</option>
+                {schemaSelection}
             </select>
 
             

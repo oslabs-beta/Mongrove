@@ -2,29 +2,42 @@ import React, { useState } from 'react';
 import Editor from '../components/Editor.jsx';
 
 
-const SchemaArea = () => {
-  const [schema, setSchema] = useState('{field: text}');
+const SchemaArea = (props) => {
+  // state handling for schema user inputs
+  const [schemaName, setSchemaName] = useState('');
+  const [schemaValue, setSchemaValue] = useState('{field: text}');
+
 
     return (
         <div id="schemaArea" className="mainAreaComponents">
-            {/* enter schema name field */}
             <h2>Schema Creation Area</h2>
+
+            {/* enter schema name field */}
             <label htmlFor="schemaName">Enter Schema Name</label>
-            <input type="text" id="schemaName" name="schemaName"/>
-            
+            <input
+              type="text"
+              id="schemaName" 
+              name="schemaName"
+              value={props.schemaName}
+              onChange={(e) => {setSchemaName(e.target.value)} }
+            />
 
             {/* schema input field */}
-            {/* <label htmlFor="schemaField">Schema Input Field</label> */}
             <Editor 
               displayName="Enter Schema here:"
-              value={schema}
-              onChange={setSchema}
+              value={schemaValue}
+              onChange={setSchemaValue}
+              // value={props.schemaValue}
+              // onChange={(e) => {setSchemaValue(e.target.value)}}
             />
-            {/* <input type="text" id="schemaField" name="schemaField"/> */}
            
             {/* save schema button */}
-            <button type="button" id="saveSchemaBn" className="mainAreaBn">
-                Save Schema
+            <button 
+              id="saveSchemaBn" 
+              className="mainAreaBn"
+              onClick={() => {props.handleSaveSchema(schemaName, schemaValue)}}
+            >
+              Save Schema
             </button>
         </div>
     );

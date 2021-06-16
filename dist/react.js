@@ -119,8 +119,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var DatabaseItem = function DatabaseItem(props) {
   //return a single databaseitem; name, key, ID are passed in as props from DatabasePanel
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "dbItem"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    className: "dbNamePanel"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.dbName)));
 };
 
@@ -159,7 +161,7 @@ var DatabasePanel = function DatabasePanel(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "databasePanel"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "TEST DATABASES"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "databasesList"
+    id: "databasesList"
   }, databaseItemsList));
 };
 
@@ -269,11 +271,11 @@ var Navbar = function Navbar() {
     to: "/",
     activeClassName: "activeClassName",
     className: "navLink"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "CREATE"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "CREATE"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
     to: "/queryPage",
     activeClassName: "activeClassName",
     className: "navLink"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "TEST"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "TEST"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     id: "navbar-header"
   }, "Mongrove"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "helpIcon"
@@ -306,6 +308,33 @@ var QueriesPanel = function QueriesPanel() {
 
 /***/ }),
 
+/***/ "./client/components/SchemaItem.jsx":
+/*!******************************************!*\
+  !*** ./client/components/SchemaItem.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var SchemaItem = function SchemaItem(props) {
+  // set initial state and respective values
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "schemaItem"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    className: "schemaNamePanel"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.schemaName)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SchemaItem);
+
+/***/ }),
+
 /***/ "./client/components/SchemaPanel.jsx":
 /*!*******************************************!*\
   !*** ./client/components/SchemaPanel.jsx ***!
@@ -318,39 +347,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+/* harmony import */ var _SchemaItem_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SchemaItem.jsx */ "./client/components/SchemaItem.jsx");
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+var SchemaPanel = function SchemaPanel(props) {
+  // // use state to populate schemas to display here
+  // const state = {
+  //     schemaNameList: [], 
+  // }
+  // const [currentState, setState] = useState(state);
+  // array to hold saved schema items
+  var schemaItemsList = [];
 
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
- // import SchemaItem from './SchemaItem';
-
-var SchemaPanel = function SchemaPanel() {
-  // use state to populate schemas to display here
-  var state = {
-    schemaNameList: []
-  };
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(state),
-      _useState2 = _slicedToArray(_useState, 2),
-      currentState = _useState2[0],
-      setState = _useState2[1];
-
-  var schemaList = [];
-
-  for (var i = 0; i < currentState.schemaNameList.length; i++) {
-    schemaList.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(SchemaItem, {
-      schemaName: currentState.schemaNameList[i],
+  for (var i = 0; i < props.schemaList.length; i++) {
+    schemaItemsList.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaItem_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
+      schemaName: props.schemaList[i].name,
       key: i,
-      id: i,
-      currentState: currentState
+      id: i
     }));
   }
 
@@ -359,7 +373,7 @@ var SchemaPanel = function SchemaPanel() {
     className: "panels"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, " SCHEMAS "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "schemaList"
-  }, "schemaItem1"));
+  }, schemaItemsList));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SchemaPanel);
@@ -413,14 +427,29 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var LandingPage = function LandingPage(props) {
   //set initial state
+  // for handling data from schema creation area
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
-      testDatabasesList = _useState2[0],
-      setTestDatabasesList = _useState2[1]; //functions for setting schema area inputs to state
+      schemaList = _useState2[0],
+      setSchemaList = _useState2[1]; // for handling data from test DB generation area
 
 
-  var handleSaveSchema = function handleSaveSchema(e) {//when clicked, should add new schema to state and add new schemaItem component to schemaPanel
-  }; //functions for setting testDBgenArea inputs to state
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      testDatabasesList = _useState4[0],
+      setTestDatabasesList = _useState4[1]; //functions for setting schema area inputs to state
+  //when clicked, should add new schema to state and add new schemaItem component to schemaPanel
+
+
+  function handleSaveSchema(schemaName, schemaValue) {
+    var newSchemaList = _toConsumableArray(schemaList);
+
+    newSchemaList.push({
+      name: schemaName,
+      value: schemaValue
+    });
+    setSchemaList(newSchemaList);
+  } //functions for setting testDBgenArea inputs to state
   //when GenerateTestDatabase button is clicked, add all 3 inputs to state and add a new dbItem to dbPanel
 
 
@@ -434,15 +463,19 @@ var LandingPage = function LandingPage(props) {
       schema: selectedSchema,
       rows: numberOfRows
     });
+    console.log(newList);
     setTestDatabasesList(newList); //use update dbName to create a new dbItem component and and it to the db panel
     //backend: all inputs get sent to backend (IPC renderer --> main?)
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "landingPage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Landing page component rendering"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar_jsx__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SchemaPanel_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+    schemaList: schemaList
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SchemaMainArea_jsx__WEBPACK_IMPORTED_MODULE_3__.default, {
     handleSaveSchema: handleSaveSchema,
-    handleGenerateTestDatabase: handleGenerateTestDatabase
+    handleGenerateTestDatabase: handleGenerateTestDatabase,
+    schemaSelection: schemaList
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DatabasePanel_jsx__WEBPACK_IMPORTED_MODULE_4__.default, {
     testDatabasesList: testDatabasesList
   }));
@@ -612,11 +645,17 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var SchemaArea = function SchemaArea() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('{field: text}'),
+var SchemaArea = function SchemaArea(props) {
+  // state handling for schema user inputs
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
-      schema = _useState2[0],
-      setSchema = _useState2[1];
+      schemaName = _useState2[0],
+      setSchemaName = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('{field: text}'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      schemaValue = _useState4[0],
+      setSchemaValue = _useState4[1];
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "schemaArea",
@@ -626,15 +665,23 @@ var SchemaArea = function SchemaArea() {
   }, "Enter Schema Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
     id: "schemaName",
-    name: "schemaName"
+    name: "schemaName",
+    value: props.schemaName,
+    onChange: function onChange(e) {
+      setSchemaName(e.target.value);
+    }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Editor_jsx__WEBPACK_IMPORTED_MODULE_1__.default, {
     displayName: "Enter Schema here:",
-    value: schema,
-    onChange: setSchema
+    value: schemaValue,
+    onChange: setSchemaValue // value={props.schemaValue}
+    // onChange={(e) => {setSchemaValue(e.target.value)}}
+
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    type: "button",
     id: "saveSchemaBn",
-    className: "mainAreaBn"
+    className: "mainAreaBn",
+    onClick: function onClick() {
+      props.handleSaveSchema(schemaName, schemaValue);
+    }
   }, "Save Schema"));
 };
 
@@ -712,10 +759,20 @@ var TestDBGenArea = function TestDBGenArea(props) {
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState6 = _slicedToArray(_useState5, 2),
       numberOfRows = _useState6[0],
-      setNumberOfRows = _useState6[1];
+      setNumberOfRows = _useState6[1]; // for having schemas in schema list appear as a selection option
+
+
+  var schemaSelection = [];
+
+  for (var i = 0; i < props.schemaSelection.length; i++) {
+    schemaSelection.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      value: props.schemaSelection[i].name
+    }, props.schemaSelection[i].name));
+  }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "testdbGenArea"
+    id: "testdbGenArea",
+    className: "mainAreaComponents"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Test Database Generation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "testdbName"
   }, "Test Database Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
@@ -735,13 +792,7 @@ var TestDBGenArea = function TestDBGenArea(props) {
     onChange: function onChange(e) {
       setSelectedSchema(e.target.value);
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "sampleSchema1"
-  }, "sampleSchema1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "sampleSchema2"
-  }, "sampleSchema2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
-    value: "sampleSchema3"
-  }, "sampleSchema3")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+  }, schemaSelection), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "rowsNum"
   }, "Enter number of rows"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
