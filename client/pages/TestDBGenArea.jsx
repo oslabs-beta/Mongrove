@@ -16,7 +16,7 @@ const TestDBGenArea = (props) => {
     const schemaSelection = [];
     for (let i = 0; i < props.schemaSelection.length; i++) {
         schemaSelection.push(
-            <option value={props.schemaSelection[i].name}>
+            <option key={i} value={props.schemaSelection[i].name}>
                 {props.schemaSelection[i].name}
             </option>
         )

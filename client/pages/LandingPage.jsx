@@ -38,10 +38,21 @@ const LandingPage = (props) => {
   function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
     // e.preventdefault()
     //frontend: 
+    // Iterate through schemaList for key/value matching selectedSchema
+    let schema = '';
+    schemaList.forEach(element => {
+      if (element.name === selectedSchema) {
+        schema = element.value;
+      }
+    })
+    // Put found schema value into a variable
+    // Add schema to the database list
+
     const newList = [...testDatabasesList];
     newList.push({
       name:testDBname, 
-      schema: selectedSchema, 
+      schemaName: selectedSchema, 
+      schema: schema,
       rows: numberOfRows});
 
     console.log(newList);

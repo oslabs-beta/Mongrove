@@ -456,11 +456,21 @@ var LandingPage = function LandingPage(props) {
   function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
     // e.preventdefault()
     //frontend: 
+    // Iterate through schemaList for key/value matching selectedSchema
+    var schema = '';
+    schemaList.forEach(function (element) {
+      if (element.name === selectedSchema) {
+        schema = element.value;
+      }
+    }); // Put found schema value into a variable
+    // Add schema to the database list
+
     var newList = _toConsumableArray(testDatabasesList);
 
     newList.push({
       name: testDBname,
-      schema: selectedSchema,
+      schemaName: selectedSchema,
+      schema: schema,
       rows: numberOfRows
     });
     console.log(newList);
@@ -766,6 +776,7 @@ var TestDBGenArea = function TestDBGenArea(props) {
 
   for (var i = 0; i < props.schemaSelection.length; i++) {
     schemaSelection.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
+      key: i,
       value: props.schemaSelection[i].name
     }, props.schemaSelection[i].name));
   }
