@@ -41,10 +41,12 @@ const App = () => {
             <HashRouter>
                 <Switch>
                     <Route exact path="/"           
-                    render={(props) => <LandingPage 
-                    testDatabasesList={testDatabasesList}
-                    handleGenerateTestDatabase={handleGenerateTestDatabase}/>}/>
-                    <Route exact path="/queryPage"  render={(props) => <QueryPage testDatabasesList={testDatabasesList}/>}/>
+                        render={(props) => <LandingPage 
+                        testDatabasesList={testDatabasesList}
+                        handleGenerateTestDatabase={handleGenerateTestDatabase}/>}/>
+                    <Route exact path="/queryPage"  
+                        render={(props) => <QueryPage 
+                        testDatabasesList={testDatabasesList}/>}/>
                 </Switch>
                 {/* <DatabasePanel/> */}
                
