@@ -8,13 +8,15 @@ import QueriesMainArea from './QueriesMainArea.jsx';
 const QueryPage = () => {
 
    
-    return (
-        <div id="queryPage">
-            <Navbar />
-            <QueriesPanel />
-            <QueriesMainArea />
-         </div>
-    );
+  return (
+    <div id="queryPage">
+      <Navbar />
+      <div className="mainArea">
+          <QueriesPanel />
+          <QueriesMainArea />
+      </div>
+    </div>
+  );
 }
 
 

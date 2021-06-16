@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState }  from 'react';
 import Navbar from '../components/Navbar.jsx';
 import SchemaPanel from '../components/SchemaPanel.jsx';
 import SchemaMainArea from './SchemaMainArea.jsx';

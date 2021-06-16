@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -15,23 +14,26 @@ const TestDBGenArea = (props) => {
 
     return (
         <div id="testdbGenArea">
-            <h6>Test Database Generation</h6>
+            <h2>Test Database Generation</h2>
             
             
             <label htmlFor="testdbName">Test Database Name</label>
             <input 
-                type="text" 
-                id="testdbName" 
-                name="testdbName" 
-                value={props.testDBname} onChange={(e) => {setTestDBname(e.target.value)}} />
+                type="text"
+                id="testdbName"
+                name="testdbName"
+                value={props.testDBname}
+                onChange={(e) => {setTestDBname(e.target.value)}}
+            />
 
             
-            <label 
-                htmlFor="selectSchema">Select Schema Name</label>
+            <label htmlFor="selectSchema">Select Schema Name</label>
             <select 
-                id="selectSchema" 
-                name="selectSchema" 
-                value={props.selectedSchema} onChange={(e) => {setSelectedSchema(e.target.value)}} >
+                id="selectSchema"
+                name="selectSchema"
+                value={props.selectedSchema}
+                onChange={(e) => {setSelectedSchema(e.target.value)}} 
+            >
             {/* placeholder values for schema selection */}
                 <option value="sampleSchema1">sampleSchema1</option>
                 <option value="sampleSchema2">sampleSchema2</option>
@@ -39,20 +41,21 @@ const TestDBGenArea = (props) => {
             </select>
 
             
-            <label 
-                htmlFor="rowsNum">Enter number of rows</label>
+            <label htmlFor="rowsNum">Enter number of rows</label>
             <input 
-                type="text" 
-                id="rowsNum" 
+                type="text"
+                id="rowsNum"
                 name="rowsNum" 
-                value={props.numberOfRows} 
-                onChange={(e) => {setNumberOfRows(e.target.value)}}/>
+                value={props.numberOfRows}
+                onChange={(e) => {setNumberOfRows(e.target.value)}}
+            />
 
             
             <button 
-                id="genTestdbBn" 
-                className="mainAreaBn" 
-                onClick={() => {props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}>
+                id="genTestdbBn"
+                className="mainAreaBn"
+                onClick={() => {props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}
+            >
                 Generate Test Database
             </button>
         </div>

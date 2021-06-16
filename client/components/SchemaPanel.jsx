@@ -24,8 +24,8 @@ const SchemaPanel = () => {
     }
 
     return (
-        <div id="schemaPanel">
-            <h2> SCHEMAS </h2>
+        <div id="schemaPanel" className="panels">
+            <h3> SCHEMAS </h3>
 
             <div id="schemaList">
                 {/* {schemaList} */}
