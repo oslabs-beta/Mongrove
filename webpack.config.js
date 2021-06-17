@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [
@@ -21,17 +22,34 @@ module.exports = [
     //render process
     {
         mode: 'development',
-        entry: './client/react.jsx',
+        entry: ['@babel/polyfill', './client/App.jsx'],
         target: 'electron-renderer',
         devtool: 'source-map',
-        module: { rules: [{
-          test: /\.js(x?)$/,
-          include: /client/,
-          use: { loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
-            }}
-        }] },
+        module: { 
+          rules: [
+            {
+              test: /\.js(x?)$/,
+              include: /client/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+              }
+            },
+            {
+              test: [/\.s[ac]ss$/i, /\.css$/i],
+              use: [
+                // Creates `style` nodes from JS strings
+                'style-loader',
+                // Translates CSS into CommonJS
+                'css-loader',
+                // Compile Sass to CSS
+                'sass-loader',
+              ],
+            }
+          ]
+        },
         output: {
           path: __dirname + '/dist',
           filename: 'react.js'
