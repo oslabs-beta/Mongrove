@@ -27,14 +27,4 @@ async function generateSchema(dbName, schema, schemaName) {
   console.log('File written');
 }
 
-generateSchema('databaseName', `{
-    name: String,
-    rotation_period: Number,
-    orbital_period: Number,
-    diameter: Number,
-    climate: String,
-    gravity: String,
-    terrain: String,
-    surface_water: String,
-    population: Number
-  }`, 'schemaName');
+module.exports = generateSchema;
