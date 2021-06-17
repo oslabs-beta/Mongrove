@@ -27,7 +27,7 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
   }
   )
   console.log(testQuery, schemaName, schema, numberOfDocuments)
-  const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments);
+  const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
   
   const newQueriesList = [];
   newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time: result});
