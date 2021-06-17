@@ -15,13 +15,13 @@ const QueryPage = (props) => {
   return (
     <div id="queryPage">
       <Navbar />
-      <div className="queryMainArea">
-          <QueriesPanel />
-          <QueriesMainArea />
-          {/* <DatabasePanel /> */}
-          <DatabasePanel 
-            testDatabasesList={props.testDatabasesList}
-            />
+      <div className="mainArea">
+        <QueriesPanel />
+        <QueriesMainArea />
+        {/* <DatabasePanel /> */}
+        <DatabasePanel 
+          testDatabasesList={props.testDatabasesList}
+          />
       </div>
     </div>
   );

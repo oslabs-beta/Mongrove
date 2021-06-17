@@ -27,7 +27,7 @@ const LandingPage = (props) => {
     return (
         <div id="landingPage">
             <Navbar />
-            <div className="queryMainArea">
+            <div className="mainArea">
                 <SchemaPanel 
                     schemaList={props.schemaList}
                 />

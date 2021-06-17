@@ -7,7 +7,7 @@ const QueriesMainArea = () => {
     return (
         <div id="queriesMainArea" className="mainAreaContainers">
             <QueryArea />
-            {/* <ResultsArea /> */}
+            <ResultsArea />
         </div>
     );
 };

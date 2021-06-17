@@ -45,6 +45,12 @@ body {
 
 .mainAreaContainers {
   width: 60%;
+  border-style: solid;
+}
+
+.mainAreaComponents {
+  display: flex;
+  flex-direction: column;
 }
 
 .panels {
