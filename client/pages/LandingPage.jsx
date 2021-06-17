@@ -10,13 +10,6 @@ import DatabaseItem from '../components/DatabaseItem.jsx';
 //SchemaPanel component
 
 const LandingPage = (props) => {
-    
-  
-
-
-  
-    
-   
   
     // Put found schema value into a variable
     
