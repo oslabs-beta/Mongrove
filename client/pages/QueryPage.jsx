@@ -8,6 +8,9 @@ import DatabasePanel from '../components/DatabasePanel.jsx';
 
 const QueryPage = (props) => {
 
+  const handleRunQuery = (queryName, query) => {
+
+  }
    
   return (
     <div id="queryPage">

@@ -22,7 +22,7 @@ module.exports = [
     //render process
     {
         mode: 'development',
-        entry: './client/App.jsx',
+        entry: ['@babel/polyfill', './client/App.jsx'],
         target: 'electron-renderer',
         devtool: 'source-map',
         module: { 

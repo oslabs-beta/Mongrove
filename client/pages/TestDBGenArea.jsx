@@ -9,11 +9,21 @@ import React, { useState } from 'react';
 const TestDBGenArea = (props) => { 
 
     const [testDBname, setTestDBname] = useState('');
-    const [selectedSchema, setSelectedSchema] = useState('sampleSchema1');
+    const [selectedSchema, setSelectedSchema] = useState('');
     const [numberOfRows, setNumberOfRows] = useState(0);
 
+    // for having schemas in schema list appear as a selection option
+    const schemaSelection = [<option key={'a'} value={""}>{"Select Schema Below"}</option>];
+    for (let i = 0; i < props.schemaList.length; i++) {
+        schemaSelection.push(
+            <option key={i} value={props.schemaList[i].name}>
+                {props.schemaList[i].name}
+            </option>
+        )
+    }
+
     return (
-        <div id="testdbGenArea">
+        <div id="testdbGenArea" className="mainAreaComponents">
             <h2>Test Database Generation</h2>
             
             
@@ -22,7 +32,7 @@ const TestDBGenArea = (props) => {
                 type="text"
                 id="testdbName"
                 name="testdbName"
-                value={props.testDBname}
+                value={testDBname}
                 onChange={(e) => {setTestDBname(e.target.value)}}
             />
 
@@ -31,13 +41,11 @@ const TestDBGenArea = (props) => {
             <select 
                 id="selectSchema"
                 name="selectSchema"
-                value={props.selectedSchema}
+                value={selectedSchema}
                 onChange={(e) => {setSelectedSchema(e.target.value)}} 
             >
             {/* placeholder values for schema selection */}
-                <option value="sampleSchema1">sampleSchema1</option>
-                <option value="sampleSchema2">sampleSchema2</option>
-                <option value="sampleSchema3">sampleSchema3</option>
+                {schemaSelection}
             </select>
 
             
@@ -46,7 +54,7 @@ const TestDBGenArea = (props) => {
                 type="text"
                 id="rowsNum"
                 name="rowsNum" 
-                value={props.numberOfRows}
+                value={numberOfRows}
                 onChange={(e) => {setNumberOfRows(e.target.value)}}
             />
 
@@ -54,7 +62,9 @@ const TestDBGenArea = (props) => {
             <button 
                 id="genTestdbBn"
                 className="mainAreaBn"
-                onClick={() => {props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}
+                onClick={() => {
+                    console.log(testDBname, selectedSchema, numberOfRows);
+                    props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}
             >
                 Generate Test Database
             </button>

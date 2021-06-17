@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import Editor from '../components/Editor.jsx';
 
 
-const QueryArea = () => {
+const QueryArea = (props) => {
     const [selectedDB, setSelectedDB] = useState('sampleDB1')
-    const [testQueryName, setTestQueryName] = useState('')
-    const [testQuery, setTestQuery] = useState('')
+    const [queryName, setQueryName] = useState('')
+    const [query, setQuery] = useState('db.users.find().limit(10)')
     
     return (
         <div id="queryArea" className="mainAreaComponents">
@@ -27,18 +27,16 @@ const QueryArea = () => {
                 name="queryName"/>
 
             {/* query input field */}
-            
-                <Editor 
+            <Editor 
               displayName="Enter query here:"
               value={testQuery}
               onChange={setTestQuery}
             />
 
             <button 
-                type="submit" 
                 id="runQueryBn" 
                 className="mainAreaBn"
-                // onClick={}
+                // onClick={props.handleRunQuery(queryName, query)}
                 >
             Run Query
             </button>

@@ -11,26 +11,30 @@ import DatabaseItem from '../components/DatabaseItem.jsx';
 
 const LandingPage = (props) => {
     
-   
-        
-   //functions for setting schema area inputs to state
-   const handleSaveSchema = () => {
-    //when clicked, should add new schema to state and add new schemaItem component to schemaPanel
-   }
-    
-   
-   
+  
 
+
+  
     
+   
+  
+    // Put found schema value into a variable
+    
+    //use update dbName to create a new dbItem component and and it to the db panel
+    //backend: all inputs get sent to backend (IPC renderer --> main?)
+  
 
     return (
         <div id="landingPage">
             <Navbar />
-            <div className="queryMainArea"></div>
-                <SchemaPanel />
+            <div className="queryMainArea">
+                <SchemaPanel 
+                    schemaList={props.schemaList}
+                />
                 <SchemaMainArea 
-                    handleSaveSchema={handleSaveSchema} 
-                    handleGenerateTestDatabase={props.handleGenerateTestDatabase}        
+                    handleSaveSchema={props.handleSaveSchema} 
+                    handleGenerateTestDatabase={props.handleGenerateTestDatabase}   
+                    schemaList={props.schemaList} 
                 />
                 <DatabasePanel 
                     testDatabasesList={props.testDatabasesList}
