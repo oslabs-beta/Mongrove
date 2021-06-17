@@ -5,7 +5,7 @@ import Editor from '../components/Editor.jsx';
 const QueryArea = (props) => {
     const [selectedDB, setSelectedDB] = useState('sampleDB1')
     const [queryName, setQueryName] = useState('')
-    const [query, setQuery] = useState('db.users.find().limit(10)')
+    const [testQuery, setTestQuery] = useState('db.users.find().limit(10)')
     
     return (
         <div id="queryArea" className="mainAreaComponents">

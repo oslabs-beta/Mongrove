@@ -1,17 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 
-
-// try {
-// 	require('electron-reloader')(module, {
-//     watchRenderer: true
-//   })
-// } catch (_) { console.log('Error'); }
-
-// require('electron-reload')(__dirname, {
-//     electron: path.join(__dirname, 'node_modules', 'electron'),
-//     hardResetMethod: 'exit'
-// });
+require('../backend/channels');
 
 function createWindow () {
   // Create the browser window.
@@ -20,6 +10,7 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false
     }
   });
 
@@ -27,10 +18,4 @@ function createWindow () {
   win.loadFile('index.html');
 }
 
-app.whenReady().then(() => {
-  installExtension(REACT_DEVELOPER_TOOLS)
-      .then((name) => console.log(`Added Extension:  ${name}`))
-      .catch((err) => console.log('An error occurred: ', err));
-}).then(createWindow);
-
-// app.on('ready', createWindow);
+app.on('ready', createWindow);
