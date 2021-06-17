@@ -1,5 +1,6 @@
 import { ipcMain } from "electron";
 const generateSchema = require('./functions/generateSchema');
+const runQuery = require('./functions/runQuery');
 
 ipcMain.handle('generate-schema', async (event, ...args) => {
   console.log('args: ', ...args);
