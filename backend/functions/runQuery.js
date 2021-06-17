@@ -3,7 +3,7 @@ const generateTestDatabase = require('./generateTestDatabase');
 
 async function runQuery(query, schemaName, schema, numberOfDocuments) {
   
-  const model = require(`../models/${schemaName}`);
+  const model = await require(`../models/${schemaName}`);
 
   // Call function to generate test database with dummy data
   const data = generateTestDatabase(schema, numberOfDocuments);

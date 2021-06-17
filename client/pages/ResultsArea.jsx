@@ -5,16 +5,17 @@ import ResultsItem from '../components/ResultsItem.jsx';
 const ResultsArea = (props) => {
 
   // declare array to store result items to render
-  // const resultsItemsList = [];
-  // for (let i = 0; i < props.queryList.length; i++) {
-  //   resultsItemsList.push(
-  //     <ResultsItem
-  //       key={i}
-  //       id={i}
-  //       queryName={props.queryList[i].name}
-  //     />
-  //   )
-  // }
+  const resultsItemsList = [];
+  for (let i = 0; i < props.testQueriesList.length; i++) {
+    resultsItemsList.push(
+      <ResultsItem
+        key={i}
+        id={i}
+        queryName={props.testQueriesList[i].name}
+        queryRuntime={props.testQueriesList[i].time}
+      />
+    )
+  }
 
   return (
 
@@ -33,8 +34,8 @@ const ResultsArea = (props) => {
       </div>
 
       <div id="resultsItemsContainer">
-        {/* {resultsItemsList} */}
-        <ResultsItem />
+        {resultsItemsList}
+        {/* <ResultsItem /> */}
       </div>
     </div>
   )

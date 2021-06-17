@@ -11,30 +11,30 @@ const QueryPage = (props) => {
 //create hook to hold/update list of inputted queries as objects
 const [testQueriesList, setTestQueriesList] = useState([]); 
 
-const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
-  //when runQuery button is clicked, turn the inputted values into an obj and update list in state
-  let schemaName;
-  let schema;
-  let numberOfDocuments;
+  const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
+    //when runQuery button is clicked, turn the inputted values into an obj and update list in state
+    let schemaName;
+    let schema;
+    let numberOfDocuments;
 
-  props.testDatabasesList.forEach(element => {
-    if (element.name === selectedDB) {
-      schemaName = element.schemaName;
-      schema = element.schema;
-      numberOfDocuments = element.rows;
-      // console.log('schema in conditional: ', schema);
+    props.testDatabasesList.forEach(element => {
+      if (element.name === selectedDB) {
+        schemaName = element.schemaName;
+        schema = element.schema;
+        numberOfDocuments = element.rows;
+        // console.log('schema in conditional: ', schema);
+      }
     }
-  }
-  )
-  console.log(testQuery, schemaName, schema, numberOfDocuments)
-  const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
-  
-  const newQueriesList = [];
-  newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time: result});
-  setTestQueriesList(newQueriesList);
-  
-  //actually run query and store results
-  console.log('testQueriesList', testQueriesList)
+    )
+    console.log(testQuery, schemaName, schema, numberOfDocuments)
+    const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
+    
+    const newQueriesList = [];
+    newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time: result});
+    setTestQueriesList(newQueriesList);
+    
+    //actually run query and store results
+    console.log('testQueriesList', testQueriesList)
   };
    
   return (
@@ -43,7 +43,8 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
       <div className="queryMainArea">
           <QueriesPanel />
           <QueriesMainArea 
-            {...props} 
+            {...props}
+            testQueriesList={testQueriesList} 
             handleRunQuery={handleRunQuery} />
           {/* <DatabasePanel /> */}
           <DatabasePanel 
