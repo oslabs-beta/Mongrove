@@ -86,9 +86,7 @@ const App = () => {
                     <Route exact path="/queryPage"  
                         render={(props) => <QueryPage 
                         testDatabasesList={testDatabasesList}/>}/>
-                </Switch>
-                {/* <DatabasePanel/> */}
-               
+                </Switch>               
              </HashRouter>
         </div>
     );

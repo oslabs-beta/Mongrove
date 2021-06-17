@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const QueryItem = (props) => {
- return (
   
  return (
         <div>
@@ -15,7 +14,7 @@ const QueryItem = (props) => {
     
     )
 
- )
+ 
 }
 
 

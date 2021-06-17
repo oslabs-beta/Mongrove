@@ -4,27 +4,49 @@ import Editor from '../components/Editor.jsx';
 
 const QueryArea = (props) => {
     const [selectedDB, setSelectedDB] = useState('sampleDB1')
-    const [queryName, setQueryName] = useState('')
+    const [testQueryName, setTestQueryName] = useState('')
     const [testQuery, setTestQuery] = useState('db.users.find().limit(10)')
     
+    console.log('testDatabasesList', props.testDatabasesList)
+    // create a array to hold the db options to select from dropdown menu
+    const dbSelection = [<option key={'a'} value={""}>{"Select Database Below"}</option>];
+    props.testDatabasesList.forEach((e, i) => {
+        dbSelection.push(
+            <option 
+                key={i} 
+                value={e.name}
+            >
+            {e.name} 
+            </option> )
+    });
+    
+    console.log('dbSelection', dbSelection)
+
     return (
         <div id="queryArea" className="mainAreaComponents">
-        
+            <h2>Query Creation Area</h2>
+
             {/* select database dropdown */}
             <label htmlFor="selectDB">Select Database</label>
-            <select id="selectDB" name="selectDB">
+            <select 
+                id="selectDB" 
+                name="selectDB"
+                value={selectedDB}
+                onChange={(e)=> {setSelectedDB(e.target.value)}}    
+            >
                 {/* placeholder values for database selection */}
-                <option value="sampleDB1">sampleDB1</option>
-                <option value="sampleDB2">sampleDB2</option>
-                <option value="sampleDB3">sampleDB3</option>
+                {dbSelection}
             </select>
 
             {/* enter query name field */}
             <label htmlFor="queryName">Enter Query Name</label>
             <input 
                 type="text" 
-                id="queryName" 
-                name="queryName"/>
+                id="testQueryName" 
+                name="testQueryName"
+                value={testQueryName}
+                onChange={(e)=>setTestQueryName(e.target.value)}
+            />
 
             {/* query input field */}
             <Editor 
@@ -36,7 +58,8 @@ const QueryArea = (props) => {
             <button 
                 id="runQueryBn" 
                 className="mainAreaBn"
-                // onClick={props.handleRunQuery(queryName, query)}
+                // onClick={() => console.log('runQueryButton clicked')}
+                onClick={() => {props.handleRunQuery(selectedDB, testQueryName, testQuery)}}
                 >
             Run Query
             </button>
