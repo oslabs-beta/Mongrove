@@ -26,14 +26,16 @@ const LandingPage = (props) => {
     return (
         <div id="landingPage">
             <Navbar />
-            <SchemaPanel />
-            <SchemaMainArea 
-                handleSaveSchema={handleSaveSchema} 
-                handleGenerateTestDatabase={props.handleGenerateTestDatabase}        
-            />
-            <DatabasePanel 
-                 testDatabasesList={props.testDatabasesList}
-                 />
+            <div className="queryMainArea"></div>
+                <SchemaPanel />
+                <SchemaMainArea 
+                    handleSaveSchema={handleSaveSchema} 
+                    handleGenerateTestDatabase={props.handleGenerateTestDatabase}        
+                />
+                <DatabasePanel 
+                    testDatabasesList={props.testDatabasesList}
+                    />
+            </div>
         </div>
     )
 }

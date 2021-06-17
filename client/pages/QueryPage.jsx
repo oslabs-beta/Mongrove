@@ -12,7 +12,7 @@ const QueryPage = (props) => {
   return (
     <div id="queryPage">
       <Navbar />
-      <div className="mainArea">
+      <div className="queryMainArea">
           <QueriesPanel />
           <QueriesMainArea />
           {/* <DatabasePanel /> */}
