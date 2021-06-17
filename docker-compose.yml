@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  mongrove:
+    image: mongrove
+    build: .
+    restart: always
+    environment:
+      NODE_ENV: development
+      # WAIT_HOSTS: mongodb:27017
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    networks:
+      - samplenet
+    links:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+    networks:
+      samplenet:
+        aliases:
+          - 'mongodb'
+
+networks:
+  samplenet:
+    driver: bridge
+
+volumes:
+  data:
