@@ -1,7 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 
-
 // try {
 // 	require('electron-reloader')(module, {
 //     watchRenderer: true
