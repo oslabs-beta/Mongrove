@@ -27,10 +27,11 @@ const QueryArea = (props) => {
                 name="queryName"/>
 
             {/* query input field */}
-            <Editor 
+            <Editor
               displayName="Enter query here:"
               value={testQuery}
               onChange={setTestQuery}
+              className="codemirror"
             />
 
             <button 

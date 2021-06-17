@@ -23,17 +23,18 @@ const ResultsArea = (props) => {
       
       <div id="resultItemsLegend">
         <div id="legend-1" className="legends">
-          <div id="legend-1-colorBlock"></div>
-          <p> Query Throughput (amount/ms) </p>
+          <div id="legend-1-colorBlock" className="colorblock"></div>
+          <p>   Query Throughput (amount/ms) </p>
         </div>
         <div id="legend-2" className="legends">
-          <div id="legend-2-colorBlock"></div>
-          <p> Query Runtime (ms) </p>
+          <div id="legend-2-colorBlock" className="colorblock"></div>
+          <p>   Query Runtime (ms) </p>
         </div>
       </div>
 
       <div id="resultsItemsContainer">
         {/* {resultsItemsList} */}
+        <ResultsItem />
       </div>
     </div>
   )

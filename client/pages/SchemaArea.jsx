@@ -27,6 +27,7 @@ const SchemaArea = (props) => {
               displayName="Enter Schema here:"
               value={schemaValue}
               onChange={setSchemaValue}
+              className="codemirror"
               // value={props.schemaValue}
               // onChange={(e) => {setSchemaValue(e.target.value)}}
             />

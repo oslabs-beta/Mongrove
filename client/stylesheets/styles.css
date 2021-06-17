@@ -51,6 +51,32 @@ body {
 .mainAreaComponents {
   display: flex;
   flex-direction: column;
+  border-style: solid;
+  padding: 15px;
+  margin: 20px;
+}
+
+.mainAreaComponents h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.mainAreaComponents input {
+  margin-bottom: 10px;
+}
+
+/* .codemirror {
+  margin-bottom: 10px;
+} */
+
+.mainAreaComponents select {
+  margin-bottom: 10px;
+}
+
+.mainAreaBn {
+  padding: 15px;
+  background-color: gold;
+  font-weight: bold;
 }
 
 .panels {
@@ -72,30 +98,93 @@ body {
   padding: 15px;
 }
 
-#schemaArea {
-  display: flex;
-  flex-direction: column;
-  border-style: solid;
-  padding: 15px;
-  margin: 20px;
-}
-
-#schemaArea input {
-  margin-bottom: 10px;
-}
-
-#testdbGenArea {
-  display: flex;
-  flex-direction: column;
-  border-style: solid;
-  padding: 15px;
-  margin: 20px;
-}
-
-#testdbGenArea input {
-  margin-bottom: 10px;
-}
 
 #testdbGenArea label {
   margin-top: 5px;
 }
+
+#resultItemsLegend {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* align-items: center; */
+  border: solid 1px gray;
+  padding: 10px;
+  margin: 15px;
+  width: 65%;
+}
+
+.legends {
+  display: flex;
+  flex-direction: row;
+  /* border: solid .5px gray; */
+  /* align-self: center; */
+}
+
+.legends p {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.colorblock {
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+#legend-1-colorBlock {
+  background-color: lightskyblue;
+}
+
+.resultItem {
+  border: solid;
+  padding: 10px;
+  margin: 10px;
+  width: 45%;
+}
+
+.result-queryName {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.metricsContainer {
+  border: solid;
+  display: flex;
+  justify-content: space-around;
+}
+
+.queryBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+  padding: 5px;
+}
+
+#queryRuntimeBlock {
+  background-color: orange;
+  color: white;
+  width: 50%;
+}
+
+#queryThroughputBlock {
+  background-color: lightskyblue;
+  color: white;
+  width: 50%;
+}
+
+.metricNums {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.metricLabel {
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
