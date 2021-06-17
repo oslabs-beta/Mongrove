@@ -1,10 +1,11 @@
 const { PerformanceObserver, performance } = require('perf_hooks');
 const generateTestDatabase = require('./generateTestDatabase');
+const path = require('path');
 
 async function runQuery(query, schemaName, schema, numberOfDocuments) {
-  
+  console.log('dirname', __dirname);
+  console.log(path.join(__dirname, `../backend/models/${schemaName}`))
   const model = require(`../models/${schemaName}`);
-
   // Call function to generate test database with dummy data
   const data = generateTestDatabase(schema, numberOfDocuments);
   
