@@ -40,11 +40,12 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
   return (
     <div id="queryPage">
       <Navbar />
-      <div className="queryMainArea">
+      <div className="mainArea">
           <QueriesPanel />
           <QueriesMainArea 
             {...props} 
-            handleRunQuery={handleRunQuery} />
+            handleRunQuery={handleRunQuery} 
+            testQueriesList={testQueriesList}/>
           {/* <DatabasePanel /> */}
           <DatabasePanel 
             testDatabasesList={props.testDatabasesList}

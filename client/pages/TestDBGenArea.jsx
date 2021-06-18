@@ -24,7 +24,7 @@ const TestDBGenArea = (props) => {
 
     return (
         <div id="testdbGenArea" className="mainAreaComponents">
-            <h2>Test Database Generation</h2>
+            <h2>Test Database Configuration</h2>
             
             
             <label htmlFor="testdbName">Test Database Name</label>
@@ -49,7 +49,7 @@ const TestDBGenArea = (props) => {
             </select>
 
             
-            <label htmlFor="rowsNum">Enter number of rows</label>
+            <label htmlFor="rowsNum">Enter Number Of Documents</label>
             <input 
                 type="text"
                 id="rowsNum"
@@ -65,7 +65,7 @@ const TestDBGenArea = (props) => {
                 onClick={() => {
                     props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}
             >
-                Generate Test Database
+                Configure Test Database
             </button>
         </div>
     )

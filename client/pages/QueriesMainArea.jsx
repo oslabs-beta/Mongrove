@@ -7,7 +7,7 @@ const QueriesMainArea = (props) => {
     return (
         <div id="queriesMainArea" className="mainAreaContainers">
             <QueryArea {...props}/>
-            {/* <ResultsArea /> */}
+            <ResultsArea {...props}/>
         </div>
     );
 };
