@@ -47,9 +47,10 @@ body {
   width: 60%;
 }
 
-.panels {
+.panel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex: grow 1;
   align-items: center;
   border-style: solid;
   width: 20%;
@@ -92,4 +93,36 @@ body {
 
 #testdbGenArea label {
   margin-top: 5px;
+}
+
+.true {
+  color: blue;
+  box-shadow: cornflowerblue;
+  text-shadow: cornflowerblue;
+}
+
+.false {
+  color: purple
+}
+
+.queryMainArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+}
+
+h1 {
+  justify-content: center;
+}
+
+h2 {
+  justify-content: center;
+}
+
+h3 {
+  justify-content: center;
+}
+
+h4 {
+  justify-content: space-around;
 }

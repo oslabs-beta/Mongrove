@@ -15,8 +15,8 @@ const DatabasePanel = (props) => {
 		)
 	}
 	return (
-			<div id="databasePanel">
-					<h2>TEST DATABASES</h2>
+			<div id="databasePanel" className="sidePanel">
+					<h3>TEST DATABASES</h3>
 
 					<div id="databasesList">
 					{databaseItemsList}

@@ -21,7 +21,7 @@ const SchemaPanel = (props) => {
   }
 
   return (
-    <div id="schemaPanel" className="panels">
+    <div id="schemaPanel" className="sidePanel">
       <h3> SCHEMAS </h3>
 
       <div id="schemaList">
