@@ -1,12 +1,12 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
 }
 
 body {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #navbar {
@@ -39,8 +39,8 @@ body {
 }
 
 .mainArea {
-  display: flex;
-  flex-direction: row;
+display: flex;
+flex-direction: row;
 }
 
 .mainAreaContainers {
@@ -66,7 +66,7 @@ body {
 }
 
 /* .codemirror {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 } */
 
 .mainAreaComponents select {
@@ -85,7 +85,7 @@ body {
   align-items: center;
   border-style: solid;
   width: 20%;
-}
+  }
 
 .panels h3 {
   margin: 15px;

@@ -25,7 +25,7 @@ const ResultsArea = (props) => {
       <div id="resultItemsLegend">
         <div id="legend-1" className="legends">
           <div id="legend-1-colorBlock" className="colorblock"></div>
-          <p>   Query Throughput (amount/ms) </p>
+          <p>   Query Throughput (per second) </p>
         </div>
         <div id="legend-2" className="legends">
           <div id="legend-2-colorBlock" className="colorblock"></div>

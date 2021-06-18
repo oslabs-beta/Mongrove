@@ -11,7 +11,7 @@ const ResultsItem = (props) => {
         <div id="queryRuntimeBlock"  className="queryBlock">
           <h5 className="metricNums">
             {/* query runtime --> display result from backend here */}
-            {props.queryRuntime}
+            {Math.floor(props.queryRuntime)}
           </h5>
           <p className="metricLabel">Query Runtime <br/>(ms)</p>
         </div>
@@ -19,10 +19,10 @@ const ResultsItem = (props) => {
         <div id="queryThroughputBlock" className="queryBlock">
           <h5 className="metricNums">
             {/* query throughput --> display result from backend here */}
-            {/* {Math.ceil(1000 / Number(props.queryRuntime))} */}
-            0.5
+            {Math.ceil(1000 / Number(props.queryRuntime))}
+            {/* 0.5 */}
           </h5>
-          <p className="metricLabel"> Query Throughput <br />(amount/ms)</p>
+          <p className="metricLabel"> Query Throughput <br/>per sec</p>
         </div>
       </div>
     </div>

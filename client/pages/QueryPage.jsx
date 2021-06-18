@@ -40,12 +40,12 @@ const [testQueriesList, setTestQueriesList] = useState([]);
   return (
     <div id="queryPage">
       <Navbar />
-      <div className="queryMainArea">
+      <div className="mainArea">
           <QueriesPanel />
           <QueriesMainArea 
-            {...props}
-            testQueriesList={testQueriesList} 
-            handleRunQuery={handleRunQuery} />
+            {...props} 
+            handleRunQuery={handleRunQuery} 
+            testQueriesList={testQueriesList}/>
           {/* <DatabasePanel /> */}
           <DatabasePanel 
             testDatabasesList={props.testDatabasesList}
