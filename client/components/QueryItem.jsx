@@ -7,19 +7,16 @@ const QueryItem = (props) => {
 
 
     return (
-        <div className="queryItemPanel">
+        <div
+            onClick={() => props.handleActivateQuery(props.key, props.activeStatus)}           
+            id="queryItem"
+            className={activeStatus ? "active" : "inactive"}
+        >
             {/* name of database appears */}
             {/* when clicked, appearance changes to active and that database's queries results show in query panel */}
-            
-            <span>
-               <p   
-                    className={props.activeStatus.toString()}
-                    onClick={props.handleActivateQuery}
-                         
-                >
-                    {props.testQueryName}
-                </p> 
-            </span>
+            <p>
+                {props.testQueryName}
+            </p> 
         </div>
     
     )

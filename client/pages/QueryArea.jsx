@@ -5,7 +5,7 @@ import Editor from '../components/Editor.jsx';
 const QueryArea = (props) => {
     const [selectedDB, setSelectedDB] = useState('sampleDB1')
     const [testQueryName, setTestQueryName] = useState('')
-    const [testQuery, setTestQuery] = useState('find().limit(10)')
+    const [testQuery, setTestQuery] = useState('find()')
     
     // console.log('testDatabasesList', props.testDatabasesList)
     // create a array to hold the db options to select from dropdown menu

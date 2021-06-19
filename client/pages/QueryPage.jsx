@@ -10,7 +10,7 @@ import { ipcRenderer } from 'electron';
 const QueryPage = (props) => {
 //create hook to hold/update list of inputted queries as objects
 const [testQueriesList, setTestQueriesList] = useState([]);
-const [activeStatus, setActiveStatus] = useState(false);
+// const [activeStatus, setActiveStatus] = useState(false);
 
 
 const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
@@ -32,7 +32,13 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
   const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
   
   const newQueriesList = [];
-  newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time: result});
+  newQueriesList.push(...testQueriesList, {
+    name: testQueryName, 
+    query: testQuery, 
+    time: result,
+    activeStatus: true,
+    className: "active"
+  });
   setTestQueriesList(newQueriesList);
   
   //actually run query and store results
@@ -40,27 +46,33 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
   };
   
   //function to activate/deactivate queryItems; active queryItems display their corresponding resultsItems in the resultsArea
-  const handleActivateQuery = () => {
+  const handleActivateQuery = (key, activeStatus) => {
+    //user clicks
+    testQueriesList[key].activeStatus = !activeStatus;
+
+    //create a new array of query objects which is identical to the current state, except with the target object updated
+    //then use setState to update testQueriesList
+    let newNewQueriesList = testQueriesList.map(query => {
+      if (query.key === key) {
+        query.activeStatus = !query.activeStatus
+      }
+    })
+    setTestQueriesList(newNewQueriesList)
+    //pass in name of query that was clicked
+    //iterate over queriesList array of objects
+      //for each object, if name=== passed in queryName, change its active status to false & change className to "inactive"
+      //now when results area receives queriesList, only show 
+
+
+    //if current schema object active status is true, convert active Status propery in schema object
+    
+    console.log('handleActivateQuery clicked');
     //if queryItem's current state is true, set it to false; or if false, set to true
-    setActiveStatus(!activeStatus);
-    console.log('activeStatus', activeStatus)
-    //  let currentActiveStatus = false;
-    // if (props.activeStatus === undefined) {
-    //     currentActiveStatus = false;
-    // } else if (props.activeStatus === false){
-    //     currentActiveStatus = false;
-    // } else {
-    //     currentActiveStatus = true};
-    // let stringCurrentActiveStatus = currentActiveStatus.toString()
-    // console.log('stringCurrentActiveStatus', currentActiveStatus)  
+    // setActiveStatus(!activeStatus);
+    console.log('activeStatus', activeStatus) 
 
   }
 
-  // const handleActivateQuery2 = () => {
-    //if array of active queries does not contain queryItem, add it
-    //if the array of active queries does contain queryItem, remove it
-    //for all queryItems in array, change classname to active
-    // }
 
   return (
     <div id="queryPage">

@@ -10,7 +10,7 @@
   dbName: "d1"
   });
 
-  const testSchema = new Schema({enter-field-name: enter-data-type});
+  const testSchema = new Schema({enter-field-name: String});
 
-  module.exports = mongoose.model("s1", testSchema);
+  module.exports = mongoose.model("Schema", testSchema);
   

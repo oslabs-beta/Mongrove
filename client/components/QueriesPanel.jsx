@@ -2,6 +2,8 @@ import React from 'react';
 import QueryItem from './QueryItem.jsx';
 
 const QueriesPanel = (props) => {
+  
+        
     //create an array to hold all queryItems
     const queryItemsList = []
     
@@ -10,7 +12,9 @@ const QueriesPanel = (props) => {
                                 key={i} 
                                 id={i} 
                                 testQueryName={props.testQueriesList[i].name}
-                                activeStatus={props.activeStatus}
+                                activeStatus={props.testQueriesList[i].activeStatus}
+                                handleActivateQuery={props.handleActivateQuery}
+
                             />)
     }
     
@@ -18,7 +22,9 @@ const QueriesPanel = (props) => {
         <div className="sidePanel"
         >
             <h3>QUERIES</h3>
-            {queryItemsList}
+            <div className="queryItemContainer">
+                {queryItemsList}
+            </div>  
         </div>
     )
 }
