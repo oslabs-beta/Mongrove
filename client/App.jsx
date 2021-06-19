@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage.jsx';
 import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.css';
 import DatabasePanel from './components/DatabasePanel.jsx';
+import { ipcRenderer } from "electron";
 // renderer process
 // const { ipcRenderer } = require('electron');
 
@@ -38,27 +39,27 @@ const App = () => {
   }
 
   //when GenerateTestDatabase button is clicked, add all 3 inputs to state and add a new dbItem to dbPanel
-  function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
-    // e.preventdefault()
-        //frontend: 
-            // Add schema to the database list
-     let schema = '';
-     console.log('selectedSchema: ', selectedSchema);
+  async function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
+    // Add schema to the database list
+    let schema = '';
+    console.log('selectedSchema: ', selectedSchema);
+    
+    schemaList.forEach(element => {
+      if (element.name === selectedSchema) {
+        schema = element.value;
+        console.log('schema in conditional: ', schema);
+      }
+    })
+    
+    const result = await ipcRenderer.invoke('generate-schema', testDBname, schema, selectedSchema);
+    console.log(result);
 
-     schemaList.forEach(element => {
-       if (element.name === selectedSchema) {
-         schema = element.value;
-         console.log('schema in conditional: ', schema);
-       }
-     })
     const newList = [...testDatabasesList];
     newList.push({
       name: testDBname, 
       schemaName: selectedSchema, 
       schema: schema,
       rows: numberOfRows});
-
-    console.log(newList);
 
     setTestDatabasesList(newList);
             //use update dbName to create a new dbItem component and and it to the db panel

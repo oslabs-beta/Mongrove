@@ -33,18 +33,18 @@ async function runQuery(query, schemaName, schema, numberOfDocuments) {
   return responseTime;
 }
 
-const schema = `{
-  name: String,
-  rotation_period: Number,
-  orbital_period: Number,
-  diameter: Number,
-  climate: String,
-  gravity: String,
-  terrain: String,
-  surface_water: String,
-  population: Number
-}`;
+// const schema = `{
+//   name: String,
+//   rotation_period: Number,
+//   orbital_period: Number,
+//   diameter: Number,
+//   climate: String,
+//   gravity: String,
+//   terrain: String,
+//   surface_water: String,
+//   population: Number
+// }`;
 
-runQuery('find({})', 'schemaName', schema, 5);
+// runQuery('find({})', 'schemaName', schema, 5);
 
 module.exports = runQuery;

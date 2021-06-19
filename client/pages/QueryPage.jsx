@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.jsx';
 import QueriesPanel from '../components/QueriesPanel.jsx';
 import QueriesMainArea from './QueriesMainArea.jsx';
 import DatabasePanel from '../components/DatabasePanel.jsx';
-// import { ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electron';
 
 // eventually add a graphs/visualization component
 
@@ -28,11 +28,11 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
     }
   }
   )
-  // console.log(testQuery, schemaName, schema, numberOfDocuments)
-  // const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
+  console.log(testQuery, schemaName, schema, numberOfDocuments)
+  const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
   
   const newQueriesList = [];
-  newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time:2});
+  newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time: result});
   setTestQueriesList(newQueriesList);
   
   //actually run query and store results
@@ -74,6 +74,7 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
           <QueriesMainArea 
             {...props} 
             handleRunQuery={handleRunQuery}
+            testQueriesList={testQueriesList}
             //pass in state of all active queries
           />
           {/* <DatabasePanel /> */}
