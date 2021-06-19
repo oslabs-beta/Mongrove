@@ -5,9 +5,9 @@ import Editor from '../components/Editor.jsx';
 const QueryArea = (props) => {
     const [selectedDB, setSelectedDB] = useState('sampleDB1')
     const [testQueryName, setTestQueryName] = useState('')
-    const [testQuery, setTestQuery] = useState('find().limit(10)')
+    const [testQuery, setTestQuery] = useState('find()')
     
-    console.log('testDatabasesList', props.testDatabasesList)
+    // console.log('testDatabasesList', props.testDatabasesList)
     // create a array to hold the db options to select from dropdown menu
     const dbSelection = [<option key={'a'} value={""}>{"Select Database Below"}</option>];
     props.testDatabasesList.forEach((e, i) => {
@@ -20,7 +20,7 @@ const QueryArea = (props) => {
             </option> )
     });
     
-    console.log('dbSelection', dbSelection)
+    // console.log('dbSelection', dbSelection)
 
     return (
         <div id="queryArea" className="mainAreaComponents">
@@ -37,7 +37,6 @@ const QueryArea = (props) => {
                 {/* placeholder values for database selection */}
                 {dbSelection}
             </select>
-
             {/* enter query name field */}
             <label htmlFor="queryName">Enter Query Name</label>
             <input 
@@ -46,7 +45,7 @@ const QueryArea = (props) => {
                 name="testQueryName"
                 value={testQueryName}
                 onChange={(e)=>setTestQueryName(e.target.value)}
-            />
+                />
 
             {/* query input field */}
             <Editor
