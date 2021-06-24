@@ -63,6 +63,7 @@ const TestDBGenArea = (props) => {
                 id="genTestdbBn"
                 className="mainAreaBn"
                 onClick={() => {
+                    // console.log(testDBname, selectedSchema, numberOfRows);
                     props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}
             >
                 Configure Test Database

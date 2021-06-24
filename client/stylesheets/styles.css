@@ -10,32 +10,32 @@ body {
 }
 
 #navbar {
-display: flex;
-align-items: center;
-border-style: solid;
-background-color: #718355;
-color: white;
-height: 70px;
-position: relative;
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  background-color: #718355;
+  color: white;
+  height: 70px;
+  position: relative;
 }
 
 #navbar-header {
-position: absolute;
-top: 50%;
-left: 50%;
-margin-right: -50%;
-transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .navbarLinks {
-display: flex;
-margin-left: 20px;
+  display: flex;
+  margin-left: 20px;
 }
 
 .navLink {
-margin-left: 20px;
-color: gold;
-text-decoration: none;
+  margin-left: 20px;
+  color: gold;
+  text-decoration: none;
 }
 
 .mainArea {
@@ -44,25 +44,25 @@ flex-direction: row;
 }
 
 .mainAreaContainers {
-width: 60%;
-border-style: solid;
+  width: 60%;
+  border-style: solid;
 }
 
 .mainAreaComponents {
-display: flex;
-flex-direction: column;
-border-style: solid;
-padding: 15px;
-margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 15px;
+  margin: 20px;
 }
 
 .mainAreaComponents h2 {
-margin-bottom: 15px;
-text-align: center;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .mainAreaComponents input {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* .codemirror {
@@ -70,121 +70,158 @@ margin-bottom: 10px;
 } */
 
 .mainAreaComponents select {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .mainAreaBn {
-padding: 15px;
-background-color: gold;
-font-weight: bold;
+  padding: 15px;
+  background-color: gold;
+  font-weight: bold;
 }
 
-.panels {
-display: flex;
-flex-direction: column;
-align-items: center;
-border-style: solid;
-width: 20%;
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  border-style: solid;
+  width: 20%;
 }
 
-.panels h3 {
-margin: 15px;
+.sidePanel h3 {
+  margin: 15px;
+  text-align: center;
 }
 
 #schemaMainArea {
-display: flex;
-flex-direction: column;
-border-style: solid;
-padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  padding: 15px;
 }
 
 
 #testdbGenArea label {
-margin-top: 5px;
+  margin-top: 5px;
 }
 
 #resultItemsLegend {
-display: flex;
-flex-direction: column;
-align-self: center;
-/* align-items: center; */
-border: solid 1px gray;
-padding: 10px;
-margin: 15px;
-width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* align-items: center; */
+  border: solid 1px gray;
+  padding: 10px;
+  margin: 15px;
+  width: 65%;
 }
 
 .legends {
-display: flex;
-flex-direction: row;
-/* border: solid .5px gray; */
-/* align-self: center; */
+  display: flex;
+  flex-direction: row;
+  /* border: solid .5px gray; */
+  /* align-self: center; */
 }
 
 .legends p {
-font-size: 12px;
-margin-top: 2px;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
+#testdbGenArea label {
+  margin-top: 5px;
+}
+
+.active {
+  color: blue;
+  box-shadow: cornflowerblue;
+  text-shadow: cornflowerblue;
+}
+
+.inactive {
+  color: purple
+}
+
+.queryMainArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+}
+
+h1 {
+  justify-content: center;
+}
+
+h2 {
+  justify-content: center;
+}
+
+h3 {
+  justify-content: center;
+}
+
+h4 {
+  justify-content: space-around;
+}
 .colorblock {
-width: 10px;
-height: 10px;
-background-color: orange;
-margin-right: 10px;
-margin-top: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  margin-right: 10px;
+  margin-top: 3px;
 }
 
 #legend-1-colorBlock {
-background-color: lightskyblue;
+  background-color: lightskyblue;
 }
 
 .resultItem {
-border: solid;
-padding: 10px;
-margin: 10px;
-width: 45%;
+  border: solid;
+  padding: 10px;
+  margin: 10px;
+  width: 45%;
 }
 
 .result-queryName {
-text-align: center;
-margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .metricsContainer {
-border: solid;
-display: flex;
-justify-content: space-around;
+  border: solid;
+  display: flex;
+  justify-content: space-around;
 }
 
 .queryBlock {
-display: flex;
-flex-direction: column;
-align-items: center;
-border: solid;
-padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+  padding: 5px;
 }
 
 #queryRuntimeBlock {
-background-color: orange;
-color: white;
-width: 50%;
+  background-color: orange;
+  color: white;
+  width: 50%;
 }
 
 #queryThroughputBlock {
-background-color: lightskyblue;
-color: white;
-width: 50%;
+  background-color: lightskyblue;
+  color: white;
+  width: 50%;
 }
 
 .metricNums {
-font-size: 25px;
-margin: 5px;
+  font-size: 25px;
+  margin: 5px;
 }
 
 .metricLabel {
-font-size: 12px;
-margin-bottom: 5px;
-text-align: center;
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 

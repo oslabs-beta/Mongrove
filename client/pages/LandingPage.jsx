@@ -5,9 +5,6 @@ import SchemaMainArea from './SchemaMainArea.jsx';
 import DatabasePanel from '../components/DatabasePanel.jsx';
 import DatabaseItem from '../components/DatabaseItem.jsx';
 
-//Navbar component
-
-//SchemaPanel component
 
 const LandingPage = (props) => {
   

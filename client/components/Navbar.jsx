@@ -28,17 +28,35 @@ const Navbar = () => {
 
 
   return (
-        <div id="navbar">
+    <div id="navbar">
 
-            <div className="navbarLinks">
-                <NavLink to="/" activeClassName="activeClassName" className="navLink"><h2>CREATE</h2> </NavLink> 
-                <NavLink to="/queryPage" activeClassName="activeClassName" className="navLink"><h2>TEST</h2></NavLink>
-            </div>
-            <h1 id="navbar-header">Mongrove</h1>
-            <div className="helpIcon">
-              {/* <IconButton onClick={handleOpenHelp} className="helpButton" icon={HelpOutlineRoundedIcon}></IconButton> */}
-            </div>
-        </div>
+      <div className="navbarLinks">
+        {/* navbar: create link  --> redirects to landingPage*/}
+        <NavLink 
+          to="/" 
+          activeClassName="activeClassName" 
+          className="navLink"
+        >
+          <h2>CREATE</h2>
+        </NavLink> 
+
+        {/* navbar: test link --> redirects to queryPage */}
+        <NavLink
+          to="/queryPage" 
+          activeClassName="activeClassName" 
+          className="navLink"
+        >
+          <h2>TEST</h2>
+        </NavLink>
+      </div>
+
+      <h1 id="navbar-header">Mongrove</h1>
+
+      {/* help modal icon */}
+      <div className="helpIcon">
+        {/* <IconButton onClick={handleOpenHelp} className="helpButton" icon={HelpOutlineRoundedIcon}></IconButton> */}
+      </div>
+    </div>
   )
 };
 

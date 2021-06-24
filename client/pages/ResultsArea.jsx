@@ -7,6 +7,7 @@ const ResultsArea = (props) => {
   // declare array to store result items to render
   const resultsItemsList = [];
   for (let i = 0; i < props.testQueriesList.length; i++) {
+  //if testQueriesList[i].activeStatus===true
     resultsItemsList.push(
       <ResultsItem
         key={i}

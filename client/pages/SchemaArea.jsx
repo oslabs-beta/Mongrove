@@ -5,7 +5,7 @@ import Editor from '../components/Editor.jsx';
 const SchemaArea = (props) => {
   // state handling for schema user inputs
   const [schemaName, setSchemaName] = useState('');
-  const [schemaValue, setSchemaValue] = useState('{enter-field-name: enter-data-type}');
+  const [schemaValue, setSchemaValue] = useState('{enter-field-name: String}');
 
 
     return (
@@ -27,6 +27,7 @@ const SchemaArea = (props) => {
               displayName="Enter Schema here:"
               value={schemaValue}
               onChange={setSchemaValue}
+              className="codemirror"
               // value={props.schemaValue}
               // onChange={(e) => {setSchemaValue(e.target.value)}}
             />

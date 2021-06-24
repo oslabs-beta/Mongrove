@@ -15,7 +15,8 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
     // If not connected, return errors immediately rather than waiting for reconnect
     bufferMaxEntries: 0,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    dbName: databaseName
   };
   console.log('Hello!')
   // const model = require(`../models/${schemaName}`);
@@ -30,7 +31,7 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
 
   const connectWithRetry = () => {
     console.log('MongoDB connection with retry')
-    mongoose.connect("mongodb://mongo:27017/test", options).then(()=>{
+    mongoose.connect("mongodb://localhost:27017", options).then(()=>{
       console.log('MongoDB is connected')
     }).catch(err=>{
       console.log('MongoDB connection unsuccessful, retry after 5 seconds.')
