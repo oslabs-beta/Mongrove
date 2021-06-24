@@ -10,7 +10,7 @@ const SchemaArea = (props) => {
 
     return (
         <div id="schemaArea" className="mainAreaComponents">
-            <h2>Schema Creation Area</h2>
+            <h2>Schema Creation Zone</h2>
 
             {/* enter schema name field */}
             <label htmlFor="schemaName">Enter Schema Name</label>
