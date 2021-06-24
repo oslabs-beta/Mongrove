@@ -16,18 +16,20 @@ const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
   let schemaName;
   let schema;
   let numberOfDocuments;
+  let dbName;
 
   props.testDatabasesList.forEach(element => {
     if (element.name === selectedDB) {
       schemaName = element.schemaName;
       schema = element.schema;
       numberOfDocuments = element.rows;
+      dbName = element.name;
       // console.log('schema in conditional: ', schema);
     }
   }
   )
-  console.log(testQuery, schemaName, schema, numberOfDocuments)
-  const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
+  console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
+  const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
   
   const newQueriesList = [];
   newQueriesList.push(...testQueriesList, {name:testQueryName, query:testQuery, time: result});

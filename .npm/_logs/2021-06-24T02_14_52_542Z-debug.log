@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'start' ]
+2 info using npm@6.14.13
+3 info using node@v14.17.1
+4 verbose config Skipping project config: /mongrove/.npmrc. (matches userconfig)
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info lifecycle Mongrove@1.0.0~prestart: Mongrove@1.0.0
+7 info lifecycle Mongrove@1.0.0~start: Mongrove@1.0.0
+8 verbose lifecycle Mongrove@1.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle Mongrove@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/mongrove/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+10 verbose lifecycle Mongrove@1.0.0~start: CWD: /mongrove
+11 silly lifecycle Mongrove@1.0.0~start: Args: [ '-c', 'electron ./dist/bundle.js --no-sandbox' ]
+12 info lifecycle Mongrove@1.0.0~start: Failed to exec start script
+13 verbose stack Error: Mongrove@1.0.0 start: `electron ./dist/bundle.js --no-sandbox`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:48:18)
+13 verbose stack     at ChildProcess.emit (events.js:375:28)
+13 verbose stack     at maybeClose (internal/child_process.js:1055:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+14 verbose pkgid Mongrove@1.0.0
+15 verbose cwd /mongrove
+16 verbose Linux 5.10.25-linuxkit
+17 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start"
+18 verbose node v14.17.1
+19 verbose npm  v6.14.13
+20 error code ELIFECYCLE
+21 error syscall spawn
+22 error file sh
+23 error errno ENOENT
+24 error Mongrove@1.0.0 start: `electron ./dist/bundle.js --no-sandbox`
+24 error spawn ENOENT
+25 error Failed at the Mongrove@1.0.0 start script.
+25 error This is probably not a problem with npm. There is likely additional logging output above.
+26 verbose exit [ 1, true ]

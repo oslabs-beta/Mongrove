@@ -6,35 +6,25 @@ services:
     build: .
     restart: always
     environment:
-      NODE_ENV: development
-      # WAIT_HOSTS: mongodb:27017
+      - NODE_ENV=development
+      - DISPLAY=host.docker.internal:0
+      - WAIT_HOSTS=mongodb:27017
     expose:
-      - 3000
-    ports:
-      - 3000:3000
-    volumes:
-      - .:/app
-    networks:
-      - samplenet
+      - 27017
+    depends_on:
+      - mongodb
     links:
       - mongodb
 
   mongodb:
     image: mongo:latest
+    container_name: mongo
     expose:
       - 27017
     ports:
       - 27017:27017
     volumes:
-      - data:/data/db
-    networks:
-      samplenet:
-        aliases:
-          - 'mongodb'
-
-networks:
-  samplenet:
-    driver: bridge
+      - data:/db/data
 
 volumes:
   data:

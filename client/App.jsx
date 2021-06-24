@@ -8,12 +8,6 @@ import './stylesheets/styles.css';
 import DatabasePanel from './components/DatabasePanel.jsx';
 import { ipcRenderer } from "electron";
 // renderer process
-// const { ipcRenderer } = require('electron');
-
-// ipcRenderer.send('anything-asynchronous', 'ping');
-
-
-
 
 //render landing page when app is first opened
 
@@ -35,7 +29,7 @@ const App = () => {
     })
     console.log('schemaName', schemaName, 'schemaValue', schemaValue);
     setSchemaList(newSchemaList);
-    console.log(schemaList);
+    // console.log('schemaList: ', schemaList);
   }
 
   //when GenerateTestDatabase button is clicked, add all 3 inputs to state and add a new dbItem to dbPanel
@@ -47,12 +41,8 @@ const App = () => {
     schemaList.forEach(element => {
       if (element.name === selectedSchema) {
         schema = element.value;
-        console.log('schema in conditional: ', schema);
       }
     })
-    
-    const result = await ipcRenderer.invoke('generate-schema', testDBname, schema, selectedSchema);
-    console.log(result);
 
     const newList = [...testDatabasesList];
     newList.push({
