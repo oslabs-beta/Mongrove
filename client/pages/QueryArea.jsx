@@ -7,7 +7,8 @@ const QueryArea = (props) => {
     const [testQueryName, setTestQueryName] = useState('')
     const [testQuery, setTestQuery] = useState('find()')
     
-    // console.log('testDatabasesList', props.testDatabasesList)
+
+    // FOR POPULATING THE SELECTION DROPDOWN
     // create a array to hold the db options to select from dropdown menu
     const dbSelection = [<option key={'a'} value={""}>{"Select Database Below"}</option>];
     props.testDatabasesList.forEach((e, i) => {
@@ -20,7 +21,6 @@ const QueryArea = (props) => {
             </option> )
     });
     
-    // console.log('dbSelection', dbSelection)
 
     return (
         <div id="queryArea" className="mainAreaComponents">
@@ -60,7 +60,7 @@ const QueryArea = (props) => {
                 className="mainAreaBn"
                 // onClick={() => console.log('runQueryButton clicked')}
                 onClick={() => {props.handleRunQuery(selectedDB, testQueryName, testQuery)}}
-                >
+            >
             Run Query
             </button>
         </div>

@@ -2,14 +2,9 @@ import React, { useState } from 'react';
 import SchemaItem from './SchemaItem.jsx';
 
 const SchemaPanel = (props) => {
-  // // use state to populate schemas to display here
-  // const state = {
-  //     schemaNameList: [], 
-  // }
-  // const [currentState, setState] = useState(state);
-
   // array to hold saved schema items
   const schemaItemsList = [];
+
   for (let i = 0; i < props.schemaList.length; i++) {
     schemaItemsList.push(
       <SchemaItem 

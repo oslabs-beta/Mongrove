@@ -15,22 +15,14 @@ const DatabasePanel = (props) => {
 		)
 	}
 	return (
-<<<<<<< HEAD
-    <div id="databasePanel" className="panels">
-      <h3>TEST DATABASES</h3>
-||||||| 7cf7af5
-			<div id="databasePanel" className="panels">
-					<h2>TEST DATABASES</h2>
-=======
-			<div id="databasePanel" className="sidePanel">
-					<h3>TEST DATABASES</h3>
->>>>>>> fd845d6296965c1b820857a960f549b9506f247f
+		<div id="databasePanel" className="sidePanel">
+			<h3>TEST DATABASES</h3>
 
-      <div id="databasesList">
-        {databaseItemsList}
-      </div>
+			<div id="databasesList">
+				{databaseItemsList}
+			</div>
     
-    </div>
+    	</div>
 	)
 }
 

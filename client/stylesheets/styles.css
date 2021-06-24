@@ -79,17 +79,18 @@ margin-bottom: 10px;
   font-weight: bold;
 }
 
-.panels {
+.sidePanel {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  /* align-items: center; */
+  /* justify-content: space-around; */
   border-style: solid;
   width: 20%;
 }
 
-.panels h3 {
+.sidePanel h3 {
   margin: 15px;
+  text-align: center;
 }
 
 #schemaMainArea {
