@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./webpack.config.js --watch",
+    "build": "webpack --config ./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ./dist/bundle.js",
+    "start": "electron ./dist/bundle.js --no-sandbox",
     "server": "node ./backend/server.js"
   },
   "keywords": [],
@@ -30,6 +30,7 @@
     "electron-reload": "^1.5.0",
     "electron-reloader": "^1.2.1",
     "html-webpack-plugin": "^5.3.1",
+    "mongodb-client-encryption": "^1.2.5",
     "node-loader": "^2.0.0",
     "react": "^17.0.2",
     "react-codemirror2": "^7.2.1",
