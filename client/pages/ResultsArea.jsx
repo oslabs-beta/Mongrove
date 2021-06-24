@@ -7,26 +7,27 @@ const ResultsArea = (props) => {
   // declare array to store result items to render
   const resultsItemsList = [];
   for (let i = 0; i < props.testQueriesList.length; i++) {
-  //if testQueriesList[i].activeStatus===true
-    resultsItemsList.push(
-      <ResultsItem
-        key={i}
-        id={i}
-        queryName={props.testQueriesList[i].name}
-        queryRuntime={props.testQueriesList[i].time}
-      />
-    )
+    if (props.testQueriesList[i].activeStatus===true){
+      resultsItemsList.push(
+        <ResultsItem
+          key={i}
+          id={i}
+          queryName={props.testQueriesList[i].name}
+          queryRuntime={props.testQueriesList[i].time}
+        />
+      )
+    }
   }
 
   return (
 
     <div id="resultsArea" className="mainAreaComponents">
-      <h2>Results Area</h2>
+      <h2>Results Zone</h2>
       
       <div id="resultItemsLegend">
         <div id="legend-1" className="legends">
           <div id="legend-1-colorBlock" className="colorblock"></div>
-          <p>   Query Throughput (per second) </p>
+          <p>   Query Throughput (queries per second) </p>
         </div>
         <div id="legend-2" className="legends">
           <div id="legend-2-colorBlock" className="colorblock"></div>
@@ -36,7 +37,6 @@ const ResultsArea = (props) => {
 
       <div id="resultsItemsContainer">
         {resultsItemsList}
-        {/* <ResultsItem /> */}
       </div>
     </div>
   )
