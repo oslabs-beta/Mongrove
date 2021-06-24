@@ -7,10 +7,10 @@
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
-  dbName: "d1"
+  dbName: "testdb1"
   });
 
-  const testSchema = new Schema({test: String});
+  const testSchema = new Schema({name: String});
 
   module.exports = mongoose.model("mySchema", testSchema);
   
