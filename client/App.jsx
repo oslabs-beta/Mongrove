@@ -7,7 +7,6 @@ import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.css';
 import { ipcRenderer } from "electron";
 
-
 const App = () => {
   // USING STATE TO HANDLE AND PERSIST DATA
   // from schema creation area
@@ -28,7 +27,7 @@ const App = () => {
     })
     console.log('schemaName', schemaName, 'schemaValue', schemaValue);
     setSchemaList(newSchemaList);
-    console.log(schemaList);
+    // console.log('schemaList: ', schemaList);
   }
 
   // Handling functionality for 'CONFIGURE TEST DATABASE' button:
@@ -41,12 +40,8 @@ const App = () => {
     schemaList.forEach(element => {
       if (element.name === selectedSchema) {
         schema = element.value;
-        console.log('schema in conditional: ', schema);
       }
     })
-    
-    const result = await ipcRenderer.invoke('generate-schema', testDBname, schema, selectedSchema);
-    console.log(result);
 
     const newList = [...testDatabasesList];
     newList.push({
@@ -66,17 +61,19 @@ const App = () => {
     let schemaName;
     let schema;
     let numberOfDocuments;
+    let dbName;
   
     testDatabasesList.forEach(element => {
       if (element.name === selectedDB) {
         schemaName = element.schemaName;
         schema = element.schema;
         numberOfDocuments = element.rows;
+        dbName = element.name;
       }
     })
       
-    console.log(testQuery, schemaName, schema, numberOfDocuments)
-    const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments)
+    console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
+    const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
     
     const newQueriesList = [];
     newQueriesList.push(...testQueriesList, {
