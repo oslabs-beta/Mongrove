@@ -7,6 +7,13 @@ const ResultsItem = (props) => {
       <h3 className="result-queryName">
         {props.id + 1}. {props.queryName}
       </h3>
+      
+      <div className="result-div-queryValue">
+        <h5 className="result-queryValue">
+          {props.queryValue}
+        </h5>
+      </div>
+
       <div className="metricsContainer">
         <div id="queryRuntimeBlock"  className="queryBlock">
           <h5 className="metricNums">
@@ -24,6 +31,24 @@ const ResultsItem = (props) => {
           </h5>
           <p className="metricLabel"> Query Throughput <br/>per sec</p>
         </div>
+      </div>
+
+      <div className="result-schemaSection">
+        <h5 className="result-schemaName">
+          {props.schemaName}
+        </h5>
+        <h6 className="result-schemaValue">
+          {props.schemaValue}
+        </h6>
+      </div>
+
+      <div className="result-dbData">
+        <h5 className="result-dbName">
+          {props.dbName}
+        </h5>
+        <h5 className="result-dbNum">
+          {props.numOfDocs}
+        </h5>
       </div>
     </div>
   )
