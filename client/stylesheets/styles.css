@@ -10,13 +10,13 @@ body {
 }
 
 #navbar {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   border-style: solid;
   background-color: #718355;
-  color: white;
+  /* color: white; */
   height: 70px;
-  position: relative;
+  /* position: relative; */
 }
 
 #navbar-header {
