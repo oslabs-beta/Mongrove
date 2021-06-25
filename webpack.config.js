@@ -22,10 +22,7 @@ module.exports = [
     //render process
     {
         mode: 'development',
-        entry: {
-          mainpage:['@babel/polyfill', './client/App.jsx'],
-          helppage: './client/components/HelpModal.jsx'
-        },
+        entry: ['@babel/polyfill', './client/App.jsx'],
         target: 'electron-renderer',
         devtool: 'source-map',
         module: { 
@@ -55,18 +52,51 @@ module.exports = [
         },
         output: {
           path: __dirname + '/dist',
-          filename: '[name]/react.js'
+          filename: 'react.js'
         },
         plugins: [
           new HtmlWebpackPlugin({
-            filename: './client/index.html',
-            inject: true,
-            chunks: ['mainpage']
-          }),
+            template: './client/index.html'
+          })
+        ]
+      },
+      {
+        mode: 'development',
+        entry: ['@babel/polyfill','./client/components/HelpModal.jsx'],
+        // target: 'electron-renderer',
+        devtool: 'source-map',
+        module: { 
+          rules: [
+            {
+              test: /\.js(x?)$/,
+              include: /client/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+              }
+            },
+            {
+              test: [/\.s[ac]ss$/i, /\.css$/i],
+              use: [
+                // Creates `style` nodes from JS strings
+                'style-loader',
+                // Translates CSS into CommonJS
+                'css-loader',
+                // Compile Sass to CSS
+                'sass-loader',
+              ],
+            }
+          ]
+        },
+        output: {
+          path: __dirname + '/dist',
+          filename: 'reactHelp.js'
+        },
+        plugins: [
           new HtmlWebpackPlugin({
-            filename: './client/help.html',
-            inject: true,
-            chunks: ['helppage']
+            template: './client/help.html'
           })
         ]
       }

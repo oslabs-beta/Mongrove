@@ -20,11 +20,12 @@ ipcMain.on('open-help', function(){
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      nativeWindowOpen: true
+      nativeWindowOpen: true,
+      name:'helpModal'
     }
   });
 
-  // and load the index.html of the app.
-  win.loadFile('client/help.html');
+  // and load the index.html of the app (looks in dist, not main directory, because we told it to in webpack (output))
+  win.loadFile('../client/help.html');
 })
   
