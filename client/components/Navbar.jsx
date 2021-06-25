@@ -9,17 +9,16 @@ import HelpIcon from '@material-ui/icons/Help';
 // const remote = electron.remote
 // const { BrowserWindow } = remote
 
+const { ipcRenderer } = require('electron')
 
 //create NavBar component
 const Navbar = () => {
 
   //opened browser window width and height defaults to 800 by 600
-  const handleOpenHelp = () => {
-    console.log('handlehelp clicked')  
-  //   const win = new BrowserWindow({width: 400, height: 400}); 
-  //   win.loadURL('https://github.com');
-
-    // win.loadFile('help.html')
+  const handleOpenHelp = (e) => {
+    // console.log('handlehelp clicked')  
+   e.preventDefault();
+   ipcRenderer.send('open-help')
   }
 
 

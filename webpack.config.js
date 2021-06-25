@@ -22,7 +22,10 @@ module.exports = [
     //render process
     {
         mode: 'development',
-        entry: ['@babel/polyfill', './client/App.jsx'],
+        entry: {
+          mainpage:['@babel/polyfill', './client/App.jsx'],
+          helppage: './client/components/HelpModal.jsx'
+        },
         target: 'electron-renderer',
         devtool: 'source-map',
         module: { 
@@ -52,11 +55,18 @@ module.exports = [
         },
         output: {
           path: __dirname + '/dist',
-          filename: 'react.js'
+          filename: '[name]/react.js'
         },
         plugins: [
           new HtmlWebpackPlugin({
-            template: './client/index.html'
+            filename: './client/index.html',
+            inject: true,
+            chunks: ['mainpage']
+          }),
+          new HtmlWebpackPlugin({
+            filename: './client/help.html',
+            inject: true,
+            chunks: ['helppage']
           })
         ]
       }
