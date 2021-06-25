@@ -48,7 +48,8 @@ const App = () => {
       name: testDBname, 
       schemaName: selectedSchema, 
       schema: schema,
-      rows: numberOfRows});
+      rows: numberOfRows
+    });
 
     setTestDatabasesList(newList);
       //use update dbName to create a new dbItem component and and it to the db panel
@@ -77,10 +78,14 @@ const App = () => {
     
     const newQueriesList = [];
     newQueriesList.push(...testQueriesList, {
-      name: testQueryName, 
-      query: testQuery, 
+      queryName: testQueryName, 
+      queryValue: testQuery, 
       time: result,
-      activeStatus: true
+      activeStatus: true,
+      schemaName: schemaName,
+      schemaValue: schema,
+      dbName: dbName,
+      numOfDocs: numberOfDocuments
     });
     setTestQueriesList(newQueriesList);
   };
@@ -97,8 +102,8 @@ const handleActivateQuery = (queryKey, status) => {
 
   for (let i = 0; i < testQueriesList.length; i++) {
     if (i === queryKey) {
-      console.log('query INPUT status:', status);
       testQueriesList[i].activeStatus = !testQueriesList[i].activeStatus;
+      console.log('query INPUT status:', status);
     }
     updatedQueriesList.push(testQueriesList[i]);
   }

@@ -12,8 +12,13 @@ const ResultsArea = (props) => {
       <ResultsItem
         key={i}
         id={i}
-        queryName={props.testQueriesList[i].name}
+        queryName={props.testQueriesList[i].queryName}
         queryRuntime={props.testQueriesList[i].time}
+        queryValue={props.testQueriesList[i].queryValue}
+        schemaName={props.testQueriesList[i].schemaName}
+        schemaValue={props.testQueriesList[i].schemaValue}
+        dbName={props.testQueriesList[i].dbName}
+        numOfDocs={props.testQueriesList[i].numOfDocs}
       />
     )
   }
