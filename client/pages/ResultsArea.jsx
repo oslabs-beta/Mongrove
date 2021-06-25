@@ -12,8 +12,13 @@ const ResultsArea = (props) => {
       <ResultsItem
         key={i}
         id={i}
-        queryName={props.testQueriesList[i].name}
+        queryName={props.testQueriesList[i].queryName}
         queryRuntime={props.testQueriesList[i].time}
+        queryValue={props.testQueriesList[i].queryValue}
+        schemaName={props.testQueriesList[i].schemaName}
+        schemaValue={props.testQueriesList[i].schemaValue}
+        dbName={props.testQueriesList[i].dbName}
+        numOfDocs={props.testQueriesList[i].numOfDocs}
       />
     )
   }
@@ -21,12 +26,12 @@ const ResultsArea = (props) => {
   return (
 
     <div id="resultsArea" className="mainAreaComponents">
-      <h2>Results Area</h2>
+      <h2>Results Zone</h2>
       
       <div id="resultItemsLegend">
         <div id="legend-1" className="legends">
           <div id="legend-1-colorBlock" className="colorblock"></div>
-          <p>   Query Throughput (per second) </p>
+          <p>   Query Throughput (queries per second) </p>
         </div>
         <div id="legend-2" className="legends">
           <div id="legend-2-colorBlock" className="colorblock"></div>
@@ -36,7 +41,6 @@ const ResultsArea = (props) => {
 
       <div id="resultsItemsContainer">
         {resultsItemsList}
-        {/* <ResultsItem /> */}
       </div>
     </div>
   )
