@@ -102,8 +102,8 @@ const handleActivateQuery = (queryKey, status) => {
 
   for (let i = 0; i < testQueriesList.length; i++) {
     if (i === queryKey) {
-      console.log('query INPUT status:', status);
       testQueriesList[i].activeStatus = !testQueriesList[i].activeStatus;
+      console.log('query INPUT status:', status);
     }
     updatedQueriesList.push(testQueriesList[i]);
   }

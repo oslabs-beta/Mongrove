@@ -11,7 +11,7 @@ const QueriesPanel = (props) => {
     queryItemsList.push(<QueryItem 
       key={i} 
       id={i} 
-      testQueryName={props.testQueriesList[i].name}
+      testQueryName={props.testQueriesList[i].queryName}
       activeStatus={props.testQueriesList[i].activeStatus}
       handleActivateQuery={props.handleActivateQuery}
     />)

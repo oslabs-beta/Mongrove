@@ -163,6 +163,7 @@ h3 {
 h4 {
   justify-content: space-around;
 }
+
 .colorblock {
   width: 10px;
   height: 10px;
@@ -189,9 +190,27 @@ h4 {
 
 .result-div-queryValue {
   background-color: darkslategray;
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
 }
+
+.result-div-schemaSection, .result-div-dbData {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .result-dbName {
+  margin-top: 5px;
+}
+ */
+
+
+/* .result-div-dbData {
+
+} */
 
 .result-queryValue {
   text-align: center;

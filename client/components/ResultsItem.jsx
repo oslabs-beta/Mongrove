@@ -33,7 +33,7 @@ const ResultsItem = (props) => {
         </div>
       </div>
 
-      <div className="result-schemaSection">
+      <div className="result-div-schemaSection">
         <h5 className="result-schemaName">
           {props.schemaName}
         </h5>
@@ -41,14 +41,13 @@ const ResultsItem = (props) => {
           {props.schemaValue}
         </h6>
       </div>
-
-      <div className="result-dbData">
+      <div className="result-div-dbData">
         <h5 className="result-dbName">
           {props.dbName}
         </h5>
-        <h5 className="result-dbNum">
-          {props.numOfDocs}
-        </h5>
+        <h6 className="result-dbNum">
+          Number of documents: {props.numOfDocs}
+        </h6>
       </div>
     </div>
   )
