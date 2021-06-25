@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron');
-import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 
 
 require('../backend/channels');
@@ -11,7 +10,8 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
+      nativeWindowOpen: true
     }
   });
 
