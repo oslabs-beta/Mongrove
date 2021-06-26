@@ -16,13 +16,13 @@ const Chart = props => {
     }
     d3.select('#chart').selectAll('*').remove()
     let h = 400;
-    let w = 500;
+    let w = div.current.offsetWidth;
     console.log('width', div.current.offsetWidth);
     const svg = d3.select("#chart")
                   .append("svg")
                   .attr("width", w)
                   .attr("height", h)
-                  .style("margin-left", 30);
+                  .style("margin-left", -15);
 
     const names = data.map(el => el.name);
 
