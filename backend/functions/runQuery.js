@@ -7,18 +7,7 @@ const Schema = mongoose.Schema;
 
 async function runQuery(query, schemaName, schema, numberOfDocuments, databaseName) {
 
-  // const options = {
-  //   // autoIndex: false, // Don't build indexes
-  //   // reconnectTries: 30, // Retry up to 30 times
-  //   // reconnectInterval: 500, // Reconnect every 500ms
-  //   // poolSize: 10, // Maintain up to 10 socket connections
-  //   // // If not connected, return errors immediately rather than waiting for reconnect
-  //   // bufferMaxEntries: 0,
-  //   useNewUrlParser: true,
-  //   useUnifiedTopology: true,
-  //   dbName: databaseName
-  // };
-  console.log('Hello!')
+
   // Call function to generate test database with dummy data
   await mongoose.connect('mongodb://localhost:27017', {
     useUnifiedTopology: true,
@@ -27,18 +16,6 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
     useFindAndModify: false,
     dbName: databaseName
   })
-
-  // const connectWithRetry = () => {
-  //   console.log('MongoDB connection with retry')
-  //   mongoose.connect("mongodb://mongo:27017", options).then(()=>{
-  //     console.log('MongoDB is connected')
-  //   }).catch(err=>{
-  //     console.log('MongoDB connection unsuccessful, retry after 5 seconds.')
-  //     setTimeout(connectWithRetry, 5000)
-  //   })
-  // }
-  
-  // await connectWithRetry();
 
   const testSchema = eval(`new Schema(${schema})`);
 
@@ -58,14 +35,15 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
     console.log('Error in inserting data', err);
   }
   
-  const time1 = performance.now();
-
+  let time1, time2;
+  
   try {
+    time1 = performance.now();
     await eval('model.' + query);
+    time2 = performance.now();
   } catch (err) {
     console.log('Error in runQuery: ', err);
   }
-  const time2 = performance.now();
 
   const responseTime = time2 - time1;
 
@@ -81,19 +59,5 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
   mongoose.connection.close();
   return responseTime;
 }
-
-// const schema = `{
-//   name: String,
-//   rotation_period: Number,
-//   orbital_period: Number,
-//   diameter: Number,
-//   climate: String,
-//   gravity: String,
-//   terrain: String,
-//   surface_water: String,
-//   population: Number
-// }`;
-
-// runQuery('find({})', 'schemaName', schema, 5);
 
 module.exports = runQuery;
