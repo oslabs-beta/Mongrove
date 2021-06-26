@@ -8,8 +8,7 @@
     "dev": "webpack --config ./webpack.config.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ./dist/bundle.js --no-sandbox",
-    "server": "node ./backend/server.js",
-    "dev": "webpack --config ./webpack.config.js --watch"
+    "server": "node ./backend/server.js"
   },
   "keywords": [],
   "author": "",
