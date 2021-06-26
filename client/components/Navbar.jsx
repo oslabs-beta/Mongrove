@@ -46,12 +46,11 @@ const Navbar = () => {
       </div>
 
       <h1 id="navbar-header">Mongrove</h1>
+
       <div className="helpIcon">        
         <IconButton  onClick={handleOpenHelp}>
           <HelpOutlineRoundedIcon/>
         </IconButton>
-    
-
       </div>
       
       
