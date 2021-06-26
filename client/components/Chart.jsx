@@ -9,11 +9,13 @@ const Chart = props => {
     let maxTime = 0;
     for (let i = 0; i < props.testQueriesList.length; i++) {
       maxTime = Math.max(maxTime, props.testQueriesList[i].time);
-      data.push({
-        name: props.testQueriesList[i].queryName,
-        time: props.testQueriesList[i].time,
-        order: i
-      });
+      if (props.testQueriesList[i].activeStatus){
+        data.push({
+          name: props.testQueriesList[i].queryName,
+          time: props.testQueriesList[i].time,
+          order: i
+        });
+      }
     }
     d3.select('#chart').selectAll('*').remove()
     let h = 400;
