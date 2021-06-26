@@ -47,6 +47,8 @@ const Chart = props => {
        .attr("width", (element, index) => bandScale.bandwidth())
        .attr("height", (element, index) => heightScale(element.time))
        .attr("fill", "green")
+       .append("title")
+       .text((element) => element.name)
   
     svg.selectAll("text")
        .data(data)
@@ -55,6 +57,13 @@ const Chart = props => {
        .text(element => element.time)
        .attr("x", (element, index) => bandScale(element.name))
        .attr("y", (element, index) => h - heightScale(element.time) - 3)
+
+    let xAxis = d3.axisBottom().scale(bandScale);
+    let xAxisTranslate = h - 20;
+    svg.append("g")
+       .attr("transform", `translate(50, ${xAxisTranslate})`)
+       .style("margin-left", -15)
+       .call(xAxis);
     
     d3.select("#checkSort").on("change", function() {
       const sortByTime = (a, b) => b.time - a.time;
