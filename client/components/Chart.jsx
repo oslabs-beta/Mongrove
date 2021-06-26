@@ -11,7 +11,8 @@ const Chart = props => {
       maxTime = Math.max(maxTime, props.testQueriesList[i].time);
       data.push({
         name: props.testQueriesList[i].queryName,
-        time: props.testQueriesList[i].time
+        time: props.testQueriesList[i].time,
+        order: i
       });
     }
     d3.select('#chart').selectAll('*').remove()
@@ -34,6 +35,7 @@ const Chart = props => {
     let heightScale = d3.scaleLinear()
                         .domain([0,maxTime])
                         .range([0, 0.9 * h])
+
     svg.selectAll("rect")
        .data(data)
        .enter()
@@ -52,11 +54,31 @@ const Chart = props => {
        .attr("x", (element, index) => bandScale(element.name))
        .attr("y", (element, index) => h - heightScale(element.time) - 3)
     
-       
+    d3.select("#checkSort").on("change", function() {
+      const sortByTime = (a, b) => b.time - a.time;
+      const sortByOrder = (a, b) => a.order - b.order;
+      
+      this.checked ? data.sort(sortByTime) : data.sort(sortByOrder);
+
+      let queryOrder = data.map(el => el.name);
+      console.log('queryOrder: ', queryOrder);
+
+      bandScale.domain(queryOrder)
+      svg.transition()
+         .duration(500)
+         .selectAll("rect,text")
+         .attr("x", (element, index) => bandScale(element.name))
+         .delay((element, index) => index * 50)
+         
+    })
   }) 
     
   return (
-    <div id="chart" className="mainAreaComponents" ref={div}></div>
+    <div className="mainAreaComponents">
+      <div id="chart"  ref={div}>
+      </div>
+      <label><input id="checkSort" type="checkbox"/>Sort by time</label>
+    </div>
   )
 }
 
