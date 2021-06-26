@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 const d3 = require('d3');
 
 const Chart = props => {
+  let div = useRef(null);
   let data = [];
   useEffect(() => {
     data = [];
@@ -16,6 +17,7 @@ const Chart = props => {
     d3.select('#chart').selectAll('*').remove()
     let h = 400;
     let w = 500;
+    console.log('width', div.current.offsetWidth);
     const svg = d3.select("#chart")
                   .append("svg")
                   .attr("width", w)
@@ -54,7 +56,7 @@ const Chart = props => {
   }) 
     
   return (
-    <div id="chart" className="mainAreaComponents">This is the chart</div>
+    <div id="chart" className="mainAreaComponents" ref={div}></div>
   )
 }
 
