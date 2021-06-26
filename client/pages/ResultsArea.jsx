@@ -7,20 +7,21 @@ const ResultsArea = (props) => {
   // declare array to store result items to render
   const resultsItemsList = [];
   for (let i = 0; i < props.testQueriesList.length; i++) {
-  //if testQueriesList[i].activeStatus===true
+  if (props.testQueriesList[i].activeStatus) {
     resultsItemsList.push(
       <ResultsItem
-        key={i}
-        id={i}
-        queryName={props.testQueriesList[i].queryName}
-        queryRuntime={props.testQueriesList[i].time}
-        queryValue={props.testQueriesList[i].queryValue}
-        schemaName={props.testQueriesList[i].schemaName}
-        schemaValue={props.testQueriesList[i].schemaValue}
-        dbName={props.testQueriesList[i].dbName}
-        numOfDocs={props.testQueriesList[i].numOfDocs}
+      key={i}
+      id={i}
+      queryName={props.testQueriesList[i].queryName}
+      queryRuntime={props.testQueriesList[i].time}
+      queryValue={props.testQueriesList[i].queryValue}
+      schemaName={props.testQueriesList[i].schemaName}
+      schemaValue={props.testQueriesList[i].schemaValue}
+      dbName={props.testQueriesList[i].dbName}
+      numOfDocs={props.testQueriesList[i].numOfDocs}
       />
-    )
+      )
+    }
   }
 
   return (
