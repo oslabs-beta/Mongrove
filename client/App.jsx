@@ -58,6 +58,12 @@ const App = () => {
 
   // Handle functionality of 'RUN QUERY' button:
   const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
+    
+    const newQueriesList = [];
+    testQueriesList.forEach(el => {
+      if (testQueryName !== el.queryName) newQueriesList.push(el);
+    })
+
     //when runQuery button is clicked, turn the inputted values into an obj and update list in state
     let schemaName;
     let schema;
@@ -74,10 +80,10 @@ const App = () => {
     })
       
     console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
-    const result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
+    let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
+    result = result.toFixed(2);
     
-    const newQueriesList = [];
-    newQueriesList.push(...testQueriesList, {
+    newQueriesList.push({
       queryName: testQueryName, 
       queryValue: testQuery, 
       time: result,
