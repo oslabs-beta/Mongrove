@@ -43,7 +43,7 @@ const Chart = props => {
        .enter()
        .append("rect")
        .attr("x", (element, index) => bandScale(element.name))
-       .attr("y", (element, index) => h - heightScale(element.time))
+       .attr("y", (element, index) => h - heightScale(element.time) - 20)
        .attr("width", (element, index) => bandScale.bandwidth())
        .attr("height", (element, index) => heightScale(element.time))
        .attr("fill", "green")
@@ -56,17 +56,18 @@ const Chart = props => {
        .append("text")
        .text(element => element.time)
        .attr("x", (element, index) => bandScale(element.name))
-       .attr("y", (element, index) => h - heightScale(element.time) - 3)
+       .attr("y", (element, index) => h - heightScale(element.time) - 23)
 
     let xAxis = d3.axisBottom().scale(bandScale);
-    let xAxisTranslate = h - 20;
+    let xAxisTranslate =  h - 20;
     svg.append("g")
-       .attr("transform", `translate(50, ${xAxisTranslate})`)
-       .style("margin-left", -15)
+       .attr("transform", `translate(0, ${xAxisTranslate})`)
+       .style("margin-left", -30)
+       .attr("id", "x-axis")
        .call(xAxis);
     
     d3.select("#checkSort").on("change", function() {
-      const sortByTime = (a, b) => b.time - a.time;
+      const sortByTime = (a, b) => a.time - b.time;
       const sortByOrder = (a, b) => a.order - b.order;
       
       this.checked ? data.sort(sortByTime) : data.sort(sortByOrder);
@@ -80,6 +81,10 @@ const Chart = props => {
          .selectAll("rect,text")
          .attr("x", (element, index) => bandScale(element.name))
          .delay((element, index) => index * 50)
+      
+      svg.select("#x-axis")
+         .transition()
+         .call(xAxis)
          
     })
   }) 
