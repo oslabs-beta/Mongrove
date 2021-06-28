@@ -51,6 +51,20 @@ body {
   margin-right: 15px;
 }
 
+#helpModal {
+  background-color: beige;
+  padding: 20px;
+}
+
+#helpModal h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* .modal-content .modal-text-heading, .modal-text, .modal-text-subheading {
+  font-family: Helvetica, sans-serif;
+} */
+
+
 .mainArea {
 display: flex;
 flex-direction: row;

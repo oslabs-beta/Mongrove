@@ -60,7 +60,7 @@ function getFieldNameAndDataTypes (string) {
     let curElement = schemaArray[i].trim();
     let split = curElement.split(':');
     result[split[0].trim()] = split[1].trim();
-    }
+  }
   return result;
 }
 

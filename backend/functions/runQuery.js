@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-async function runQuery(query, schemaName, schema, numberOfDocuments, databaseName) {
+async function runQuery(query, schemaName, schema, numberOfDocuments, databaseName, data) {
 
 
   // Call function to generate test database with dummy data
@@ -26,7 +26,7 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
     model = mongoose.model(schemaName, testSchema, schemaName);
   }
 
-  const data = generateTestDatabase(schema, numberOfDocuments);
+  // const data = generateTestDatabase(schema, numberOfDocuments);
   
   try{
     await model.insertMany(data),
@@ -43,6 +43,7 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
     time2 = performance.now();
   } catch (err) {
     console.log('Error in runQuery: ', err);
+    throw new Error("Invalid query")
   }
 
   const responseTime = time2 - time1;
