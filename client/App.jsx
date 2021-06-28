@@ -53,12 +53,15 @@ const App = () => {
       }
     })
 
+    let data = await ipcRenderer.invoke('generate-test-data', schema, numberOfRows);
+
     const newList = [...testDatabasesList];
     newList.push({
       name: testDBname, 
       schemaName: selectedSchema, 
       schema: schema,
-      rows: numberOfRows
+      rows: numberOfRows,
+      data: data
     });
 
     setTestDatabasesList(newList);
@@ -68,7 +71,7 @@ const App = () => {
 
   // Handle functionality of 'RUN QUERY' button:
   const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
-    
+
     const newQueriesList = [];
     testQueriesList.forEach(el => {
       if (testQueryName !== el.queryName) newQueriesList.push(el);
@@ -79,6 +82,7 @@ const App = () => {
     let schema;
     let numberOfDocuments;
     let dbName;
+    let data;
   
     testDatabasesList.forEach(element => {
       if (element.name === selectedDB) {
@@ -86,13 +90,14 @@ const App = () => {
         schema = element.schema;
         numberOfDocuments = element.rows;
         dbName = element.name;
+        data = element.data;
       }
     })
-      
+    
     console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
 
     try{
-      let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
+      let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName, data);
       result = result.toFixed(2);
       console.log(result);
       newQueriesList.push({
@@ -110,9 +115,7 @@ const App = () => {
       console.log("error", err)
       alert("Invalid query: Verify query", err);
     }
-    
   };
-
 
 // Handle functionality for handleActivateQuery
 // When user clicks on a queryItem in the queryPanel, make its activeStatus property the opposite boolean ofits current value and toggle display of its corresponding resultsItem in the resultsArea
