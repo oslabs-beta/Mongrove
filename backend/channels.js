@@ -11,6 +11,7 @@ ipcMain.handle('run-query', async (event, ...args) => {
 
 
 
+
 //HANDLE OPEN HELP MODAL
 ipcMain.on('open-help', function(){
   // Create the browser window.

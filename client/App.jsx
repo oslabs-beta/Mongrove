@@ -90,20 +90,27 @@ const App = () => {
     })
       
     console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
-    let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
-    result = result.toFixed(2);
+
+    try{
+      let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName);
+      result = result.toFixed(2);
+      console.log(result);
+      newQueriesList.push({
+        queryName: testQueryName, 
+        queryValue: testQuery, 
+        time: result,
+        activeStatus: true,
+        schemaName: schemaName,
+        schemaValue: schema,
+        dbName: dbName,
+        numOfDocs: numberOfDocuments
+      });
+      setTestQueriesList(newQueriesList);
+    } catch (err) {
+      console.log("error", err)
+      alert("Invalid query: Verify query", err);
+    }
     
-    newQueriesList.push({
-      queryName: testQueryName, 
-      queryValue: testQuery, 
-      time: result,
-      activeStatus: true,
-      schemaName: schemaName,
-      schemaValue: schema,
-      dbName: dbName,
-      numOfDocs: numberOfDocuments
-    });
-    setTestQueriesList(newQueriesList);
   };
 
 
