@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage.jsx';
 import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.css';
 import { ipcRenderer } from "electron";
+import mongoose from 'mongoose';
 
 const App = () => {
   // USING STATE TO HANDLE AND PERSIST DATA
@@ -21,12 +22,21 @@ const App = () => {
   // when clicked, should add new schema to state and add new schemaItem component to schemaPanel
   function handleSaveSchema(schemaName, schemaValue) {
     const newSchemaList = [...schemaList];
-    newSchemaList.push({
-      name: schemaName,
-      value: schemaValue
-    })
+    // ERROR HANDLING
+    try {
+      eval(`new mongoose.Schema(${schemaValue})`);
+      newSchemaList.push({
+        name: schemaName,
+        value: schemaValue
+      })
+      setSchemaList(newSchemaList);
+    } catch (e){
+      console.log("error", e)
+      alert("Invalid schema: Enter a valid schema", e);
+      // throw new Error("Invalid schema input")
+    }
     console.log('schemaName', schemaName, 'schemaValue', schemaValue);
-    setSchemaList(newSchemaList);
+
     // console.log('schemaList: ', schemaList);
   }
 
