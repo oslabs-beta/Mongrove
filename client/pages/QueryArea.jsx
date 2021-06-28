@@ -3,11 +3,13 @@ import Editor from '../components/Editor.jsx';
 
 
 const QueryArea = (props) => {
-    const [selectedDB, setSelectedDB] = useState('sampleDB1')
-    const [testQueryName, setTestQueryName] = useState('')
-    const [testQuery, setTestQuery] = useState('find()')
+    const [selectedDB, setSelectedDB] = useState('sampleDB1');
+    const [testQueryName, setTestQueryName] = useState('');
+    const [testQuery, setTestQuery] = useState('find()');
     
-
+    // ERROR HANDLING
+    // condition that checks if user has filled out the form completely
+    const isEnabled = (selectedDB != "sampleDB1" && testQueryName.length > 0) ? true : false;
     // FOR POPULATING THE SELECTION DROPDOWN
     // create a array to hold the db options to select from dropdown menu
     const dbSelection = [<option key={'a'} value={""}>{"Select Database Below"}</option>];
@@ -60,6 +62,7 @@ const QueryArea = (props) => {
                 className="mainAreaBn"
                 // onClick={() => console.log('runQueryButton clicked')}
                 onClick={() => {props.handleRunQuery(selectedDB, testQueryName, testQuery)}}
+                disabled={!isEnabled}
             >
             Run Query
             </button>
