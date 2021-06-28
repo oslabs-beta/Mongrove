@@ -12,6 +12,8 @@ const TestDBGenArea = (props) => {
     const [selectedSchema, setSelectedSchema] = useState('');
     const [numberOfRows, setNumberOfRows] = useState(0);
 
+    
+
     // for having schemas in schema list appear as a selection option
     const schemaSelection = [<option key={'a'} value={""}>{"Select Schema Below"}</option>];
     for (let i = 0; i < props.schemaList.length; i++) {
@@ -21,7 +23,14 @@ const TestDBGenArea = (props) => {
             </option>
         )
     }
-
+ 
+    //disable testDBgen area until all input fields have some input
+    const isActive = () => {
+        if (props.schemaList.length > 0 && selectedSchema != '' && testDBname.length && numberOfRows > 1 ) return true;
+        
+    };
+    const isEnabled = isActive();
+    
     return (
         <div id="testdbGenArea" className="mainAreaComponents">
             <h2>Test Database Configuration</h2>
@@ -62,6 +71,7 @@ const TestDBGenArea = (props) => {
             <button 
                 id="genTestdbBn"
                 className="mainAreaBn"
+                disabled={!isEnabled}
                 onClick={() => {
                     // console.log(testDBname, selectedSchema, numberOfRows);
                     props.handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows)}}

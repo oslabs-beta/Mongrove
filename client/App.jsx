@@ -30,9 +30,11 @@ const App = () => {
     // console.log('schemaList: ', schemaList);
   }
 
-  // Handling functionality for 'CONFIGURE TEST DATABASE' button:
-  // when clicked, add all 3 inputs to state and add a new dbItem to dbPanel
+  // Handle 'CONFIGURE TEST DATABASE' button:
+  // when clicked, add all 3 inputs to state, add a new dbItem to dbPanel
   async function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
+    
+    
     // Add schema to the database list
     let schema = '';
     console.log('selectedSchema: ', selectedSchema);
