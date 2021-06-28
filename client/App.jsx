@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage.jsx';
 import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.css';
 import { ipcRenderer } from "electron";
+import mongoose from 'mongoose';
 
 const App = () => {
   // USING STATE TO HANDLE AND PERSIST DATA
@@ -21,12 +22,21 @@ const App = () => {
   // when clicked, should add new schema to state and add new schemaItem component to schemaPanel
   function handleSaveSchema(schemaName, schemaValue) {
     const newSchemaList = [...schemaList];
-    newSchemaList.push({
-      name: schemaName,
-      value: schemaValue
-    })
+    // ERROR HANDLING
+    try {
+      eval(`new mongoose.Schema(${schemaValue})`);
+      newSchemaList.push({
+        name: schemaName,
+        value: schemaValue
+      })
+      setSchemaList(newSchemaList);
+    } catch (e){
+      console.log("error", e)
+      alert("Invalid schema: Enter a valid schema", e);
+      // throw new Error("Invalid schema input")
+    }
     console.log('schemaName', schemaName, 'schemaValue', schemaValue);
-    setSchemaList(newSchemaList);
+
     // console.log('schemaList: ', schemaList);
   }
 
@@ -83,24 +93,29 @@ const App = () => {
         data = element.data;
       }
     })
-      
-    console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
-    let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName, data);
-    result = result.toFixed(2);
     
-    newQueriesList.push({
-      queryName: testQueryName, 
-      queryValue: testQuery, 
-      time: result,
-      activeStatus: true,
-      schemaName: schemaName,
-      schemaValue: schema,
-      dbName: dbName,
-      numOfDocs: numberOfDocuments
-    });
-    setTestQueriesList(newQueriesList);
-  };
+    console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
 
+    try{
+      let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName, data);
+      result = result.toFixed(2);
+      console.log(result);
+      newQueriesList.push({
+        queryName: testQueryName, 
+        queryValue: testQuery, 
+        time: result,
+        activeStatus: true,
+        schemaName: schemaName,
+        schemaValue: schema,
+        dbName: dbName,
+        numOfDocs: numberOfDocuments
+      });
+      setTestQueriesList(newQueriesList);
+    } catch (err) {
+      console.log("error", err)
+      alert("Invalid query: Verify query", err);
+    }
+  };
 
 // Handle functionality for handleActivateQuery
 // When user clicks on a queryItem in the queryPanel, make its activeStatus property the opposite boolean ofits current value and toggle display of its corresponding resultsItem in the resultsArea

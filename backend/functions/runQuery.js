@@ -43,6 +43,7 @@ async function runQuery(query, schemaName, schema, numberOfDocuments, databaseNa
     time2 = performance.now();
   } catch (err) {
     console.log('Error in runQuery: ', err);
+    throw new Error("Invalid query")
   }
 
   const responseTime = time2 - time1;
