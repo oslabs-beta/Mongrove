@@ -7,6 +7,9 @@ const SchemaArea = (props) => {
   const [schemaName, setSchemaName] = useState('');
   const [schemaValue, setSchemaValue] = useState('{fieldName: String}');
 
+  // ERROR HANDLING
+  // condition that checks if user has filled out the form completely
+  const isEnabled = schemaName.length > 0;
 
     return (
         <div id="schemaArea" className="mainAreaComponents">
@@ -35,6 +38,7 @@ const SchemaArea = (props) => {
               id="saveSchemaBn" 
               className="mainAreaBn"
               onClick={() => {props.handleSaveSchema(schemaName, schemaValue)}}
+              disabled={!isEnabled}
             >
               Save Schema
             </button>

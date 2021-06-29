@@ -10,8 +10,8 @@ body {
 }
 
 #navbar {
-  /* display: flex; */
-  /* align-items: center; */
+  display: flex;
+  align-items: center;
   border-style: solid;
   background-color: #718355;
   /* color: white; */
@@ -20,16 +20,22 @@ body {
 }
 
 #navbar-header {
-  position: absolute;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 13%;
+  color: white;
+  /* position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 .navbarLinks {
   display: flex;
-  margin-left: 20px;
+  margin-left: 15px;
+  justify-content: flex-start;
 }
 
 .navLink {
@@ -37,6 +43,27 @@ body {
   color: gold;
   text-decoration: none;
 }
+
+.helpIcon {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+#helpModal {
+  background-color: beige;
+  padding: 20px;
+}
+
+#helpModal h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* .modal-content .modal-text-heading, .modal-text, .modal-text-subheading {
+  font-family: Helvetica, sans-serif;
+} */
+
 
 .mainArea {
 display: flex;
@@ -46,14 +73,16 @@ flex-direction: row;
 .mainAreaContainers {
   width: 60%;
   border-style: solid;
+  background-color: burlywood;
 }
 
 .mainAreaComponents {
   display: flex;
   flex-direction: column;
-  border-style: solid;
   padding: 15px;
   margin: 20px;
+  border: solid 1px gray;
+  background-color: whitesmoke;
 }
 
 .mainAreaComponents h2 {
@@ -89,7 +118,17 @@ margin-bottom: 10px;
 }
 
 .sidePanel h3 {
-  margin: 15px;
+  margin: 20px;
+  text-align: center;
+}
+
+.items {
+  border: solid 1px gray;
+  margin: 5px 15px;
+  padding: 5px;
+}
+
+.itemName {
   text-align: center;
 }
 
@@ -201,16 +240,6 @@ h4 {
   align-items: center;
   flex-direction: column;
 }
-
-/* .result-dbName {
-  margin-top: 5px;
-}
- */
-
-
-/* .result-div-dbData {
-
-} */
 
 .result-queryValue {
   text-align: center;

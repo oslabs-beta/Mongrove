@@ -1,5 +1,6 @@
 import { ipcMain } from "electron";
 const runQuery = require('./functions/runQuery');
+const generateTestDatabase = require('./functions/generateTestDatabase');
 const { app, BrowserWindow } = require('electron');
 
 
@@ -8,6 +9,12 @@ ipcMain.handle('run-query', async (event, ...args) => {
   let responseTime = await runQuery(...args);
   return responseTime;
 })
+
+ipcMain.handle('generate-test-data', async (event, ...args) => {
+  let data = await generateTestDatabase(...args);
+  return data;
+})
+
 
 
 
