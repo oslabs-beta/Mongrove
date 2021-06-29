@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './pages/LandingPage.jsx';
 import QueryPage from './pages/QueryPage.jsx';
-import './stylesheets/styles.css';
+import './stylesheets/styles.scss';
 import { ipcRenderer } from "electron";
 import mongoose from 'mongoose';
 
