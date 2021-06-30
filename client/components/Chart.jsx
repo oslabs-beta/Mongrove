@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 const d3 = require('d3');
 
+//create Chart component to display results as a chart using D3
 const Chart = props => {
   let div = useRef(null);
   let data = [];
@@ -20,7 +21,6 @@ const Chart = props => {
     d3.select('#chart').selectAll('*').remove()
     let h = 400;
     let w = div.current.offsetWidth;
-    console.log('width', div.current.offsetWidth);
     const svg = d3.select("#chart")
                   .append("svg")
                   .attr("width", w)
@@ -46,7 +46,7 @@ const Chart = props => {
        .attr("y", (element, index) => h - heightScale(element.time) - 20)
        .attr("width", (element, index) => bandScale.bandwidth())
        .attr("height", (element, index) => heightScale(element.time))
-       .attr("fill", "green")
+       .attr("fill", '#C15C2A')
        .append("title")
        .text((element) => element.name)
   
@@ -73,7 +73,6 @@ const Chart = props => {
       this.checked ? data.sort(sortByTime) : data.sort(sortByOrder);
 
       let queryOrder = data.map(el => el.name);
-      console.log('queryOrder: ', queryOrder);
 
       bandScale.domain(queryOrder)
       svg.transition()
@@ -84,13 +83,13 @@ const Chart = props => {
       
       svg.select("#x-axis")
          .transition()
-         .call(xAxis)
-         
+         .call(xAxis)      
     })
   }) 
     
   return (
     <div className="mainAreaComponents">
+      <h2>Query Data Visualization</h2>
       <div id="chart"  ref={div}>
       </div>
       <label><input id="checkSort" type="checkbox"/>Sort by time</label>

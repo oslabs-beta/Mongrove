@@ -19,7 +19,7 @@ ipcMain.handle('generate-test-data', async (event, ...args) => {
 ipcMain.on('open-help', function () {
   const win = new BrowserWindow({
     width: 400,
-    height: 400,
+    height: 800,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
