@@ -11,12 +11,13 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      nativeWindowOpen: true
+      nativeWindowOpen: true,
+      webSecurity: false,
     }
   });
 
   // and load the index.html of the app.
-  win.loadFile('index.html');
+  win.loadFile('dist/index.html');
 }
 
 app.on('ready', createWindow);
