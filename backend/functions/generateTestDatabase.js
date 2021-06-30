@@ -64,4 +64,4 @@ function getFieldNameAndDataTypes (string) {
   return result;
 }
 
-module.exports = generateTestDatabase;
+module.exports = {generateTestDatabase, getFieldNameAndDataTypes};
