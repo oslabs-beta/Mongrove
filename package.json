@@ -1,14 +1,48 @@
 {
   "name": "Mongrove",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "DevTool for MongoDB test database generation and metrics testing",
+  "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
     "dev": "webpack --config ./webpack.config.js --watch",
     "test": "jest",
     "start": "electron ./dist/bundle.js --no-sandbox",
-    "server": "node ./backend/server.js"
+    "server": "node ./backend/server.js",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.mongrove.mongrove",
+    "productName": "Mongrove",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "Mongrove1.png"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": "110",
+          "y": "150"
+        },
+        {
+          "x": "240",
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "Mongrove1.png"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
   },
   "keywords": [],
   "author": "",
@@ -36,6 +70,9 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.6",
     "mongodb-client-encryption": "^1.2.5",
