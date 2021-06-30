@@ -89,6 +89,7 @@ const Chart = props => {
     
   return (
     <div className="mainAreaComponents">
+      <h2>Query Data Visualization</h2>
       <div id="chart"  ref={div}>
       </div>
       <label><input id="checkSort" type="checkbox"/>Sort by time</label>

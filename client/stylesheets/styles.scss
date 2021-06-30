@@ -115,7 +115,7 @@ body {
   flex-direction: column;
   padding: 35px;
   margin: 40px;
-  border-radius: 5px;
+  border-radius: 7px;
   background-color: $light-gray;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
@@ -125,18 +125,30 @@ body {
   text-align: center;
 }
 
-.mainAreaComponents input {
+.mainAreaComponents input, .mainAreaComponents select {
   margin-bottom: 10px;
+}
+
+.mainAreaComponents label {
+  margin-bottom: 5px;
+}
+
+input, select {
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
 }
 
 .codemirror {
-margin-bottom: 10px;
-padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 
-.mainAreaComponents select {
-  margin-bottom: 10px;
+.CodeMirror { 
+  border-radius: 7px;
 }
+
 
 .mainAreaBn {
   padding: 15px;
@@ -163,6 +175,7 @@ padding-bottom: 20px;
   width: 20%;
   background-color: $secondary-green;
   font-family: 'Lato', sans-serif;
+  box-shadow: 0px 6px 6px rgb(0 0 0 / 70%);
 }
 
 .sidePanel h3 {
