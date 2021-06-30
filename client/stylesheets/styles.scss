@@ -18,10 +18,11 @@ body {
   // border-style: solid;
   background-color: $primary-green;
   height: 90px;
-  // position: fixed;
-  // top: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
   // overflow: hidden;
-  // width: 100%;
+  width: 100%;
 }
 
 #navbar-header {
@@ -85,11 +86,11 @@ flex-direction: row;
 .mainAreaComponents {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  margin: 20px;
-  border: solid 1px gray;
+  padding: 35px;
+  margin: 40px;
   border-radius: 2px;
   background-color: $light-gray;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mainAreaComponents h2 {
@@ -127,9 +128,11 @@ padding-bottom: 20px;
   // border-style: solid;
   width: 20%;
   background-color: $secondary-green;
+  // overflow: hidden;
 }
 
 .sidePanel h3 {
+  margin-top: 20px;
   margin: 20px;
   text-align: center;
   color: $light-beige;
@@ -212,6 +215,7 @@ padding-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap:nowrap;
+  margin-top: 80px;
 }
 
 h1 {
