@@ -6,7 +6,34 @@ import LandingPage from './pages/LandingPage.jsx';
 import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.scss';
 import { ipcRenderer } from "electron";
-import mongoose from 'mongoose';
+
+function validateSchema(schema) {
+  const supportedTypes = {
+    String: true,
+    Number: true,
+    Boolean: true,
+    Date: true,
+    Array: true,
+    Decimal128: true
+  }
+
+  schema = schema.trim();
+  if (schema[0] !== '{' || schema[schema.length - 1] !== '}') return false;
+  schema = schema.slice(1, -1);
+  let pairs = schema.split(",");
+
+  for (let i = 0; i < pairs.length; i++) {
+    if (!(/^[a-zA-Z:\s]*$/).test(pairs[i])) return false;
+    let curPair = pairs[i].split(":");
+    if (curPair.length !== 2) return false;
+    for (let j = 0; j < curPair.length; j++) {
+      let curWord = curPair[j].trim();
+      if (j === 1 && !supportedTypes.hasOwnProperty(curWord)) return false;
+      if ((!(/^[a-zA-Z]*$/).test(curWord))) return false;
+    }
+  }
+  return true;
+}
 
 const App = () => {
   // USING STATE TO HANDLE AND PERSIST DATA
@@ -23,21 +50,17 @@ const App = () => {
   function handleSaveSchema(schemaName, schemaValue) {
     const newSchemaList = [...schemaList];
     // ERROR HANDLING
-    try {
-      eval(`new mongoose.Schema(${schemaValue})`);
+    if (validateSchema(schemaValue)) {
       newSchemaList.push({
         name: schemaName,
         value: schemaValue
       })
       setSchemaList(newSchemaList);
-    } catch (e){
-      console.log("error", e)
-      alert("Invalid schema: Enter a valid schema", e);
-      // throw new Error("Invalid schema input")
+    } else {
+      alert("Invalid schema: Enter a valid schema");
     }
     console.log('schemaName', schemaName, 'schemaValue', schemaValue);
 
-    // console.log('schemaList: ', schemaList);
   }
 
   // Handle 'CONFIGURE TEST DATABASE' button:
