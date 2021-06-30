@@ -23,7 +23,7 @@ ipcMain.on('open-help', function(){
   // Create the browser window.
   let win = new BrowserWindow({
     width: 400,
-    height: 400,
+    height: 800,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

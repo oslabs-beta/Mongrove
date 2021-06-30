@@ -2,9 +2,8 @@ import React from 'react';
 import QueryItem from './QueryItem.jsx';
 
 const QueriesPanel = (props) => {
-  
         
-  //create an array to hold all queryItems
+  //create an array to hold all queryItems to be displayed in QueryPanel
   const queryItemsList = []
   
   for (let i = 0; i < props.testQueriesList.length; i++) {
@@ -25,6 +24,6 @@ const QueriesPanel = (props) => {
       </div>  
     </div>
   )
-}
+};
 
 export default QueriesPanel;

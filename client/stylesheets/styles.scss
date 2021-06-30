@@ -1,11 +1,16 @@
-// Partials
 @import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// @font-face {
+//   font-family: "Lato";
+//   src: url("'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap'") format("woff2"),
+// }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -15,13 +20,11 @@ body {
 #navbar {
   display: flex;
   align-items: center;
-  // border-style: solid;
   background-color: $primary-green;
   height: 90px;
   position: fixed;
   top: 0;
   z-index: 99;
-  // overflow: hidden;
   width: 100%;
 }
 
@@ -31,11 +34,7 @@ body {
   justify-content: center;
   margin-left: 13%;
   color: $light-beige;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); */
+  
 }
 
 .navbarLinks {
@@ -61,15 +60,41 @@ body {
 #helpModal {
   background-color: beige;
   padding: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+#helpModalBody {
+  background-color: beige;
+  padding: 20px;
 }
 
 #helpModal h3 {
   text-align: center;
   margin-bottom: 20px;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
 }
-/* .modal-content .modal-text-heading, .modal-text, .modal-text-subheading {
-  font-family: Helvetica, sans-serif;
-} */
+
+#helpModal h4 {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+#helpModal ol {
+  padding-left: 30px;
+}
+
+#helpModal lh {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+#modal-text-heading{
+  margin-top: 10px;
+}
 
 .mainArea {
   display: flex;
@@ -80,11 +105,9 @@ body {
 
 .mainAreaContainers {
   width: 60%;
-  // border-style: solid;
   background-color: $tertiary-green;
   margin-top: 20px;
   margin-left: 20%;
-  height: 100%;
 }
 
 .mainAreaComponents {
@@ -92,7 +115,7 @@ body {
   flex-direction: column;
   padding: 35px;
   margin: 40px;
-  border-radius: 2px;
+  border-radius: 5px;
   background-color: $light-gray;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
@@ -121,15 +144,25 @@ padding-bottom: 20px;
   font-weight: bold;
   border-radius: 10px;
   margin-top: 20px;
-  
+  border: 0px;
+}
+
+.mainAreaBn:active {
+  padding: 15px;
+  background-color: $orange;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 0px;
+  color: white;
 }
 
 .sidePanel {
   display: flex;
   flex-direction: column;
   width: 20%;
-  // height: 100%;
   background-color: $secondary-green;
+  font-family: 'Lato', sans-serif;
 }
 
 .sidePanel h3 {
@@ -170,7 +203,6 @@ padding-bottom: 20px;
   padding: 15px;
 }
 
-
 #testdbGenArea label {
   margin-top: 5px;
 }
@@ -178,8 +210,6 @@ padding-bottom: 20px;
 #resultItemsLegend {
   display: flex;
   flex-direction: column;
-  // align-self: center;
-  /* align-items: center; */
   justify-content: flex-end;
   padding: 10px;
   margin: 15px;
@@ -189,8 +219,6 @@ padding-bottom: 20px;
 .legends {
   display: flex;
   flex-direction: row;
-  /* border: solid .5px gray; */
-  /* align-self: center; */
 }
 
 .legends p {
@@ -211,9 +239,7 @@ padding-bottom: 20px;
 
 .active {
   background-color: $light-orange;
-  // box-shadow: black;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  // text-shadow: cornflowerblue;
   margin: 10px 15px;
   padding: 5px;
   border-radius: 9px;
@@ -304,12 +330,14 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 6px;
   border: solid;
   padding: 5px;
 }
 
 #queryRuntimeBlock {
   background-color: orange;
+  border-radius: 6px;
   color: white;
   width: 50%;
   padding: 5px;
@@ -317,6 +345,7 @@ h4 {
 
 #queryThroughputBlock {
   background-color: lightskyblue;
+  border-radius: 6px;
   color: white;
   width: 50%;
   padding: 5px;
@@ -332,5 +361,3 @@ h4 {
   margin-bottom: 5px;
   text-align: center;
 }
-
-

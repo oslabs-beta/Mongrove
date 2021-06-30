@@ -3,30 +3,23 @@ import { NavLink } from "react-router-dom";
 import HelpOutlineRoundedIcon from '@material-ui/icons/HelpOutlineRounded';
 import IconButton from "@material-ui/core/IconButton";
 import HelpIcon from '@material-ui/icons/Help';
+const { ipcRenderer } = require('electron');
 
-//imports for opening new browser window from a react element
-// const electron = window.require('electron');
-// const remote = electron.remote
-// const { BrowserWindow } = remote
-
-const { ipcRenderer } = require('electron')
-
-//create NavBar component
+//create NavBar component with routing nav links and help button
 const Navbar = () => {
 
-  //opened browser window width and height defaults to 800 by 600
+  //handle opening HelpModal in new browser window when help button is clicked
+  //IPC renderer sends a message to IPC main
   const handleOpenHelp = (e) => {
-    // console.log('handlehelp clicked')  
    e.preventDefault();
    ipcRenderer.send('open-help')
   }
-
 
   return (
     <div id="navbar">
 
       <div className="navbarLinks">
-        {/* navbar: create link  --> redirects to landingPage*/}
+        {/* navbar: 'CREATE' link  --> routes to landingPage */}
         <NavLink 
           to="/" 
           activeClassName="activeClassName" 
@@ -35,7 +28,7 @@ const Navbar = () => {
           <h2>CREATE</h2>
         </NavLink> 
 
-        {/* navbar: test link --> redirects to queryPage */}
+        {/* navbar: 'TEST' link --> routes to queryPage */}
         <NavLink
           to="/queryPage" 
           activeClassName="activeClassName" 
@@ -52,7 +45,6 @@ const Navbar = () => {
           <HelpOutlineRoundedIcon/>
         </IconButton>
       </div>
-      
       
     </div>
   )
