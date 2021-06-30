@@ -1,6 +1,6 @@
 import { ipcMain } from "electron";
 const runQuery = require('./functions/runQuery');
-const generateTestDatabase = require('./functions/generateTestDatabase');
+const {generateTestDatabase} = require('./functions/generateTestDatabase');
 const { app, BrowserWindow } = require('electron');
 
 
