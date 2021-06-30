@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import '../stylesheets/styles.css';
+import '../stylesheets/styles.scss';
 //new browser window opens when navbar help button is clicked
 
 const HelpModal = () => {
