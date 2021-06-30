@@ -29,7 +29,7 @@ const ResultsItem = (props) => {
             {(1000 / Number(props.queryRuntime)).toFixed(2)}
             {/* 0.5 */}
           </h5>
-          <p className="metricLabel"> Query Throughput <br/>per sec</p>
+          <p className="metricLabel"> Query Throughput <br/>(queries/s)</p>
         </div>
       </div>
 

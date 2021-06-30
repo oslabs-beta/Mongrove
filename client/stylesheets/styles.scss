@@ -88,7 +88,8 @@ flex-direction: row;
   padding: 15px;
   margin: 20px;
   border: solid 1px gray;
-  background-color: $lightgray;
+  border-radius: 2px;
+  background-color: $light-gray;
 }
 
 .mainAreaComponents h2 {
@@ -100,9 +101,10 @@ flex-direction: row;
   margin-bottom: 10px;
 }
 
-/* .codemirror {
+.codemirror {
 margin-bottom: 10px;
-} */
+padding-bottom: 20px;
+}
 
 .mainAreaComponents select {
   margin-bottom: 10px;
@@ -110,8 +112,11 @@ margin-bottom: 10px;
 
 .mainAreaBn {
   padding: 15px;
-  background-color: gold;
+  background-color: $orange;
   font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  
 }
 
 .sidePanel {
@@ -155,12 +160,12 @@ margin-bottom: 10px;
 #resultItemsLegend {
   display: flex;
   flex-direction: column;
-  align-self: center;
+  // align-self: center;
   /* align-items: center; */
-  border: solid 1px gray;
+  justify-content: flex-end;
   padding: 10px;
   margin: 15px;
-  width: 65%;
+  width: 100%;
 }
 
 .legends {
@@ -173,6 +178,13 @@ margin-bottom: 10px;
 .legends p {
   font-size: 12px;
   margin-top: 2px;
+}
+
+#resultsItemsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #testdbGenArea label {
@@ -224,6 +236,7 @@ h4 {
   background-color: orange;
   margin-right: 10px;
   margin-top: 3px;
+  padding: 5px;
 }
 
 #legend-1-colorBlock {
@@ -232,7 +245,7 @@ h4 {
 
 .resultItem {
   border: solid 1px $primary-green;
-  border-radius: 5px;;
+  border-radius: 5px;
   padding: 10px;
   margin: 10px;
   width: 45%;
@@ -247,6 +260,7 @@ h4 {
   background-color: darkslategray;
   padding: 10px;
   margin-bottom: 5px;
+  border-radius: 4px;
 }
 
 .result-div-schemaSection, .result-div-dbData {
@@ -263,7 +277,6 @@ h4 {
 }
 
 .metricsContainer {
-  border: solid;
   display: flex;
   justify-content: space-around;
 }
@@ -280,12 +293,14 @@ h4 {
   background-color: orange;
   color: white;
   width: 50%;
+  padding: 5px;
 }
 
 #queryThroughputBlock {
   background-color: lightskyblue;
   color: white;
   width: 50%;
+  padding: 5px;
 }
 
 .metricNums {
