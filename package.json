@@ -1,5 +1,5 @@
 {
-  "name": "Mongrove",
+  "name": "mongrove",
   "version": "1.0.0",
   "description": "DevTool for MongoDB test database generation and metrics testing",
   "main": "./dist/bundle.js",

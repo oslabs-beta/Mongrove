@@ -1,8 +1,8 @@
-import React from 'react';
-import * as ReactDOM from 'react-dom';
-import '../stylesheets/styles.scss';
+import React from 'react'
+import * as ReactDOM from 'react-dom'
+import '../stylesheets/styles.scss'
 
-//this component renders in a new browser window when NavBar help button is clicked
+// this component renders in a new browser window when NavBar help button is clicked
 const HelpModal = () => {
   return (
     <div id="helpModalwindow">
@@ -38,4 +38,4 @@ const HelpModal = () => {
   )
 }
 
-ReactDOM.render( <HelpModal />, document.getElementById('helpModal'));
+ReactDOM.render(<HelpModal />, document.getElementById('helpModal'))

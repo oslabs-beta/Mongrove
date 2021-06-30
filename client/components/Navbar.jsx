@@ -1,18 +1,17 @@
-import React from 'react';
-import { NavLink } from "react-router-dom";
-import HelpOutlineRoundedIcon from '@material-ui/icons/HelpOutlineRounded';
-import IconButton from "@material-ui/core/IconButton";
-import HelpIcon from '@material-ui/icons/Help';
-const { ipcRenderer } = require('electron');
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import HelpOutlineRoundedIcon from '@material-ui/icons/HelpOutlineRounded'
+import IconButton from '@material-ui/core/IconButton'
+import HelpIcon from '@material-ui/icons/Help'
+const { ipcRenderer } = require('electron')
 
-//create NavBar component with routing nav links and help button
+// create NavBar component with routing nav links and help button
 const Navbar = () => {
-
-  //handle opening HelpModal in new browser window when help button is clicked
-  //IPC renderer sends a message to IPC main
+  // handle opening HelpModal in new browser window when help button is clicked
+  // IPC renderer sends a message to IPC main
   const handleOpenHelp = (e) => {
-   e.preventDefault();
-   ipcRenderer.send('open-help')
+    e.preventDefault()
+    ipcRenderer.send('open-help')
   }
 
   return (
@@ -20,18 +19,18 @@ const Navbar = () => {
 
       <div className="navbarLinks">
         {/* navbar: 'CREATE' link  --> routes to landingPage */}
-        <NavLink 
-          to="/" 
-          activeClassName="activeClassName" 
+        <NavLink
+          to="/"
+          activeClassName="activeClassName"
           className="navLink"
         >
           <h2>CREATE</h2>
-        </NavLink> 
+        </NavLink>
 
         {/* navbar: 'TEST' link --> routes to queryPage */}
         <NavLink
-          to="/queryPage" 
-          activeClassName="activeClassName" 
+          to="/queryPage"
+          activeClassName="activeClassName"
           className="navLink"
         >
           <h2>TEST</h2>
@@ -40,15 +39,14 @@ const Navbar = () => {
 
       <h1 id="navbar-header">Mongrove</h1>
 
-      <div className="helpIcon">        
-        <IconButton  onClick={handleOpenHelp}>
+      <div className="helpIcon">
+        <IconButton onClick={handleOpenHelp}>
           <HelpOutlineRoundedIcon/>
         </IconButton>
       </div>
-      
+
     </div>
   )
-};
+}
 
-
-export default Navbar;
+export default Navbar
