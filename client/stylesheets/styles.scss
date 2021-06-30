@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: $tertiary-green;
 }
 
 #navbar {
@@ -82,7 +82,9 @@ body {
   width: 60%;
   // border-style: solid;
   background-color: $tertiary-green;
+  margin-top: 20px;
   margin-left: 20%;
+  height: 100%;
 }
 
 .mainAreaComponents {
