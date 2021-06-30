@@ -80,7 +80,7 @@ const Chart = props => {
        .select("path")
        .attr("stroke-width", "2px")
     svg.selectAll("#x-axis")
-       .select("text")
+       .selectAll("text")
        .style("font-size", "16px")
        .style("font-weight", "bold")
 
