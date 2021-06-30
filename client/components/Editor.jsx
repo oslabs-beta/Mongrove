@@ -4,7 +4,7 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css'; // base css
 import 'codemirror/theme/material.css'; // theme css
 // for enabling js in codemirror
-// import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/javascript/javascript';
 // importing the text editor
 
 const Editor = (props) => {
