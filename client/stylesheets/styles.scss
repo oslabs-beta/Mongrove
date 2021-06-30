@@ -1,0 +1,376 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// @font-face {
+//   font-family: "Lato";
+//   src: url("'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap'") format("woff2"),
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: $tertiary-green;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  background-color: $primary-green;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+#navbar-header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 13%;
+  color: $light-beige;
+  
+}
+
+.navbarLinks {
+  display: flex;
+  margin-left: 15px;
+  justify-content: flex-start;
+}
+
+.navLink {
+  margin-left: 20px;
+  color: $pale-orange;
+  text-decoration: none;
+}
+
+.helpIcon {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  color: $pale-orange;
+}
+
+#helpModal {
+  background-color: beige;
+  padding: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+#helpModalBody {
+  background-color: beige;
+  padding: 20px;
+}
+
+#helpModal h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+#helpModal h4 {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+#helpModal ol {
+  padding-left: 30px;
+}
+
+#helpModal lh {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+#modal-text-heading{
+  margin-top: 10px;
+}
+
+.mainArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 80px;
+}
+
+.mainAreaContainers {
+  width: 60%;
+  background-color: $tertiary-green;
+  margin-top: 20px;
+  margin-left: 20%;
+}
+
+.mainAreaComponents {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  margin: 40px;
+  border-radius: 7px;
+  background-color: $light-gray;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mainAreaComponents h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.mainAreaComponents input, .mainAreaComponents select {
+  margin-bottom: 10px;
+}
+
+.mainAreaComponents label {
+  margin-bottom: 5px;
+}
+
+input, select {
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.codemirror {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
+.CodeMirror { 
+  border-radius: 7px;
+}
+
+
+.mainAreaBn {
+  padding: 15px;
+  background-color: $orange;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 0px;
+}
+
+.mainAreaBn:active {
+  padding: 15px;
+  background-color: $orange;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 0px;
+  color: white;
+}
+
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: $secondary-green;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 0px 6px 6px rgb(0 0 0 / 70%);
+}
+
+.sidePanel h3 {
+  margin: 20px;
+  margin-top: 40px;
+  text-align: center;
+  color: $light-beige;
+}
+
+#schemaPanel, #queryPanel {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+}
+
+#databasePanel {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+}
+
+.items {
+  margin: 10px 15px;
+  padding: 5px;
+  background-color: $pale-orange;
+  border-radius: 9px;
+}
+
+.itemName {
+  text-align: center;
+}
+
+#schemaMainArea {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+#testdbGenArea label {
+  margin-top: 5px;
+}
+
+#resultItemsLegend {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  margin: 15px;
+  width: 100%;
+}
+
+.legends {
+  display: flex;
+  flex-direction: row;
+}
+
+.legends p {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+#resultsItemsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#testdbGenArea label {
+  margin-top: 5px;
+}
+
+.active {
+  background-color: $light-orange;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 10px 15px;
+  padding: 5px;
+  border-radius: 9px;
+}
+
+.inactive {
+  background-color: $pale-orange;
+  margin: 10px 15px;
+  padding: 5px;
+  border-radius: 9px;
+}
+
+.queryMainArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 80px;
+}
+
+h1 {
+  justify-content: center;
+}
+
+h2 {
+  justify-content: center;
+}
+
+h3 {
+  justify-content: center;
+}
+
+h4 {
+  justify-content: space-around;
+}
+
+.colorblock {
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  margin-right: 10px;
+  margin-top: 3px;
+  padding: 5px;
+}
+
+#legend-1-colorBlock {
+  background-color: lightskyblue;
+}
+
+.resultItem {
+  border: solid 1px $primary-green;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 45%;
+}
+
+.result-queryName {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.result-div-queryValue {
+  background-color: darkslategray;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.result-div-schemaSection, .result-div-dbData {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.result-queryValue {
+  text-align: center;
+  color: white;
+}
+
+.metricsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.queryBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  border: solid;
+  padding: 5px;
+}
+
+#queryRuntimeBlock {
+  background-color: orange;
+  border-radius: 6px;
+  color: white;
+  width: 50%;
+  padding: 5px;
+}
+
+#queryThroughputBlock {
+  background-color: lightskyblue;
+  border-radius: 6px;
+  color: white;
+  width: 50%;
+  padding: 5px;
+}
+
+.metricNums {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.metricLabel {
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-align: center;
+}

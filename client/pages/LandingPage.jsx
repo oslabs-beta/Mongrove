@@ -8,12 +8,6 @@ import DatabaseItem from '../components/DatabaseItem.jsx';
 
 const LandingPage = (props) => {
   
-    // Put found schema value into a variable
-    
-    //use update dbName to create a new dbItem component and and it to the db panel
-    //backend: all inputs get sent to backend (IPC renderer --> main?)
-  
-
     return (
         <div id="landingPage">
             <Navbar />
@@ -28,7 +22,7 @@ const LandingPage = (props) => {
                 />
                 <DatabasePanel 
                     testDatabasesList={props.testDatabasesList}
-                    />
+                />
             </div>
         </div>
     )

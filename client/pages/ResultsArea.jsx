@@ -4,22 +4,24 @@ import ResultsItem from '../components/ResultsItem.jsx';
 
 const ResultsArea = (props) => {
 
+  // FOR DISPLAYING RESULT ITEMS
   // declare array to store result items to render
+  // pass in props required by ResultsItem component
   const resultsItemsList = [];
   for (let i = 0; i < props.testQueriesList.length; i++) {
-  if (props.testQueriesList[i].activeStatus) {
-    resultsItemsList.push(
-      <ResultsItem
-      key={i}
-      id={i}
-      queryName={props.testQueriesList[i].queryName}
-      queryRuntime={props.testQueriesList[i].time}
-      queryValue={props.testQueriesList[i].queryValue}
-      schemaName={props.testQueriesList[i].schemaName}
-      schemaValue={props.testQueriesList[i].schemaValue}
-      dbName={props.testQueriesList[i].dbName}
-      numOfDocs={props.testQueriesList[i].numOfDocs}
-      />
+    if (props.testQueriesList[i].activeStatus) {
+      resultsItemsList.push(
+        <ResultsItem
+          key={i}
+          id={i}
+          queryName={props.testQueriesList[i].queryName}
+          queryRuntime={props.testQueriesList[i].time}
+          queryValue={props.testQueriesList[i].queryValue}
+          schemaName={props.testQueriesList[i].schemaName}
+          schemaValue={props.testQueriesList[i].schemaValue}
+          dbName={props.testQueriesList[i].dbName}
+          numOfDocs={props.testQueriesList[i].numOfDocs}
+        />
       )
     }
   }
@@ -29,6 +31,7 @@ const ResultsArea = (props) => {
     <div id="resultsArea" className="mainAreaComponents">
       <h2>Results Zone</h2>
       
+      {/* Results Legend Area */}
       <div id="resultItemsLegend">
         <div id="legend-1" className="legends">
           <div id="legend-1-colorBlock" className="colorblock"></div>
@@ -40,6 +43,7 @@ const ResultsArea = (props) => {
         </div>
       </div>
 
+      {/* Area for displaying  all result items */}
       <div id="resultsItemsContainer">
         {resultsItemsList}
       </div>
