@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: $secondary-green;
 }
 
 #navbar {
@@ -59,13 +59,37 @@ body {
 }
 
 #helpModal {
-  background-color: beige;
+  background-color: $pale-orange;
   padding: 20px;
 }
 
 #helpModal h3 {
   text-align: center;
   margin-bottom: 20px;
+  padding: 10px;
+}
+
+#helpModal h4 {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#helpModal ol {
+  // list-style-type:none;
+  padding-left: 30px;
+}
+#helpModal lh {
+  // list-style-type:none;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+// .modal-text-subheading {
+
+// }
+
+#modal-text-heading{
+  margin-top: 10px;
 }
 /* .modal-content .modal-text-heading, .modal-text, .modal-text-subheading {
   font-family: Helvetica, sans-serif;
