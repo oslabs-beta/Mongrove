@@ -9,7 +9,8 @@ const QueryItem = (props) => {
   return (
     <div
       onClick={() => {
-          return props.handleActivateQuery(props.id, props.activeStatus) }}           
+        return props.handleActivateQuery(props.id, props.activeStatus) 
+      }}           
       id="queryItem"
       className={props.activeStatus ? "active" : "inactive"}
     >

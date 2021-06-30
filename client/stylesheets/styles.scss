@@ -15,11 +15,14 @@ body {
 #navbar {
   display: flex;
   align-items: center;
-  border-style: solid;
-  background-color: #718355;
-  /* color: white; */
-  height: 70px;
-  /* position: relative; */
+  // border-style: solid;
+  background-color: $primary-green;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  // overflow: hidden;
+  width: 100%;
 }
 
 #navbar-header {
@@ -27,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   margin-left: 13%;
-  color: white;
+  color: $light-beige;
   /* position: absolute;
   top: 50%;
   left: 50%;
@@ -43,7 +46,7 @@ body {
 
 .navLink {
   margin-left: 20px;
-  color: gold;
+  color: $pale-orange;
   text-decoration: none;
 }
 
@@ -52,6 +55,7 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
+  color: $pale-orange;
 }
 
 #helpModal {
@@ -75,18 +79,18 @@ flex-direction: row;
 
 .mainAreaContainers {
   width: 60%;
-  border-style: solid;
-  background-color: $tertiarygreen;
+  // border-style: solid;
+  background-color: $tertiary-green;
 }
 
 .mainAreaComponents {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  margin: 20px;
-  border: solid 1px gray;
+  padding: 35px;
+  margin: 40px;
   border-radius: 2px;
-  background-color: $lightgray;
+  background-color: $light-gray;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mainAreaComponents h2 {
@@ -121,19 +125,24 @@ padding-bottom: 20px;
   flex-direction: column;
   /* align-items: center; */
   /* justify-content: space-around; */
-  border-style: solid;
+  // border-style: solid;
   width: 20%;
+  background-color: $secondary-green;
+  // overflow: hidden;
 }
 
 .sidePanel h3 {
+  margin-top: 20px;
   margin: 20px;
   text-align: center;
+  color: $light-beige;
 }
 
 .items {
-  border: solid 1px gray;
-  margin: 5px 15px;
+  margin: 10px 15px;
   padding: 5px;
+  background-color: $pale-orange;
+  border-radius: 9px;
 }
 
 .itemName {
@@ -143,7 +152,6 @@ padding-bottom: 20px;
 #schemaMainArea {
   display: flex;
   flex-direction: column;
-  border-style: solid;
   padding: 15px;
 }
 
@@ -187,19 +195,27 @@ padding-bottom: 20px;
 }
 
 .active {
-  color: blue;
-  box-shadow: cornflowerblue;
-  text-shadow: cornflowerblue;
+  background-color: $light-orange;
+  // box-shadow: black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  // text-shadow: cornflowerblue;
+  margin: 10px 15px;
+  padding: 5px;
+  border-radius: 9px;
 }
 
 .inactive {
-  color: purple
+  background-color: $pale-orange;
+  margin: 10px 15px;
+  padding: 5px;
+  border-radius: 9px;
 }
 
 .queryMainArea {
   display: flex;
   flex-direction: row;
   flex-wrap:nowrap;
+  margin-top: 80px;
 }
 
 h1 {
@@ -232,7 +248,8 @@ h4 {
 }
 
 .resultItem {
-  border: solid;
+  border: solid 1px $primary-green;
+  border-radius: 5px;;
   padding: 10px;
   margin: 10px;
   width: 45%;
