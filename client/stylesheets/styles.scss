@@ -76,7 +76,7 @@ flex-direction: row;
 .mainAreaContainers {
   width: 60%;
   border-style: solid;
-  background-color: burlywood;
+  background-color: $tertiarygreen;
 }
 
 .mainAreaComponents {
@@ -84,7 +84,8 @@ flex-direction: row;
   flex-direction: column;
   padding: 15px;
   margin: 20px;
-  border: solid 1px gray;
+  border: dashed gray;
+  border-radius: 2px;
   background-color: $lightgray;
 }
 
@@ -97,9 +98,10 @@ flex-direction: row;
   margin-bottom: 10px;
 }
 
-/* .codemirror {
+.codemirror {
 margin-bottom: 10px;
-} */
+padding-bottom: 20px;
+}
 
 .mainAreaComponents select {
   margin-bottom: 10px;
@@ -107,8 +109,11 @@ margin-bottom: 10px;
 
 .mainAreaBn {
   padding: 15px;
-  background-color: gold;
+  background-color: $orange;
   font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  
 }
 
 .sidePanel {
@@ -152,7 +157,6 @@ margin-bottom: 10px;
   flex-direction: column;
   align-self: center;
   /* align-items: center; */
-  border: solid 1px gray;
   padding: 10px;
   margin: 15px;
   width: 65%;
@@ -234,6 +238,7 @@ h4 {
   background-color: darkslategray;
   padding: 10px;
   margin-bottom: 5px;
+  border-radius: 4px;
 }
 
 .result-div-schemaSection, .result-div-dbData {
@@ -250,7 +255,6 @@ h4 {
 }
 
 .metricsContainer {
-  border: solid;
   display: flex;
   justify-content: space-around;
 }
@@ -287,3 +291,6 @@ h4 {
 }
 
 
+.resultsArea {
+
+}
