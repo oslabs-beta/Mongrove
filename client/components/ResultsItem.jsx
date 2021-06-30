@@ -1,5 +1,6 @@
 import React from 'react';
 
+//create ResultsItem component to display results for each query
 const ResultsItem = (props) => {
 
   return (
@@ -27,9 +28,8 @@ const ResultsItem = (props) => {
           <h5 className="metricNums">
             {/* query throughput --> display result from backend here */}
             {(1000 / Number(props.queryRuntime)).toFixed(2)}
-            {/* 0.5 */}
           </h5>
-          <p className="metricLabel"> Query Throughput <br/>per sec</p>
+          <p className="metricLabel"> Query Throughput <br/>(queries/s)</p>
         </div>
       </div>
 
@@ -51,7 +51,6 @@ const ResultsItem = (props) => {
       </div>
     </div>
   )
-
 }
 
 export default ResultsItem;

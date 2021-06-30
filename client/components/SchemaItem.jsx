@@ -1,7 +1,7 @@
 import React from 'react';
 
+//each schema created is displayed as a SchemaItem in the SchemaPanel
 const SchemaItem = (props) => {
-    // set initial state and respective values
  
     return (
         <div className="schemaItem" className="items">

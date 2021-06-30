@@ -7,6 +7,7 @@ import 'codemirror/theme/material.css'; // theme css
 import 'codemirror/mode/javascript/javascript';
 // importing the text editor
 
+//create an Editor component to hold a CodeMirror component for inputting code (a schema or query)
 const Editor = (props) => {
   const { 
     displayName,
@@ -14,33 +15,32 @@ const Editor = (props) => {
     onChange
   } = props;
     
-  // handling change within codemirror editor
+  // handle change within codemirror editor
   function handleChange(editor, data, value) {
     onChange(value);
   }
 
-    return (
-        <div className="editor-container">
-          {/* label for codemirror input */}
-          <div className="editor-label">
-            {displayName}
-          </div>
-          {/* codemirror editor */}
-          <CodeMirror
-            onBeforeChange={handleChange}
-            value={value}
-            className="codemirror-wrapper"
-            options={{
-              lineWrapping: true,
-              lint: true,
-              mode: 'javascript',
-              theme: 'material',
-              lineNumbers: true
-            }}
-
-          />  
-        </div>
-    )
+  return (
+      <div className="editor-container">
+        {/* label for codemirror input */}
+         <div className="editor-label">
+          {displayName}
+         </div>
+         {/* codemirror editor */}
+         <CodeMirror
+           onBeforeChange={handleChange}
+          value={value}
+          className="codemirror-wrapper"
+           options={{
+             lineWrapping: true,
+             lint: true,
+             mode: 'javascript',
+            theme: 'material',
+            lineNumbers: true
+          }}
+         />  
+       </div>
+   )
 };
 
 export default Editor;
