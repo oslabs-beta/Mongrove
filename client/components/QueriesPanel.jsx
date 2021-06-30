@@ -18,7 +18,7 @@ const QueriesPanel = (props) => {
   }
   
   return (
-    <div className="sidePanel">
+    <div className="sidePanel" id="queryPanel">
       <h3> QUERIES </h3>
       <div className="queryItemContainer">
           {queryItemsList}
