@@ -10,11 +10,6 @@
     "start": "electron ./dist/bundle.js --no-sandbox",
     "server": "node ./backend/server.js"
   },
-  "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!(codemirror)/)"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
