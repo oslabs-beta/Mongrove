@@ -9,10 +9,10 @@ const QueryItem = (props) => {
   return (
     <div
       onClick={() => {
-          return props.handleActivateQuery(props.id, props.activeStatus) }}           
+        return props.handleActivateQuery(props.id, props.activeStatus) 
+      }}           
       id="queryItem"
       className={props.activeStatus ? "active" : "inactive"}
-      className="items"
     >
       {/* name of database appears */}
       {/* when clicked, appearance changes to active and that database's queries results show in query panel */}
