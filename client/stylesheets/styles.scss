@@ -84,7 +84,7 @@ flex-direction: row;
   flex-direction: column;
   padding: 15px;
   margin: 20px;
-  border: dashed gray;
+  border: solid 1px gray;
   border-radius: 2px;
   background-color: $lightgray;
 }
@@ -155,11 +155,12 @@ padding-bottom: 20px;
 #resultItemsLegend {
   display: flex;
   flex-direction: column;
-  align-self: center;
+  // align-self: center;
   /* align-items: center; */
+  justify-content: flex-end;
   padding: 10px;
   margin: 15px;
-  width: 65%;
+  width: 100%;
 }
 
 .legends {
@@ -172,6 +173,13 @@ padding-bottom: 20px;
 .legends p {
   font-size: 12px;
   margin-top: 2px;
+}
+
+#resultsItemsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #testdbGenArea label {
@@ -216,6 +224,7 @@ h4 {
   background-color: orange;
   margin-right: 10px;
   margin-top: 3px;
+  padding: 5px;
 }
 
 #legend-1-colorBlock {
@@ -271,12 +280,14 @@ h4 {
   background-color: orange;
   color: white;
   width: 50%;
+  padding: 5px;
 }
 
 #queryThroughputBlock {
   background-color: lightskyblue;
   color: white;
   width: 50%;
+  padding: 5px;
 }
 
 .metricNums {
@@ -291,6 +302,3 @@ h4 {
 }
 
 
-.resultsArea {
-
-}
