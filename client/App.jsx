@@ -7,6 +7,7 @@ import QueryPage from './pages/QueryPage.jsx';
 import './stylesheets/styles.scss';
 import { ipcRenderer } from "electron";
 
+
 function validateSchema(schema) {
   const supportedTypes = {
     String: true,
@@ -36,7 +37,7 @@ function validateSchema(schema) {
 }
 
 const App = () => {
-  // USING STATE TO HANDLE AND PERSIST DATA
+  // USING STATE TO HANDLE AND PERSIST DATA --> To be passed down as props to appropriate components
   // from schema creation area
   const [schemaList, setSchemaList] = useState([]);
   // from test db generation area
@@ -59,42 +60,38 @@ const App = () => {
     } else {
       alert("Invalid schema: Enter a valid schema");
     }
-    console.log('schemaName', schemaName, 'schemaValue', schemaValue);
-
   }
 
-  // Handle 'CONFIGURE TEST DATABASE' button:
+  // Handling functionality for 'CONFIGURE TEST DATABASE' button:
   // when clicked, add all 3 inputs to state, add a new dbItem to dbPanel
   async function handleGenerateTestDatabase(testDBname, selectedSchema, numberOfRows) {
-    
-    
     // Add schema to the database list
     let schema = '';
-    console.log('selectedSchema: ', selectedSchema);
-    
+  
     schemaList.forEach(element => {
       if (element.name === selectedSchema) {
         schema = element.value;
       }
     })
 
+    // sending data to backend from ipcRenderer to ipcMain
     let data = await ipcRenderer.invoke('generate-test-data', schema, numberOfRows);
 
     const newList = [...testDatabasesList];
     newList.push({
       name: testDBname, 
-      schemaName: selectedSchema, 
+      schemaName: selectedSchema,
       schema: schema,
       rows: numberOfRows,
       data: data
     });
 
+    // update database list
     setTestDatabasesList(newList);
-      //use update dbName to create a new dbItem component and and it to the db panel
-    // backend: all inputs get sent to backend (IPC renderer --> main?)
   }
 
-  // Handle functionality of 'RUN QUERY' button:
+  // Handling functionality for 'RUN QUERY' button:
+  // when clicked, should populate result item on result and chart area, and query name should populate on query panel
   const handleRunQuery = async (selectedDB, testQueryName, testQuery) => {
 
     const newQueriesList = [];
@@ -118,13 +115,12 @@ const App = () => {
         data = element.data;
       }
     })
-    
-    console.log(testQuery, schemaName, schema, numberOfDocuments, dbName)
+  
 
-    try{
+    try {
       let result = await ipcRenderer.invoke('run-query', testQuery, schemaName, schema, numberOfDocuments, dbName, data);
       result = result.toFixed(2);
-      console.log(result);
+
       newQueriesList.push({
         queryName: testQueryName, 
         queryValue: testQuery, 
@@ -135,35 +131,30 @@ const App = () => {
         dbName: dbName,
         numOfDocs: numberOfDocuments
       });
+      // update queries list
       setTestQueriesList(newQueriesList);
     } catch (err) {
-      console.log("error", err)
       alert("Invalid query: Verify query", err);
     }
   };
 
-// Handle functionality for handleActivateQuery
-// When user clicks on a queryItem in the queryPanel, make its activeStatus property the opposite boolean ofits current value and toggle display of its corresponding resultsItem in the resultsArea
+// Handle functionality for query item activation
+// When user clicks on a queryItem in the queryPanel:
+// - make its activeStatus property the opposite boolean ofits current value
+// - toggle display of its corresponding resultsItem in the resultsArea
 const handleActivateQuery = (queryKey, status) => {
-  console.log('handleActivateQuery clicked');
-  console.log('queryKey', queryKey);
-  console.log('status', status);
   // create a new array of query objects which is identical to the current state, except with the target object updated, then replace testQueriesList in state with the new array
   let updatedQueriesList = [];
 
   for (let i = 0; i < testQueriesList.length; i++) {
     if (i === queryKey) {
       testQueriesList[i].activeStatus = !testQueriesList[i].activeStatus;
-      console.log('query INPUT status:', status);
     }
     updatedQueriesList.push(testQueriesList[i]);
   }
-
-  console.log('updated list', updatedQueriesList);
+  // update queries list
   setTestQueriesList(updatedQueriesList);
 }
-
-
 
   return (
     <div>

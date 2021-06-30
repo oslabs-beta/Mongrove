@@ -1,16 +1,12 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import '../stylesheets/styles.scss';
-//new browser window opens when navbar help button is clicked
 
+//this component renders in a new browser window when NavBar help button is clicked
 const HelpModal = () => {
   return (
-    <div id="helpModal">
+    <div id="helpModalwindow">
       <h3> INSTRUCTIONS </h3>
-
-      {/* <div class="modal-media">
-
-      </div> */}
 
       <div class="modal-content">
         <h4 class="modal-text-heading"> Schema Creation </h4>

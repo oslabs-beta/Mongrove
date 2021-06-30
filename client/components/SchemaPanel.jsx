@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import SchemaItem from './SchemaItem.jsx';
 
+//create SchemaPanel component to display SchemaItems as they are created
 const SchemaPanel = (props) => {
-  // array to hold saved schema items
+
   const schemaItemsList = [];
 
   for (let i = 0; i < props.schemaList.length; i++) {

@@ -2,7 +2,6 @@ import React from 'react';
 import DatabaseItem from './DatabaseItem.jsx';
 
 const DatabasePanel = (props) => {
-
 	//create an array to hold each created test DB component
 	const databaseItemsList = []; 
 	for (let i = 0; i < props.testDatabasesList.length; i++) {
@@ -14,14 +13,13 @@ const DatabasePanel = (props) => {
 			/>
 		)
 	}
+	//display all databaseItems in the databasePanel
 	return (
 		<div id="databasePanel" className="sidePanel">
 			<h3>TEST DATABASES</h3>
-
 			<div id="databasesList">
 				{databaseItemsList}
 			</div>
-    
     	</div>
 	)
 }
