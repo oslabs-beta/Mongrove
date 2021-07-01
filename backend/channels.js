@@ -30,5 +30,5 @@ ipcMain.on('open-help', function () {
   })
 
   // Load the help modal
-  win.loadFile('../client/help.html');
+  win.loadFile('client/help.html');
 })
