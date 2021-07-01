@@ -1,6 +1,7 @@
 <div align="center">
-<p><b>Welcome to Mongrove!</b></p>
-<p>A databse analytics tool for MongoDB to compare and contrast metrics for various schemas and queries to MongoDB databses </p>
+  <img src="./assets/Mongrove.png" width=300/>
+  <p><b>Welcome to Mongrove!</b></p>
+  <p>A database analytics tool for MongoDB to compare and contrast metrics for various schemas and queries to MongoDB databses </p>
 </div>
 
 ## Built With
@@ -27,7 +28,7 @@
   - Option 2: Using a local instance of MongoDB
     - Install a local instance of [MongoDB](https://docs.mongodb.com/manual/installation/) if you don't want to use a containeized database
     - Run the following command in a terminal `mongo --port 27018`
-- Download and install the latest version of Mongrove
+- Download and install the latest version of [Mongrove](https://github.com/oslabs-beta/Mongrove/releases/tag/1.0.0)
 
 ## Using Mongrove
 
