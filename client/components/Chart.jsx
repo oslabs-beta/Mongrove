@@ -89,19 +89,6 @@ const Chart = props => {
 
        
     // Selects the element id checkSort and changes the sorting callback function when checkbox is checked/unchecked
-    d3.select("#checkSort").on("change", function() {
-      const sortByTime = (a, b) => a.time - b.time;
-      const sortByOrder = (a, b) => a.order - b.order;
-      
-      this.checked ? data.sort(sortByTime) : data.sort(sortByOrder);
-
-    const xAxis = d3.axisBottom().scale(bandScale)
-    const xAxisTranslate = h - 20
-    svg.append('g')
-      .attr('transform', `translate(0, ${xAxisTranslate})`)
-      .style('margin-left', -30)
-      .attr('id', 'x-axis')
-      .call(xAxis)
 
     d3.select('#checkSort').on('change', function () {
       const sortByTime = (a, b) => a.time - b.time
@@ -122,7 +109,6 @@ const Chart = props => {
       svg.select('#x-axis')
         .transition()
         .call(xAxis)
-    })
     })
   })
   
