@@ -74,7 +74,7 @@
   - By clicking the 'Sort By Time' checkbox in the graph area, you will get the selected queries sorted by query response time in ascending order
 
 <div align="center">
-  <img src="./assets/SaveDatabase.gif" width=800/>
+  <img src="./assets/RunQuery.gif" width=800/>
 </div>
   
 <div align="center">
