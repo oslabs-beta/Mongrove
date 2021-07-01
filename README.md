@@ -86,11 +86,8 @@ Mongrove is an open-source project thatwould be grateful for any contributions m
 
 ## Core Team
 Allana Ordonez: [GitHub](https://github.com/allanao) | [LinkedIn](https://www.linkedin.com/in/allana-ordonez/) \
-Peter Van: [GitHub](https://github.com/peterrvan
-) | [LinkedIn](https://www.linkedin.com/in/peter-van/
-) \
+Peter Van: [GitHub](https://github.com/peterrvan) | [LinkedIn](https://www.linkedin.com/in/peter-van/) \
 Sushanth Kambham: [GitHub](https://github.com/sushanth913) | [LinkedIn](https://www.linkedin.com/in/sushanth-kambham) \
-Yael Ofer: [GitHub](https://github.com/YaelWOfer) | [LinkedIn](https://github.com/peterrvan
-)
+Yael Ofer: [GitHub](https://github.com/YaelWOfer) | [LinkedIn](http://www.linkedin.com/in/yaelofer)
 
 Developed under Tech Accelerator [OS Labs](https://opensourcelabs.io/)
