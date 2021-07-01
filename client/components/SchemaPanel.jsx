@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import SchemaItem from './SchemaItem.jsx';
+import React, { useState } from 'react'
+import SchemaItem from './SchemaItem.jsx'
 
-//create SchemaPanel component to display SchemaItems as they are created
+// create SchemaPanel component to display SchemaItems as they are created
 const SchemaPanel = (props) => {
-
-  const schemaItemsList = [];
+  const schemaItemsList = []
 
   for (let i = 0; i < props.schemaList.length; i++) {
     schemaItemsList.push(
-      <SchemaItem 
+      <SchemaItem
         schemaName={props.schemaList[i].name}
         key={i}
         id={i}
@@ -27,4 +26,4 @@ const SchemaPanel = (props) => {
   )
 }
 
-export default SchemaPanel;
+export default SchemaPanel

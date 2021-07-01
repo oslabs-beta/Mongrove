@@ -1,14 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-//create ResultsItem component to display results for each query
+// create ResultsItem component to display results for each query
 const ResultsItem = (props) => {
-
   return (
     <div className="resultItem">
       <h3 className="result-queryName">
         {props.id + 1}. {props.queryName}
       </h3>
-      
+
       <div className="result-div-queryValue">
         <h5 className="result-queryValue">
           {props.queryValue}
@@ -16,7 +15,7 @@ const ResultsItem = (props) => {
       </div>
 
       <div className="metricsContainer">
-        <div id="queryRuntimeBlock"  className="queryBlock">
+        <div id="queryRuntimeBlock" className="queryBlock">
           <h5 className="metricNums">
             {/* query runtime --> display result from backend here */}
             {props.queryRuntime}
@@ -53,4 +52,4 @@ const ResultsItem = (props) => {
   )
 }
 
-export default ResultsItem;
+export default ResultsItem
