@@ -1,17 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-//create QueryItem to display each inputted query QueryPanel
-//each QueryItem can be individually clicked to toggle display/hide that query's results
+// create QueryItem to display each inputted query QueryPanel
+// each QueryItem can be individually clicked to toggle display/hide that query's results
 const QueryItem = (props) => {
-  
-  {/* when clicked, QueryItem appearance changes to active and that query's results show in query panel */}
+  /* when clicked, QueryItem appearance changes to active and that query's results show in query panel */
   return (
     <div
       onClick={() => {
-        return props.handleActivateQuery(props.id, props.activeStatus) 
-      }}           
+        return props.handleActivateQuery(props.id, props.activeStatus)
+      }}
       id="queryItem"
-      className={props.activeStatus ? "active" : "inactive"}
+      className={props.activeStatus ? 'active' : 'inactive'}
     >
       <span className="itemName">
         <p>{props.testQueryName}</p>
@@ -20,5 +19,4 @@ const QueryItem = (props) => {
   )
 }
 
-
-export default QueryItem;
+export default QueryItem

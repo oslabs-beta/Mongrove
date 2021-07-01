@@ -1,23 +1,23 @@
-import React from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import React from 'react'
+import { Controlled as CodeMirror } from 'react-codemirror2'
 // for codemirror styling
-import 'codemirror/lib/codemirror.css'; // base css
-import 'codemirror/theme/material.css'; // theme css
+import 'codemirror/lib/codemirror.css' // base css
+import 'codemirror/theme/material.css' // theme css
 // for enabling js in codemirror
-import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/javascript/javascript'
 // importing the text editor
 
-//create an Editor component to hold a CodeMirror component for inputting code (a schema or query)
+// create an Editor component to hold a CodeMirror component for inputting code (a schema or query)
 const Editor = (props) => {
-  const { 
+  const {
     displayName,
     value,
     onChange
-  } = props;
-    
+  } = props
+
   // handle change within codemirror editor
-  function handleChange(editor, data, value) {
-    onChange(value);
+  function handleChange (editor, data, value) {
+    onChange(value)
   }
 
   return (
@@ -35,12 +35,12 @@ const Editor = (props) => {
              lineWrapping: true,
              lint: true,
              mode: 'javascript',
-            theme: 'material',
-            lineNumbers: true
-          }}
-         />  
+             theme: 'material',
+             lineNumbers: true
+           }}
+         />
        </div>
-   )
-};
+  )
+}
 
-export default Editor;
+export default Editor

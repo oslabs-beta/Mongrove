@@ -1,13 +1,11 @@
-import React from 'react';
-import ResultsItem from '../components/ResultsItem.jsx';
-
+import React from 'react'
+import ResultsItem from '../components/ResultsItem.jsx'
 
 const ResultsArea = (props) => {
-
   // FOR DISPLAYING RESULT ITEMS
   // declare array to store result items to render
   // pass in props required by ResultsItem component
-  const resultsItemsList = [];
+  const resultsItemsList = []
   for (let i = 0; i < props.testQueriesList.length; i++) {
     if (props.testQueriesList[i].activeStatus) {
       resultsItemsList.push(
@@ -30,7 +28,7 @@ const ResultsArea = (props) => {
 
     <div id="resultsArea" className="mainAreaComponents">
       <h2>Results Zone</h2>
-      
+
       {/* Results Legend Area */}
       <div id="resultItemsLegend">
         <div id="legend-1" className="legends">
@@ -51,4 +49,4 @@ const ResultsArea = (props) => {
   )
 }
 
-export default ResultsArea;
+export default ResultsArea
