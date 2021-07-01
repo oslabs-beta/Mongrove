@@ -54,7 +54,9 @@ function generateTestDatabase (schema, numberOfDocuments) {
 // This function takes in the schema as a string a returns a Javascript object
 function getFieldNameAndDataTypes (string) {
   // Trims the whitespace and slices the curly braces from the string. Then splits each key/value pair (string form) into an element into schemaArray
-  const schemaArray = string.trim().slice(1, -1).trim().split(',')
+  let schema = string.trim().slice(1, -1).trim()
+  if (schema[schema.length - 1] === ',') schema = schema.slice(0, -1)
+  const schemaArray = schema.split(',')
   // Declare an empty object result
   const result = {}
   for (let i = 0; i < schemaArray.length; i++) {

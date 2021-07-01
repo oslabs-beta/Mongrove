@@ -14,6 +14,7 @@ const HelpModal = () => {
         <ol class="modal-text">
           <li> Name your schema in the <i>Enter Schema Name</i> field for quick referencing.</li>
           <li> Type a schema into the code editor provided right under the label that says <i>Enter Schema here:</i>. Make sure the field name you are entering has no spaces or special characters like dashes <i>(ex: '-')</i>. Use camelCase instead. </li>
+          <li>Currently supported data types are: <strong>String</strong>, <strong>Number</strong>, <strong>Boolean</strong>, <strong>Date</strong>, <strong>Array</strong> and <strong>Decimal128</strong></li>
           <li> Click the <strong>Save Schema</strong> button to save your schema. Now, you can move on to the Test Database Configuration area.</li>
         </ol>
 
@@ -22,7 +23,7 @@ const HelpModal = () => {
         <ol class="modal-text">
           <li> Enter a <i>Test Database Name</i> for the test database you want to generate. </li>
           <li>Choose a schema from the <i>Select Schema Name</i> drop down.</li>
-          <li>pecify the number of documents you want to generate test data for under the <i>Enter Number of Documents</i> label.</li>
+          <li>Specify the number of documents you want to generate test data for under the <i>Enter Number of Documents</i> label.</li>
         </ol>
 
         <h4 class="modal-text-heading"> Query Creation </h4>

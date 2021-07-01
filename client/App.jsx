@@ -20,16 +20,18 @@ function validateSchema (schema) {
   schema = schema.trim()
   if (schema[0] !== '{' || schema[schema.length - 1] !== '}') return false
   schema = schema.slice(1, -1)
+  schema = schema.trim()
+  if (schema[schema.length - 1] === ',') schema = schema.slice(0, -1);
   const pairs = schema.split(',')
 
   for (let i = 0; i < pairs.length; i++) {
-    if (!(/^[a-zA-Z:\s]*$/).test(pairs[i])) return false
+    if (!(/^[a-zA-Z:_\s]*$/).test(pairs[i])) return false
     const curPair = pairs[i].split(':')
     if (curPair.length !== 2) return false
     for (let j = 0; j < curPair.length; j++) {
       const curWord = curPair[j].trim()
       if (j === 1 && !supportedTypes.hasOwnProperty(curWord)) return false
-      if ((!(/^[a-zA-Z]*$/).test(curWord))) return false
+      if ((!(/^[a-zA-Z_]*$/).test(curWord))) return false
     }
   }
   return true
