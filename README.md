@@ -3,17 +3,6 @@
 <p>A databse analytics tool for MongoDB to compare and contrast metrics for various schemas and queries to MongoDB databses </p>
 </div>
 
-## Using Mongrove 
-
-- Database setup:
-  - Option 1: Using a containerized database (Recommended)
-    - Install the latest version of [Docker](https://www.docker.com/) if you want to use a containerized database
-    - Run the following command in a terminal: `docker run -d -p 27018:27017 mongo`
-  - Option 2: Using a local instance of MongoDB
-    - Install a local instance of [MongoDB](https://docs.mongodb.com/manual/installation/) if you don't want to use a containeized database
-    - Run the following command in a terminal `mongo --port 27018`
-- Download and install the latest version of Mongrove
-
 ## Built With
 
 - [Electron](https://www.electronjs.org/)
@@ -28,6 +17,17 @@
 - [Electron Builder](https://www.electron.build/)
 - [Jest](https://jestjs.io/)
 - [Enzyme](https://enzymejs.github.io/enzyme/)
+
+## Set Up 
+
+- Database setup:
+  - Option 1: Using a containerized database (Recommended)
+    - Install the latest version of [Docker](https://www.docker.com/) if you want to use a containerized database
+    - Run the following command in a terminal: `docker run -d -p 27018:27017 mongo`
+  - Option 2: Using a local instance of MongoDB
+    - Install a local instance of [MongoDB](https://docs.mongodb.com/manual/installation/) if you don't want to use a containeized database
+    - Run the following command in a terminal `mongo --port 27018`
+- Download and install the latest version of Mongrove
 
 ## Using Mongrove
 
@@ -57,6 +57,10 @@
   - Enter the number of documents that you would like the test database to have
   - Click the configure test database button
 
+<div align="center">
+  <img src="./assets/SaveDatabase.gif" width=800/>
+</div>
+
 - Test Page
   - Click the 'Test' button in the NavBar to run queries
   - Select the previously configured database that you would like to run your current query on
@@ -68,15 +72,24 @@
   - Your query results will be populated below
   - You can unselect a query in the 'Query Panel' on the left if you don't want to display it
   - By clicking the 'Sort By Time' checkbox in the graph area, you will get the selected queries sorted by query response time in ascending order
+
+<div align="center">
+  <img src="./assets/SaveDatabase.gif" width=800/>
+</div>
   
+<div align="center">
+  <img src="./assets/Results.gif" width=800/>
+</div>
+
 ## Contributing
 Mongrove is an open-source project thatwould be grateful for any contributions made by the open-source community. Please feel free to submit pull requests or report any issues in the issues tab. Thank you for your interest in making Mongrove a better product! 
+
 ## Core Team
 Allana Ordonez: [GitHub](https://github.com/allanao) | [LinkedIn](https://www.linkedin.com/in/allana-ordonez/) \
 Peter Van: [GitHub](https://github.com/peterrvan
-) | [LinkedIn](www.linkedin.com/in/peter-van/
+) | [LinkedIn](https://www.linkedin.com/in/peter-van/
 ) \
-Sushanth Kambham: [GitHub](https://github.com/sushanth913) | [LinkedIn](www.linkedin.com/in/sushanth-kambham)\
+Sushanth Kambham: [GitHub](https://github.com/sushanth913) | [LinkedIn](https://www.linkedin.com/in/sushanth-kambham) \
 Yael Ofer: [GitHub](https://github.com/YaelWOfer) | [LinkedIn](https://github.com/peterrvan
 )
 
