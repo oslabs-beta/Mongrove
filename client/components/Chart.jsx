@@ -123,7 +123,9 @@ const Chart = props => {
         .transition()
         .call(xAxis)
     })
+    })
   })
+  
 
   return (
     <div className="mainAreaComponents">
